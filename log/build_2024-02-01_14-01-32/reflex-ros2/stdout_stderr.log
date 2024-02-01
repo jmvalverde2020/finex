@@ -1,0 +1,16 @@
+[ 50%] [32mBuilding CXX object CMakeFiles/control_node.dir/src/control_node.cpp.o[0m
+[ 50%] Built target ament_cmake_python_symlink_reflex-ros2
+running egg_info
+writing reflex_ros2.egg-info/PKG-INFO
+writing dependency_links to reflex_ros2.egg-info/dependency_links.txt
+writing top-level names to reflex_ros2.egg-info/top_level.txt
+reading manifest file 'reflex_ros2.egg-info/SOURCES.txt'
+writing manifest file 'reflex_ros2.egg-info/SOURCES.txt'
+[ 50%] Built target ament_cmake_python_build_reflex-ros2_egg
+[01m[K/home/ubuntu/reflex-therapy/src/reflex-ros2/src/control_node.cpp:5:10:[m[K [01;31m[Kfatal error: [m[Kstd_msgs/msg/UInt16.hpp: No such file or directory
+    5 | #include [01;31m[K"std_msgs/msg/UInt16.hpp"[m[K
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+gmake[2]: *** [CMakeFiles/control_node.dir/build.make:76: CMakeFiles/control_node.dir/src/control_node.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:140: CMakeFiles/control_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

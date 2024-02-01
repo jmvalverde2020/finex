@@ -1,0 +1,4 @@
+Invoking command in '/home/ubuntu/reflex-therapy/build/reflex-ros2': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/ubuntu/reflex-therapy/src/reflex-ros2 -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/ubuntu/reflex-therapy/install/reflex-ros2
+Invoked command in '/home/ubuntu/reflex-therapy/build/reflex-ros2' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/ubuntu/reflex-therapy/src/reflex-ros2 -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/ubuntu/reflex-therapy/install/reflex-ros2
+Invoking command in '/home/ubuntu/reflex-therapy/build/reflex-ros2': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/ubuntu/reflex-therapy/build/reflex-ros2 -- -j4 -l4
+Invoked command in '/home/ubuntu/reflex-therapy/build/reflex-ros2' returned '2': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/ubuntu/reflex-therapy/build/reflex-ros2 -- -j4 -l4

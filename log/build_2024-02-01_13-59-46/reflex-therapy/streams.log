@@ -1,0 +1,32 @@
+[0.305s] Invoking command in '/home/ubuntu/reflex-therapy/build/reflex-therapy': /usr/bin/cmake /home/ubuntu/reflex-therapy/src/reflex-therapy -DCMAKE_INSTALL_PREFIX=/home/ubuntu/reflex-therapy/install/reflex-therapy
+[1.224s] [33mCMake Warning (dev) in CMakeLists.txt:
+[1.225s]   No project() command is present.  The top-level CMakeLists.txt file must
+[1.226s]   contain a literal, direct call to the project() command.  Add a line of
+[1.227s]   code such as
+[1.228s] 
+[1.229s]     project(ProjectName)
+[1.230s] 
+[1.231s]   near the top of the file, but after cmake_minimum_required().
+[1.231s] 
+[1.232s]   CMake is pretending there is a "project(Project)" command on the first
+[1.232s]   line.
+[1.232s] This warning is for project developers.  Use -Wno-dev to suppress it.
+[1.233s] [0m
+[2.953s] -- The C compiler identification is GNU 11.4.0
+[4.247s] -- The CXX compiler identification is GNU 11.4.0
+[4.320s] -- Detecting C compiler ABI info
+[5.086s] -- Detecting C compiler ABI info - done
+[5.126s] -- Check for working C compiler: /usr/bin/cc - skipped
+[5.127s] -- Detecting C compile features
+[5.129s] -- Detecting C compile features - done
+[5.149s] -- Detecting CXX compiler ABI info
+[5.801s] -- Detecting CXX compiler ABI info - done
+[5.843s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[5.844s] -- Detecting CXX compile features
+[5.847s] -- Detecting CXX compile features - done
+[5.853s] -- Configuring done
+[5.859s] -- Generating done
+[5.863s] -- Build files have been written to: /home/ubuntu/reflex-therapy/build/reflex-therapy
+[5.879s] Invoked command in '/home/ubuntu/reflex-therapy/build/reflex-therapy' returned '0': /usr/bin/cmake /home/ubuntu/reflex-therapy/src/reflex-therapy -DCMAKE_INSTALL_PREFIX=/home/ubuntu/reflex-therapy/install/reflex-therapy
+[5.895s] Invoking command in '/home/ubuntu/reflex-therapy/build/reflex-therapy': /usr/bin/cmake --build /home/ubuntu/reflex-therapy/build/reflex-therapy -- -j4 -l4
+[6.064s] Invoked command in '/home/ubuntu/reflex-therapy/build/reflex-therapy' returned '0': /usr/bin/cmake --build /home/ubuntu/reflex-therapy/build/reflex-therapy -- -j4 -l4

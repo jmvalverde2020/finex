@@ -1,0 +1,57 @@
+[0.554s] Invoking command in '/home/ubuntu/reflex-therapy/build/reflex-ros2': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/ubuntu/reflex-therapy/src/reflex-ros2 -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/ubuntu/reflex-therapy/install/reflex-ros2
+[3.235s] -- The C compiler identification is GNU 11.4.0
+[4.525s] -- The CXX compiler identification is GNU 11.4.0
+[4.604s] -- Detecting C compiler ABI info
+[5.370s] -- Detecting C compiler ABI info - done
+[5.401s] -- Check for working C compiler: /usr/bin/cc - skipped
+[5.404s] -- Detecting C compile features
+[5.408s] -- Detecting C compile features - done
+[5.427s] -- Detecting CXX compiler ABI info
+[6.003s] -- Detecting CXX compiler ABI info - done
+[6.038s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[6.040s] -- Detecting CXX compile features
+[6.042s] -- Detecting CXX compile features - done
+[6.133s] -- Found ament_cmake: 1.3.7 (/opt/ros/humble/share/ament_cmake/cmake)
+[7.311s] -- Found Python3: /usr/bin/python3.10 (found version "3.10.12") found components: Interpreter 
+[7.908s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[8.399s] -- Found rclcpp: 16.0.8 (/opt/ros/humble/share/rclcpp/cmake)
+[8.933s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[8.999s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[9.090s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[9.223s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[9.399s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[9.960s] -- Found rmw_implementation_cmake: 6.1.1 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[9.997s] -- Found rmw_fastrtps_cpp: 6.2.6 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[10.863s] -- Found OpenSSL: /usr/lib/aarch64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[11.177s] -- Found FastRTPS: /opt/ros/humble/include  
+[11.681s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[11.797s] -- Looking for pthread.h
+[12.229s] -- Looking for pthread.h - found
+[12.231s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[12.635s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[12.641s] -- Found Threads: TRUE  
+[13.941s] -- Found rclpy: 3.3.11 (/opt/ros/humble/share/rclpy/cmake)
+[14.873s] -- Configuring done
+[14.951s] -- Generating done
+[14.961s] -- Build files have been written to: /home/ubuntu/reflex-therapy/build/reflex-ros2
+[15.007s] Invoked command in '/home/ubuntu/reflex-therapy/build/reflex-ros2' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/ubuntu/reflex-therapy/src/reflex-ros2 -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/ubuntu/reflex-therapy/install/reflex-ros2
+[15.012s] Invoking command in '/home/ubuntu/reflex-therapy/build/reflex-ros2': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/ubuntu/reflex-therapy/build/reflex-ros2 -- -j4 -l4
+[15.248s] [ 50%] [32mBuilding CXX object CMakeFiles/control_node.dir/src/control_node.cpp.o[0m
+[15.292s] [ 50%] Built target ament_cmake_python_symlink_reflex-ros2
+[16.872s] running egg_info
+[16.875s] creating reflex_ros2.egg-info
+[16.876s] writing reflex_ros2.egg-info/PKG-INFO
+[16.877s] writing dependency_links to reflex_ros2.egg-info/dependency_links.txt
+[16.878s] writing top-level names to reflex_ros2.egg-info/top_level.txt
+[16.879s] writing manifest file 'reflex_ros2.egg-info/SOURCES.txt'
+[16.892s] reading manifest file 'reflex_ros2.egg-info/SOURCES.txt'
+[16.895s] writing manifest file 'reflex_ros2.egg-info/SOURCES.txt'
+[17.053s] [ 50%] Built target ament_cmake_python_build_reflex-ros2_egg
+[18.226s] [01m[K/home/ubuntu/reflex-therapy/src/reflex-ros2/src/control_node.cpp:5:10:[m[K [01;31m[Kfatal error: [m[Kstd_msgs/msg/UInt16.hpp: No such file or directory
+[18.227s]     5 | #include [01;31m[K"std_msgs/msg/UInt16.hpp"[m[K
+[18.227s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[18.229s] compilation terminated.
+[18.239s] gmake[2]: *** [CMakeFiles/control_node.dir/build.make:76: CMakeFiles/control_node.dir/src/control_node.cpp.o] Error 1
+[18.240s] gmake[1]: *** [CMakeFiles/Makefile2:140: CMakeFiles/control_node.dir/all] Error 2
+[18.241s] gmake: *** [Makefile:146: all] Error 2
+[18.249s] Invoked command in '/home/ubuntu/reflex-therapy/build/reflex-ros2' returned '2': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/ubuntu/reflex-therapy/build/reflex-ros2 -- -j4 -l4
