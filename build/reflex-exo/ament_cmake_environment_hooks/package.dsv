@@ -1,0 +1,4 @@
+source;share/reflex-exo/local_setup.bash
+source;share/reflex-exo/local_setup.dsv
+source;share/reflex-exo/local_setup.sh
+source;share/reflex-exo/local_setup.zsh

@@ -1,0 +1,675 @@
+[0.000000] (-) TimerEvent: {}
+[0.001784] (-) JobUnselected: {'identifier': 'reflex_readings_py'}
+[0.002440] (reflex-control-cpp) JobQueued: {'identifier': 'reflex-control-cpp', 'dependencies': OrderedDict()}
+[0.002770] (reflex-control-cpp) JobStarted: {'identifier': 'reflex-control-cpp'}
+[0.098940] (-) TimerEvent: {}
+[0.199818] (-) TimerEvent: {}
+[0.281705] (reflex-control-cpp) JobProgress: {'identifier': 'reflex-control-cpp', 'progress': 'cmake'}
+[0.282977] (reflex-control-cpp) Command: {'cmd': ['/usr/bin/cmake', '/home/ubuntu/reflex-therapy/src/reflex-control-cpp', '-DCMAKE_INSTALL_PREFIX=/home/ubuntu/reflex-therapy/install/reflex-control-cpp'], 'cwd': '/home/ubuntu/reflex-therapy/build/reflex-control-cpp', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'ubuntu'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/ubuntu'), ('OLDPWD', '/home/ubuntu/reflex-therapy/src'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('SYSTEMD_EXEC_PID', '2214'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'ubuntu'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'ubuntu'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/ubuntu-rpi:@/tmp/.ICE-unix/1888,unix/ubuntu-rpi:/tmp/.ICE-unix/1888'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/a2e0a1a5_c92e_4757_b969_a5b3bb7de458'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'es_ES.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.RLIPI2'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.823'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '12'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/ubuntu/reflex-therapy/build/reflex-control-cpp'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.300042] (-) TimerEvent: {}
+[0.401371] (-) TimerEvent: {}
+[0.502724] (-) TimerEvent: {}
+[0.604028] (-) TimerEvent: {}
+[0.705374] (-) TimerEvent: {}
+[0.807516] (-) TimerEvent: {}
+[0.909311] (-) TimerEvent: {}
+[1.010786] (-) TimerEvent: {}
+[1.112018] (-) TimerEvent: {}
+[1.213037] (-) TimerEvent: {}
+[1.314341] (-) TimerEvent: {}
+[1.415474] (-) TimerEvent: {}
+[1.434937] (reflex-control-cpp) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[1.515684] (-) TimerEvent: {}
+[1.616588] (-) TimerEvent: {}
+[1.719096] (-) TimerEvent: {}
+[1.821375] (-) TimerEvent: {}
+[1.922543] (-) TimerEvent: {}
+[2.023644] (-) TimerEvent: {}
+[2.125523] (-) TimerEvent: {}
+[2.230181] (-) TimerEvent: {}
+[2.333184] (-) TimerEvent: {}
+[2.436638] (-) TimerEvent: {}
+[2.469034] (reflex-control-cpp) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[2.537100] (-) TimerEvent: {}
+[2.560852] (reflex-control-cpp) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[2.637832] (-) TimerEvent: {}
+[2.740712] (-) TimerEvent: {}
+[2.842366] (-) TimerEvent: {}
+[2.943962] (-) TimerEvent: {}
+[3.044974] (-) TimerEvent: {}
+[3.075802] (reflex-control-cpp) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[3.107790] (reflex-control-cpp) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[3.111050] (reflex-control-cpp) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[3.114845] (reflex-control-cpp) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[3.134216] (reflex-control-cpp) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[3.145175] (-) TimerEvent: {}
+[3.246495] (-) TimerEvent: {}
+[3.348570] (-) TimerEvent: {}
+[3.449655] (-) TimerEvent: {}
+[3.550749] (-) TimerEvent: {}
+[3.562847] (reflex-control-cpp) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[3.596969] (reflex-control-cpp) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[3.598548] (reflex-control-cpp) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[3.600726] (reflex-control-cpp) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[3.650962] (-) TimerEvent: {}
+[3.684001] (reflex-control-cpp) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.7 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[3.751177] (-) TimerEvent: {}
+[3.852167] (-) TimerEvent: {}
+[3.953062] (-) TimerEvent: {}
+[4.054812] (-) TimerEvent: {}
+[4.156085] (-) TimerEvent: {}
+[4.261002] (-) TimerEvent: {}
+[4.368692] (-) TimerEvent: {}
+[4.470243] (-) TimerEvent: {}
+[4.573302] (-) TimerEvent: {}
+[4.676680] (-) TimerEvent: {}
+[4.780031] (-) TimerEvent: {}
+[4.882216] (-) TimerEvent: {}
+[4.987567] (-) TimerEvent: {}
+[5.089599] (-) TimerEvent: {}
+[5.191407] (-) TimerEvent: {}
+[5.293801] (-) TimerEvent: {}
+[5.383251] (reflex-control-cpp) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3.10 (found version "3.10.12") found components: Interpreter \n'}
+[5.394019] (-) TimerEvent: {}
+[5.494884] (-) TimerEvent: {}
+[5.595954] (-) TimerEvent: {}
+[5.696896] (-) TimerEvent: {}
+[5.797739] (-) TimerEvent: {}
+[5.898539] (-) TimerEvent: {}
+[5.999445] (-) TimerEvent: {}
+[6.100360] (-) TimerEvent: {}
+[6.201474] (-) TimerEvent: {}
+[6.220472] (reflex-control-cpp) StdoutLine: {'line': b'-- Found rclcpp: 16.0.8 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[6.301664] (-) TimerEvent: {}
+[6.402439] (-) TimerEvent: {}
+[6.503289] (-) TimerEvent: {}
+[6.604121] (-) TimerEvent: {}
+[6.704969] (-) TimerEvent: {}
+[6.752971] (reflex-control-cpp) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[6.805239] (-) TimerEvent: {}
+[6.820933] (reflex-control-cpp) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[6.905414] (-) TimerEvent: {}
+[6.913176] (reflex-control-cpp) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[7.005607] (-) TimerEvent: {}
+[7.047657] (reflex-control-cpp) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[7.105808] (-) TimerEvent: {}
+[7.206643] (-) TimerEvent: {}
+[7.221025] (reflex-control-cpp) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[7.306848] (-) TimerEvent: {}
+[7.407805] (-) TimerEvent: {}
+[7.508796] (-) TimerEvent: {}
+[7.609612] (-) TimerEvent: {}
+[7.710502] (-) TimerEvent: {}
+[7.776270] (reflex-control-cpp) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.1 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[7.807906] (reflex-control-cpp) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.6 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[7.810642] (-) TimerEvent: {}
+[7.911422] (-) TimerEvent: {}
+[8.012205] (-) TimerEvent: {}
+[8.112993] (-) TimerEvent: {}
+[8.213791] (-) TimerEvent: {}
+[8.314756] (-) TimerEvent: {}
+[8.415999] (-) TimerEvent: {}
+[8.517213] (-) TimerEvent: {}
+[8.619349] (-) TimerEvent: {}
+[8.684824] (reflex-control-cpp) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/aarch64-linux-gnu/libcrypto.so (found version "3.0.2")  \n'}
+[8.719488] (-) TimerEvent: {}
+[8.820255] (-) TimerEvent: {}
+[8.921035] (-) TimerEvent: {}
+[8.987067] (reflex-control-cpp) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/humble/include  \n'}
+[9.021231] (-) TimerEvent: {}
+[9.122053] (-) TimerEvent: {}
+[9.222889] (-) TimerEvent: {}
+[9.323839] (-) TimerEvent: {}
+[9.424621] (-) TimerEvent: {}
+[9.488675] (reflex-control-cpp) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[9.524806] (-) TimerEvent: {}
+[9.603354] (reflex-control-cpp) StdoutLine: {'line': b'-- Looking for pthread.h\n'}
+[9.625010] (-) TimerEvent: {}
+[9.725799] (-) TimerEvent: {}
+[9.826814] (-) TimerEvent: {}
+[9.928128] (-) TimerEvent: {}
+[10.028994] (-) TimerEvent: {}
+[10.047868] (reflex-control-cpp) StdoutLine: {'line': b'-- Looking for pthread.h - found\n'}
+[10.050757] (reflex-control-cpp) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[10.129295] (-) TimerEvent: {}
+[10.230390] (-) TimerEvent: {}
+[10.331218] (-) TimerEvent: {}
+[10.432260] (-) TimerEvent: {}
+[10.461867] (reflex-control-cpp) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success\n'}
+[10.467999] (reflex-control-cpp) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[10.532663] (-) TimerEvent: {}
+[10.633683] (-) TimerEvent: {}
+[10.734786] (-) TimerEvent: {}
+[10.835641] (-) TimerEvent: {}
+[10.936439] (-) TimerEvent: {}
+[11.037267] (-) TimerEvent: {}
+[11.138175] (-) TimerEvent: {}
+[11.238995] (-) TimerEvent: {}
+[11.339871] (-) TimerEvent: {}
+[11.440667] (-) TimerEvent: {}
+[11.541482] (-) TimerEvent: {}
+[11.642509] (-) TimerEvent: {}
+[11.700541] (reflex-control-cpp) StdoutLine: {'line': b'-- Configuring done\n'}
+[11.742684] (-) TimerEvent: {}
+[11.767199] (reflex-control-cpp) StdoutLine: {'line': b'-- Generating done\n'}
+[11.776002] (reflex-control-cpp) StdoutLine: {'line': b'-- Build files have been written to: /home/ubuntu/reflex-therapy/build/reflex-control-cpp\n'}
+[11.818147] (reflex-control-cpp) CommandEnded: {'returncode': 0}
+[11.820498] (reflex-control-cpp) JobProgress: {'identifier': 'reflex-control-cpp', 'progress': 'build'}
+[11.825841] (reflex-control-cpp) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/ubuntu/reflex-therapy/build/reflex-control-cpp', '--', '-j4', '-l4'], 'cwd': '/home/ubuntu/reflex-therapy/build/reflex-control-cpp', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'ubuntu'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/ubuntu'), ('OLDPWD', '/home/ubuntu/reflex-therapy/src'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('SYSTEMD_EXEC_PID', '2214'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'ubuntu'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'ubuntu'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/ubuntu-rpi:@/tmp/.ICE-unix/1888,unix/ubuntu-rpi:/tmp/.ICE-unix/1888'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/a2e0a1a5_c92e_4757_b969_a5b3bb7de458'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'es_ES.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.RLIPI2'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.823'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '12'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/ubuntu/reflex-therapy/build/reflex-control-cpp'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[11.842973] (-) TimerEvent: {}
+[11.944115] (-) TimerEvent: {}
+[12.045098] (-) TimerEvent: {}
+[12.063861] (reflex-control-cpp) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/control_node.dir/src/control_node.cpp.o\x1b[0m\n'}
+[12.145334] (-) TimerEvent: {}
+[12.246436] (-) TimerEvent: {}
+[12.347217] (-) TimerEvent: {}
+[12.448103] (-) TimerEvent: {}
+[12.548904] (-) TimerEvent: {}
+[12.649742] (-) TimerEvent: {}
+[12.750575] (-) TimerEvent: {}
+[12.851440] (-) TimerEvent: {}
+[12.952282] (-) TimerEvent: {}
+[13.053178] (-) TimerEvent: {}
+[13.154102] (-) TimerEvent: {}
+[13.254939] (-) TimerEvent: {}
+[13.355847] (-) TimerEvent: {}
+[13.456857] (-) TimerEvent: {}
+[13.557956] (-) TimerEvent: {}
+[13.658947] (-) TimerEvent: {}
+[13.760136] (-) TimerEvent: {}
+[13.860987] (-) TimerEvent: {}
+[13.962149] (-) TimerEvent: {}
+[14.063012] (-) TimerEvent: {}
+[14.163895] (-) TimerEvent: {}
+[14.264900] (-) TimerEvent: {}
+[14.365774] (-) TimerEvent: {}
+[14.471769] (-) TimerEvent: {}
+[14.573030] (-) TimerEvent: {}
+[14.674199] (-) TimerEvent: {}
+[14.775172] (-) TimerEvent: {}
+[14.876146] (-) TimerEvent: {}
+[14.977796] (-) TimerEvent: {}
+[15.079352] (-) TimerEvent: {}
+[15.180442] (-) TimerEvent: {}
+[15.281350] (-) TimerEvent: {}
+[15.382308] (-) TimerEvent: {}
+[15.483094] (-) TimerEvent: {}
+[15.584283] (-) TimerEvent: {}
+[15.685305] (-) TimerEvent: {}
+[15.786516] (-) TimerEvent: {}
+[15.887480] (-) TimerEvent: {}
+[15.988381] (-) TimerEvent: {}
+[16.089403] (-) TimerEvent: {}
+[16.190251] (-) TimerEvent: {}
+[16.291403] (-) TimerEvent: {}
+[16.392663] (-) TimerEvent: {}
+[16.493878] (-) TimerEvent: {}
+[16.594736] (-) TimerEvent: {}
+[16.695653] (-) TimerEvent: {}
+[16.796592] (-) TimerEvent: {}
+[16.897628] (-) TimerEvent: {}
+[16.998657] (-) TimerEvent: {}
+[17.099655] (-) TimerEvent: {}
+[17.200485] (-) TimerEvent: {}
+[17.301498] (-) TimerEvent: {}
+[17.402956] (-) TimerEvent: {}
+[17.504162] (-) TimerEvent: {}
+[17.605115] (-) TimerEvent: {}
+[17.706015] (-) TimerEvent: {}
+[17.806908] (-) TimerEvent: {}
+[17.907841] (-) TimerEvent: {}
+[18.008872] (-) TimerEvent: {}
+[18.110081] (-) TimerEvent: {}
+[18.211093] (-) TimerEvent: {}
+[18.312275] (-) TimerEvent: {}
+[18.413251] (-) TimerEvent: {}
+[18.514165] (-) TimerEvent: {}
+[18.615242] (-) TimerEvent: {}
+[18.716322] (-) TimerEvent: {}
+[18.817242] (-) TimerEvent: {}
+[18.922352] (-) TimerEvent: {}
+[19.023648] (-) TimerEvent: {}
+[19.124619] (-) TimerEvent: {}
+[19.225633] (-) TimerEvent: {}
+[19.326596] (-) TimerEvent: {}
+[19.427683] (-) TimerEvent: {}
+[19.528755] (-) TimerEvent: {}
+[19.629744] (-) TimerEvent: {}
+[19.730691] (-) TimerEvent: {}
+[19.831670] (-) TimerEvent: {}
+[19.932529] (-) TimerEvent: {}
+[20.033446] (-) TimerEvent: {}
+[20.134521] (-) TimerEvent: {}
+[20.235501] (-) TimerEvent: {}
+[20.336442] (-) TimerEvent: {}
+[20.437478] (-) TimerEvent: {}
+[20.538788] (-) TimerEvent: {}
+[20.640043] (-) TimerEvent: {}
+[20.744988] (-) TimerEvent: {}
+[20.847983] (-) TimerEvent: {}
+[20.949081] (-) TimerEvent: {}
+[21.050154] (-) TimerEvent: {}
+[21.151224] (-) TimerEvent: {}
+[21.252379] (-) TimerEvent: {}
+[21.353473] (-) TimerEvent: {}
+[21.454375] (-) TimerEvent: {}
+[21.555374] (-) TimerEvent: {}
+[21.656388] (-) TimerEvent: {}
+[21.757277] (-) TimerEvent: {}
+[21.858156] (-) TimerEvent: {}
+[21.959060] (-) TimerEvent: {}
+[22.060031] (-) TimerEvent: {}
+[22.160913] (-) TimerEvent: {}
+[22.261813] (-) TimerEvent: {}
+[22.362774] (-) TimerEvent: {}
+[22.463814] (-) TimerEvent: {}
+[22.564812] (-) TimerEvent: {}
+[22.665690] (-) TimerEvent: {}
+[22.766654] (-) TimerEvent: {}
+[22.867620] (-) TimerEvent: {}
+[22.968489] (-) TimerEvent: {}
+[23.069395] (-) TimerEvent: {}
+[23.170274] (-) TimerEvent: {}
+[23.271184] (-) TimerEvent: {}
+[23.372125] (-) TimerEvent: {}
+[23.473025] (-) TimerEvent: {}
+[23.573897] (-) TimerEvent: {}
+[23.674891] (-) TimerEvent: {}
+[23.776135] (-) TimerEvent: {}
+[23.876976] (-) TimerEvent: {}
+[23.978132] (-) TimerEvent: {}
+[24.079689] (-) TimerEvent: {}
+[24.181683] (-) TimerEvent: {}
+[24.283431] (-) TimerEvent: {}
+[24.384719] (-) TimerEvent: {}
+[24.485923] (-) TimerEvent: {}
+[24.587083] (-) TimerEvent: {}
+[24.688244] (-) TimerEvent: {}
+[24.789315] (-) TimerEvent: {}
+[24.890541] (-) TimerEvent: {}
+[24.991498] (-) TimerEvent: {}
+[25.092354] (-) TimerEvent: {}
+[25.193259] (-) TimerEvent: {}
+[25.294123] (-) TimerEvent: {}
+[25.395006] (-) TimerEvent: {}
+[25.495968] (-) TimerEvent: {}
+[25.596844] (-) TimerEvent: {}
+[25.697722] (-) TimerEvent: {}
+[25.798741] (-) TimerEvent: {}
+[25.899723] (-) TimerEvent: {}
+[26.000499] (-) TimerEvent: {}
+[26.101590] (-) TimerEvent: {}
+[26.203452] (-) TimerEvent: {}
+[26.304469] (-) TimerEvent: {}
+[26.405346] (-) TimerEvent: {}
+[26.506200] (-) TimerEvent: {}
+[26.607092] (-) TimerEvent: {}
+[26.708126] (-) TimerEvent: {}
+[26.808989] (-) TimerEvent: {}
+[26.909802] (-) TimerEvent: {}
+[27.010754] (-) TimerEvent: {}
+[27.112038] (-) TimerEvent: {}
+[27.212985] (-) TimerEvent: {}
+[27.313864] (-) TimerEvent: {}
+[27.414743] (-) TimerEvent: {}
+[27.515676] (-) TimerEvent: {}
+[27.616584] (-) TimerEvent: {}
+[27.717471] (-) TimerEvent: {}
+[27.818397] (-) TimerEvent: {}
+[27.919257] (-) TimerEvent: {}
+[28.020242] (-) TimerEvent: {}
+[28.121172] (-) TimerEvent: {}
+[28.222227] (-) TimerEvent: {}
+[28.323102] (-) TimerEvent: {}
+[28.423985] (-) TimerEvent: {}
+[28.524876] (-) TimerEvent: {}
+[28.625774] (-) TimerEvent: {}
+[28.726681] (-) TimerEvent: {}
+[28.827727] (-) TimerEvent: {}
+[28.928659] (-) TimerEvent: {}
+[29.029590] (-) TimerEvent: {}
+[29.130609] (-) TimerEvent: {}
+[29.231730] (-) TimerEvent: {}
+[29.332892] (-) TimerEvent: {}
+[29.434125] (-) TimerEvent: {}
+[29.535415] (-) TimerEvent: {}
+[29.636520] (-) TimerEvent: {}
+[29.737932] (-) TimerEvent: {}
+[29.839364] (-) TimerEvent: {}
+[29.940666] (-) TimerEvent: {}
+[30.050833] (-) TimerEvent: {}
+[30.172770] (-) TimerEvent: {}
+[30.273725] (-) TimerEvent: {}
+[30.374622] (-) TimerEvent: {}
+[30.475553] (-) TimerEvent: {}
+[30.576702] (-) TimerEvent: {}
+[30.677565] (-) TimerEvent: {}
+[30.778434] (-) TimerEvent: {}
+[30.879388] (-) TimerEvent: {}
+[30.980312] (-) TimerEvent: {}
+[31.081232] (-) TimerEvent: {}
+[31.182103] (-) TimerEvent: {}
+[31.282953] (-) TimerEvent: {}
+[31.383907] (-) TimerEvent: {}
+[31.484833] (-) TimerEvent: {}
+[31.585689] (-) TimerEvent: {}
+[31.686860] (-) TimerEvent: {}
+[31.787849] (-) TimerEvent: {}
+[31.888677] (-) TimerEvent: {}
+[31.989518] (-) TimerEvent: {}
+[32.090401] (-) TimerEvent: {}
+[32.191291] (-) TimerEvent: {}
+[32.292287] (-) TimerEvent: {}
+[32.393214] (-) TimerEvent: {}
+[32.494112] (-) TimerEvent: {}
+[32.595223] (-) TimerEvent: {}
+[32.696432] (-) TimerEvent: {}
+[32.798453] (-) TimerEvent: {}
+[32.899389] (-) TimerEvent: {}
+[33.000527] (-) TimerEvent: {}
+[33.101734] (-) TimerEvent: {}
+[33.202724] (-) TimerEvent: {}
+[33.303829] (-) TimerEvent: {}
+[33.404999] (-) TimerEvent: {}
+[33.506688] (-) TimerEvent: {}
+[33.608492] (-) TimerEvent: {}
+[33.709399] (-) TimerEvent: {}
+[33.810302] (-) TimerEvent: {}
+[33.911230] (-) TimerEvent: {}
+[34.012476] (-) TimerEvent: {}
+[34.113760] (-) TimerEvent: {}
+[34.215118] (-) TimerEvent: {}
+[34.316485] (-) TimerEvent: {}
+[34.417641] (-) TimerEvent: {}
+[34.518836] (-) TimerEvent: {}
+[34.619736] (-) TimerEvent: {}
+[34.720619] (-) TimerEvent: {}
+[34.821579] (-) TimerEvent: {}
+[34.922467] (-) TimerEvent: {}
+[35.023431] (-) TimerEvent: {}
+[35.124333] (-) TimerEvent: {}
+[35.225214] (-) TimerEvent: {}
+[35.326117] (-) TimerEvent: {}
+[35.427015] (-) TimerEvent: {}
+[35.527945] (-) TimerEvent: {}
+[35.628840] (-) TimerEvent: {}
+[35.729827] (-) TimerEvent: {}
+[35.830686] (-) TimerEvent: {}
+[35.931682] (-) TimerEvent: {}
+[36.033087] (-) TimerEvent: {}
+[36.134639] (-) TimerEvent: {}
+[36.235473] (-) TimerEvent: {}
+[36.336305] (-) TimerEvent: {}
+[36.437116] (-) TimerEvent: {}
+[36.537957] (-) TimerEvent: {}
+[36.638940] (-) TimerEvent: {}
+[36.740160] (-) TimerEvent: {}
+[36.841084] (-) TimerEvent: {}
+[36.941970] (-) TimerEvent: {}
+[37.042937] (-) TimerEvent: {}
+[37.143956] (-) TimerEvent: {}
+[37.244871] (-) TimerEvent: {}
+[37.345772] (-) TimerEvent: {}
+[37.446719] (-) TimerEvent: {}
+[37.547746] (-) TimerEvent: {}
+[37.648733] (-) TimerEvent: {}
+[37.750330] (-) TimerEvent: {}
+[37.851284] (-) TimerEvent: {}
+[37.952248] (-) TimerEvent: {}
+[38.053171] (-) TimerEvent: {}
+[38.154067] (-) TimerEvent: {}
+[38.255023] (-) TimerEvent: {}
+[38.356052] (-) TimerEvent: {}
+[38.457139] (-) TimerEvent: {}
+[38.558199] (-) TimerEvent: {}
+[38.659188] (-) TimerEvent: {}
+[38.760249] (-) TimerEvent: {}
+[38.861191] (-) TimerEvent: {}
+[38.962075] (-) TimerEvent: {}
+[39.063015] (-) TimerEvent: {}
+[39.164007] (-) TimerEvent: {}
+[39.264915] (-) TimerEvent: {}
+[39.365798] (-) TimerEvent: {}
+[39.466705] (-) TimerEvent: {}
+[39.567595] (-) TimerEvent: {}
+[39.668514] (-) TimerEvent: {}
+[39.769374] (-) TimerEvent: {}
+[39.870235] (-) TimerEvent: {}
+[39.971191] (-) TimerEvent: {}
+[40.072253] (-) TimerEvent: {}
+[40.173286] (-) TimerEvent: {}
+[40.274299] (-) TimerEvent: {}
+[40.375195] (-) TimerEvent: {}
+[40.476103] (-) TimerEvent: {}
+[40.576920] (-) TimerEvent: {}
+[40.677798] (-) TimerEvent: {}
+[40.778664] (-) TimerEvent: {}
+[40.879633] (-) TimerEvent: {}
+[40.980473] (-) TimerEvent: {}
+[41.081351] (-) TimerEvent: {}
+[41.182261] (-) TimerEvent: {}
+[41.283222] (-) TimerEvent: {}
+[41.384301] (-) TimerEvent: {}
+[41.485481] (-) TimerEvent: {}
+[41.586964] (-) TimerEvent: {}
+[41.688095] (-) TimerEvent: {}
+[41.789009] (-) TimerEvent: {}
+[41.889920] (-) TimerEvent: {}
+[41.990780] (-) TimerEvent: {}
+[42.091644] (-) TimerEvent: {}
+[42.192490] (-) TimerEvent: {}
+[42.293364] (-) TimerEvent: {}
+[42.394229] (-) TimerEvent: {}
+[42.495169] (-) TimerEvent: {}
+[42.596188] (-) TimerEvent: {}
+[42.697066] (-) TimerEvent: {}
+[42.797988] (-) TimerEvent: {}
+[42.898966] (-) TimerEvent: {}
+[43.000081] (-) TimerEvent: {}
+[43.189806] (-) TimerEvent: {}
+[43.291376] (-) TimerEvent: {}
+[43.392294] (-) TimerEvent: {}
+[43.493387] (-) TimerEvent: {}
+[43.594252] (-) TimerEvent: {}
+[43.695129] (-) TimerEvent: {}
+[43.796239] (-) TimerEvent: {}
+[43.897318] (-) TimerEvent: {}
+[43.999075] (-) TimerEvent: {}
+[44.100719] (-) TimerEvent: {}
+[44.201808] (-) TimerEvent: {}
+[44.302833] (-) TimerEvent: {}
+[44.403763] (-) TimerEvent: {}
+[44.504845] (-) TimerEvent: {}
+[44.606132] (-) TimerEvent: {}
+[44.707100] (-) TimerEvent: {}
+[44.808333] (-) TimerEvent: {}
+[44.942682] (-) TimerEvent: {}
+[45.044552] (-) TimerEvent: {}
+[45.145573] (-) TimerEvent: {}
+[45.246653] (-) TimerEvent: {}
+[45.348134] (-) TimerEvent: {}
+[45.449238] (-) TimerEvent: {}
+[45.550131] (-) TimerEvent: {}
+[45.650963] (-) TimerEvent: {}
+[45.751916] (-) TimerEvent: {}
+[45.852757] (-) TimerEvent: {}
+[45.953629] (-) TimerEvent: {}
+[46.054525] (-) TimerEvent: {}
+[46.155449] (-) TimerEvent: {}
+[46.256318] (-) TimerEvent: {}
+[46.357152] (-) TimerEvent: {}
+[46.458033] (-) TimerEvent: {}
+[46.559027] (-) TimerEvent: {}
+[46.659914] (-) TimerEvent: {}
+[46.761328] (-) TimerEvent: {}
+[46.862337] (-) TimerEvent: {}
+[46.963213] (-) TimerEvent: {}
+[47.064119] (-) TimerEvent: {}
+[47.165090] (-) TimerEvent: {}
+[47.266070] (-) TimerEvent: {}
+[47.367265] (-) TimerEvent: {}
+[47.468505] (-) TimerEvent: {}
+[47.569725] (-) TimerEvent: {}
+[47.671082] (-) TimerEvent: {}
+[47.772374] (-) TimerEvent: {}
+[47.873356] (-) TimerEvent: {}
+[47.974250] (-) TimerEvent: {}
+[48.075186] (-) TimerEvent: {}
+[48.176071] (-) TimerEvent: {}
+[48.277032] (-) TimerEvent: {}
+[48.377962] (-) TimerEvent: {}
+[48.479216] (-) TimerEvent: {}
+[48.580179] (-) TimerEvent: {}
+[48.681057] (-) TimerEvent: {}
+[48.781905] (-) TimerEvent: {}
+[48.882787] (-) TimerEvent: {}
+[48.983717] (-) TimerEvent: {}
+[49.084525] (-) TimerEvent: {}
+[49.185368] (-) TimerEvent: {}
+[49.286237] (-) TimerEvent: {}
+[49.387059] (-) TimerEvent: {}
+[49.488026] (-) TimerEvent: {}
+[49.588918] (-) TimerEvent: {}
+[49.689848] (-) TimerEvent: {}
+[49.790745] (-) TimerEvent: {}
+[49.891630] (-) TimerEvent: {}
+[49.992509] (-) TimerEvent: {}
+[50.093486] (-) TimerEvent: {}
+[50.194385] (-) TimerEvent: {}
+[50.295205] (-) TimerEvent: {}
+[50.396130] (-) TimerEvent: {}
+[50.497001] (-) TimerEvent: {}
+[50.597904] (-) TimerEvent: {}
+[50.698765] (-) TimerEvent: {}
+[50.799689] (-) TimerEvent: {}
+[50.900554] (-) TimerEvent: {}
+[51.001428] (-) TimerEvent: {}
+[51.102328] (-) TimerEvent: {}
+[51.203210] (-) TimerEvent: {}
+[51.304078] (-) TimerEvent: {}
+[51.405149] (-) TimerEvent: {}
+[51.506299] (-) TimerEvent: {}
+[51.607229] (-) TimerEvent: {}
+[51.708150] (-) TimerEvent: {}
+[51.809080] (-) TimerEvent: {}
+[51.909954] (-) TimerEvent: {}
+[52.011044] (-) TimerEvent: {}
+[52.112289] (-) TimerEvent: {}
+[52.213462] (-) TimerEvent: {}
+[52.314560] (-) TimerEvent: {}
+[52.415524] (-) TimerEvent: {}
+[52.516354] (-) TimerEvent: {}
+[52.617532] (-) TimerEvent: {}
+[52.718974] (-) TimerEvent: {}
+[52.820210] (-) TimerEvent: {}
+[52.921143] (-) TimerEvent: {}
+[53.022448] (-) TimerEvent: {}
+[53.123812] (-) TimerEvent: {}
+[53.226409] (-) TimerEvent: {}
+[53.327791] (-) TimerEvent: {}
+[53.428754] (-) TimerEvent: {}
+[53.529599] (-) TimerEvent: {}
+[53.630449] (-) TimerEvent: {}
+[53.731402] (-) TimerEvent: {}
+[53.832309] (-) TimerEvent: {}
+[53.933128] (-) TimerEvent: {}
+[54.033996] (-) TimerEvent: {}
+[54.135027] (-) TimerEvent: {}
+[54.236090] (-) TimerEvent: {}
+[54.336971] (-) TimerEvent: {}
+[54.437839] (-) TimerEvent: {}
+[54.538721] (-) TimerEvent: {}
+[54.639705] (-) TimerEvent: {}
+[54.740582] (-) TimerEvent: {}
+[54.841487] (-) TimerEvent: {}
+[54.942785] (-) TimerEvent: {}
+[55.044454] (-) TimerEvent: {}
+[55.145335] (-) TimerEvent: {}
+[55.246382] (-) TimerEvent: {}
+[55.347505] (-) TimerEvent: {}
+[55.448515] (-) TimerEvent: {}
+[55.549490] (-) TimerEvent: {}
+[55.650496] (-) TimerEvent: {}
+[55.751571] (-) TimerEvent: {}
+[55.852817] (-) TimerEvent: {}
+[55.953854] (-) TimerEvent: {}
+[56.054918] (-) TimerEvent: {}
+[56.155869] (-) TimerEvent: {}
+[56.256992] (-) TimerEvent: {}
+[56.325861] (reflex-control-cpp) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable control_node\x1b[0m\n'}
+[56.387489] (-) TimerEvent: {}
+[56.488497] (-) TimerEvent: {}
+[56.589649] (-) TimerEvent: {}
+[56.690712] (-) TimerEvent: {}
+[56.791794] (-) TimerEvent: {}
+[56.893134] (-) TimerEvent: {}
+[56.994989] (-) TimerEvent: {}
+[57.096486] (-) TimerEvent: {}
+[57.197690] (-) TimerEvent: {}
+[57.298731] (-) TimerEvent: {}
+[57.399913] (-) TimerEvent: {}
+[57.500899] (-) TimerEvent: {}
+[57.601742] (-) TimerEvent: {}
+[57.702791] (-) TimerEvent: {}
+[57.804459] (-) TimerEvent: {}
+[57.905741] (-) TimerEvent: {}
+[58.006502] (-) TimerEvent: {}
+[58.107264] (-) TimerEvent: {}
+[58.208133] (-) TimerEvent: {}
+[58.309507] (-) TimerEvent: {}
+[58.410305] (-) TimerEvent: {}
+[58.511221] (-) TimerEvent: {}
+[58.612033] (-) TimerEvent: {}
+[58.712814] (-) TimerEvent: {}
+[58.793289] (reflex-control-cpp) StdoutLine: {'line': b'[100%] Built target control_node\n'}
+[58.813030] (-) TimerEvent: {}
+[58.921438] (-) TimerEvent: {}
+[58.940134] (reflex-control-cpp) CommandEnded: {'returncode': 0}
+[59.021697] (-) TimerEvent: {}
+[59.122986] (-) TimerEvent: {}
+[59.133296] (reflex-control-cpp) JobProgress: {'identifier': 'reflex-control-cpp', 'progress': 'install'}
+[59.205262] (reflex-control-cpp) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/ubuntu/reflex-therapy/build/reflex-control-cpp'], 'cwd': '/home/ubuntu/reflex-therapy/build/reflex-control-cpp', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'ubuntu'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/ubuntu'), ('OLDPWD', '/home/ubuntu/reflex-therapy/src'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('SYSTEMD_EXEC_PID', '2214'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'ubuntu'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'ubuntu'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/ubuntu-rpi:@/tmp/.ICE-unix/1888,unix/ubuntu-rpi:/tmp/.ICE-unix/1888'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/a2e0a1a5_c92e_4757_b969_a5b3bb7de458'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'es_ES.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.RLIPI2'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.823'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '12'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/ubuntu/reflex-therapy/build/reflex-control-cpp'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[59.223482] (-) TimerEvent: {}
+[59.241947] (reflex-control-cpp) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[59.246690] (reflex-control-cpp) StdoutLine: {'line': b'-- Installing: /home/ubuntu/reflex-therapy/install/reflex-control-cpp/lib/reflex-control-cpp/control_node\n'}
+[59.284470] (reflex-control-cpp) StdoutLine: {'line': b'-- Set runtime path of "/home/ubuntu/reflex-therapy/install/reflex-control-cpp/lib/reflex-control-cpp/control_node" to ""\n'}
+[59.288225] (reflex-control-cpp) StdoutLine: {'line': b'-- Installing: /home/ubuntu/reflex-therapy/install/reflex-control-cpp/share/ament_index/resource_index/package_run_dependencies/reflex-control-cpp\n'}
+[59.291548] (reflex-control-cpp) StdoutLine: {'line': b'-- Installing: /home/ubuntu/reflex-therapy/install/reflex-control-cpp/share/ament_index/resource_index/parent_prefix_path/reflex-control-cpp\n'}
+[59.297172] (reflex-control-cpp) StdoutLine: {'line': b'-- Installing: /home/ubuntu/reflex-therapy/install/reflex-control-cpp/share/reflex-control-cpp/environment/ament_prefix_path.sh\n'}
+[59.300020] (reflex-control-cpp) StdoutLine: {'line': b'-- Installing: /home/ubuntu/reflex-therapy/install/reflex-control-cpp/share/reflex-control-cpp/environment/ament_prefix_path.dsv\n'}
+[59.302401] (reflex-control-cpp) StdoutLine: {'line': b'-- Installing: /home/ubuntu/reflex-therapy/install/reflex-control-cpp/share/reflex-control-cpp/environment/path.sh\n'}
+[59.304784] (reflex-control-cpp) StdoutLine: {'line': b'-- Installing: /home/ubuntu/reflex-therapy/install/reflex-control-cpp/share/reflex-control-cpp/environment/path.dsv\n'}
+[59.307336] (reflex-control-cpp) StdoutLine: {'line': b'-- Installing: /home/ubuntu/reflex-therapy/install/reflex-control-cpp/share/reflex-control-cpp/local_setup.bash\n'}
+[59.309606] (reflex-control-cpp) StdoutLine: {'line': b'-- Installing: /home/ubuntu/reflex-therapy/install/reflex-control-cpp/share/reflex-control-cpp/local_setup.sh\n'}
+[59.312160] (reflex-control-cpp) StdoutLine: {'line': b'-- Installing: /home/ubuntu/reflex-therapy/install/reflex-control-cpp/share/reflex-control-cpp/local_setup.zsh\n'}
+[59.314276] (reflex-control-cpp) StdoutLine: {'line': b'-- Installing: /home/ubuntu/reflex-therapy/install/reflex-control-cpp/share/reflex-control-cpp/local_setup.dsv\n'}
+[59.316362] (reflex-control-cpp) StdoutLine: {'line': b'-- Installing: /home/ubuntu/reflex-therapy/install/reflex-control-cpp/share/reflex-control-cpp/package.dsv\n'}
+[59.319438] (reflex-control-cpp) StdoutLine: {'line': b'-- Installing: /home/ubuntu/reflex-therapy/install/reflex-control-cpp/share/ament_index/resource_index/packages/reflex-control-cpp\n'}
+[59.321883] (reflex-control-cpp) StdoutLine: {'line': b'-- Installing: /home/ubuntu/reflex-therapy/install/reflex-control-cpp/share/reflex-control-cpp/cmake/reflex-control-cppConfig.cmake\n'}
+[59.323608] (-) TimerEvent: {}
+[59.324513] (reflex-control-cpp) StdoutLine: {'line': b'-- Installing: /home/ubuntu/reflex-therapy/install/reflex-control-cpp/share/reflex-control-cpp/cmake/reflex-control-cppConfig-version.cmake\n'}
+[59.327046] (reflex-control-cpp) StdoutLine: {'line': b'-- Installing: /home/ubuntu/reflex-therapy/install/reflex-control-cpp/share/reflex-control-cpp/package.xml\n'}
+[59.338835] (reflex-control-cpp) CommandEnded: {'returncode': 0}
+[59.424196] (-) TimerEvent: {}
+[59.525486] (-) TimerEvent: {}
+[59.627037] (-) TimerEvent: {}
+[59.728089] (-) TimerEvent: {}
+[59.829021] (-) TimerEvent: {}
+[59.930750] (-) TimerEvent: {}
+[60.031873] (-) TimerEvent: {}
+[60.133356] (-) TimerEvent: {}
+[60.235974] (-) TimerEvent: {}
+[60.337645] (-) TimerEvent: {}
+[60.438760] (-) TimerEvent: {}
+[60.539834] (-) TimerEvent: {}
+[60.640850] (-) TimerEvent: {}
+[60.742053] (-) TimerEvent: {}
+[60.846142] (-) TimerEvent: {}
+[60.947801] (-) TimerEvent: {}
+[61.049661] (-) TimerEvent: {}
+[61.150804] (-) TimerEvent: {}
+[61.253310] (-) TimerEvent: {}
+[61.354175] (-) TimerEvent: {}
+[61.455978] (-) TimerEvent: {}
+[61.510719] (reflex-control-cpp) JobEnded: {'identifier': 'reflex-control-cpp', 'rc': 0}
+[61.527207] (-) EventReactorShutdown: {}

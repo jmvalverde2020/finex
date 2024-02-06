@@ -1,0 +1,32 @@
+running egg_info
+writing ../../build/reflex_readings_py/reflex_readings_py.egg-info/PKG-INFO
+writing dependency_links to ../../build/reflex_readings_py/reflex_readings_py.egg-info/dependency_links.txt
+writing entry points to ../../build/reflex_readings_py/reflex_readings_py.egg-info/entry_points.txt
+writing requirements to ../../build/reflex_readings_py/reflex_readings_py.egg-info/requires.txt
+writing top-level names to ../../build/reflex_readings_py/reflex_readings_py.egg-info/top_level.txt
+reading manifest file '../../build/reflex_readings_py/reflex_readings_py.egg-info/SOURCES.txt'
+writing manifest file '../../build/reflex_readings_py/reflex_readings_py.egg-info/SOURCES.txt'
+running build
+running build_py
+copying reflex_readings_py/sensor_node.py -> /home/ubuntu/reflex-therapy/build/reflex_readings_py/build/lib/reflex_readings_py
+creating /home/ubuntu/reflex-therapy/build/reflex_readings_py/build/lib/utils
+copying utils/can_rpi.py -> /home/ubuntu/reflex-therapy/build/reflex_readings_py/build/lib/utils
+copying utils/__init__.py -> /home/ubuntu/reflex-therapy/build/reflex_readings_py/build/lib/utils
+running install
+/usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+  warnings.warn(
+running install_lib
+copying /home/ubuntu/reflex-therapy/build/reflex_readings_py/build/lib/reflex_readings_py/sensor_node.py -> /home/ubuntu/reflex-therapy/install/reflex_readings_py/lib/python3.10/site-packages/reflex_readings_py
+creating /home/ubuntu/reflex-therapy/install/reflex_readings_py/lib/python3.10/site-packages/utils
+copying /home/ubuntu/reflex-therapy/build/reflex_readings_py/build/lib/utils/can_rpi.py -> /home/ubuntu/reflex-therapy/install/reflex_readings_py/lib/python3.10/site-packages/utils
+copying /home/ubuntu/reflex-therapy/build/reflex_readings_py/build/lib/utils/__init__.py -> /home/ubuntu/reflex-therapy/install/reflex_readings_py/lib/python3.10/site-packages/utils
+byte-compiling /home/ubuntu/reflex-therapy/install/reflex_readings_py/lib/python3.10/site-packages/reflex_readings_py/sensor_node.py to sensor_node.cpython-310.pyc
+byte-compiling /home/ubuntu/reflex-therapy/install/reflex_readings_py/lib/python3.10/site-packages/utils/can_rpi.py to can_rpi.cpython-310.pyc
+byte-compiling /home/ubuntu/reflex-therapy/install/reflex_readings_py/lib/python3.10/site-packages/utils/__init__.py to __init__.cpython-310.pyc
+running install_data
+running install_egg_info
+removing '/home/ubuntu/reflex-therapy/install/reflex_readings_py/lib/python3.10/site-packages/reflex_readings_py-0.0.0-py3.10.egg-info' (and everything under it)
+Copying ../../build/reflex_readings_py/reflex_readings_py.egg-info to /home/ubuntu/reflex-therapy/install/reflex_readings_py/lib/python3.10/site-packages/reflex_readings_py-0.0.0-py3.10.egg-info
+running install_scripts
+Installing sensor_node script to /home/ubuntu/reflex-therapy/install/reflex_readings_py/lib/reflex_readings_py
+writing list of installed files to '/home/ubuntu/reflex-therapy/build/reflex_readings_py/install.log'

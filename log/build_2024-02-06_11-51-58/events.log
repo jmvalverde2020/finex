@@ -1,0 +1,5 @@
+[0.000000] (-) TimerEvent: {}
+[0.001037] (-) JobUnselected: {'identifier': 'reflex-control-cpp'}
+[0.001234] (-) JobUnselected: {'identifier': 'reflex-exo'}
+[0.001646] (-) JobUnselected: {'identifier': 'reflex_readings_py'}
+[0.002242] (-) EventReactorShutdown: {}

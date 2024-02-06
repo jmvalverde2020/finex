@@ -1,0 +1,62 @@
+[0.379s] Invoking command in '/home/ubuntu/reflex-therapy/build/reflex-exo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ubuntu/reflex-therapy/install/reflex_readings_py:/opt/ros/humble /usr/bin/cmake /home/ubuntu/reflex-therapy/src/reflex-exo -DCMAKE_INSTALL_PREFIX=/home/ubuntu/reflex-therapy/install/reflex-exo
+[1.514s] -- The C compiler identification is GNU 11.4.0
+[2.101s] -- The CXX compiler identification is GNU 11.4.0
+[2.154s] -- Detecting C compiler ABI info
+[2.638s] -- Detecting C compiler ABI info - done
+[2.670s] -- Check for working C compiler: /usr/bin/cc - skipped
+[2.674s] -- Detecting C compile features
+[2.677s] -- Detecting C compile features - done
+[2.696s] -- Detecting CXX compiler ABI info
+[3.113s] -- Detecting CXX compiler ABI info - done
+[3.145s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[3.146s] -- Detecting CXX compile features
+[3.148s] -- Detecting CXX compile features - done
+[3.200s] -- Found ament_cmake: 1.3.7 (/opt/ros/humble/share/ament_cmake/cmake)
+[4.208s] -- Found Python3: /usr/bin/python3.10 (found version "3.10.12") found components: Interpreter 
+[4.988s] -- Found rclcpp: 16.0.8 (/opt/ros/humble/share/rclcpp/cmake)
+[5.519s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[5.588s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[5.682s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[5.814s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[5.991s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[6.566s] -- Found rmw_implementation_cmake: 6.1.1 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[6.601s] -- Found rmw_fastrtps_cpp: 6.2.6 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[7.448s] -- Found OpenSSL: /usr/lib/aarch64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[7.753s] -- Found FastRTPS: /opt/ros/humble/include  
+[8.262s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[8.381s] -- Looking for pthread.h
+[8.808s] -- Looking for pthread.h - found
+[8.811s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[9.289s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[9.295s] -- Found Threads: TRUE  
+[10.197s] -- Found rclpy: 3.3.11 (/opt/ros/humble/share/rclpy/cmake)
+[10.556s] -- Configuring done
+[10.620s] -- Generating done
+[10.629s] -- Build files have been written to: /home/ubuntu/reflex-therapy/build/reflex-exo
+[10.669s] Invoked command in '/home/ubuntu/reflex-therapy/build/reflex-exo' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ubuntu/reflex-therapy/install/reflex_readings_py:/opt/ros/humble /usr/bin/cmake /home/ubuntu/reflex-therapy/src/reflex-exo -DCMAKE_INSTALL_PREFIX=/home/ubuntu/reflex-therapy/install/reflex-exo
+[10.681s] Invoking command in '/home/ubuntu/reflex-therapy/build/reflex-exo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ubuntu/reflex-therapy/install/reflex_readings_py:/opt/ros/humble /usr/bin/cmake --build /home/ubuntu/reflex-therapy/build/reflex-exo -- -j4 -l4
+[10.916s] [ 50%] [32mBuilding CXX object CMakeFiles/control_node.dir/src/control_node.cpp.o[0m
+[54.534s] [100%] [32m[1mLinking CXX executable control_node[0m
+[56.851s] [100%] Built target control_node
+[57.317s] Invoked command in '/home/ubuntu/reflex-therapy/build/reflex-exo' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ubuntu/reflex-therapy/install/reflex_readings_py:/opt/ros/humble /usr/bin/cmake --build /home/ubuntu/reflex-therapy/build/reflex-exo -- -j4 -l4
+[57.848s] Invoking command in '/home/ubuntu/reflex-therapy/build/reflex-exo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ubuntu/reflex-therapy/install/reflex_readings_py:/opt/ros/humble /usr/bin/cmake --install /home/ubuntu/reflex-therapy/build/reflex-exo
+[57.880s] -- Install configuration: ""
+[57.885s] -- Installing: /home/ubuntu/reflex-therapy/install/reflex-exo/lib/reflex-exo/control_node
+[57.919s] -- Set runtime path of "/home/ubuntu/reflex-therapy/install/reflex-exo/lib/reflex-exo/control_node" to ""
+[57.924s] -- Installing: /home/ubuntu/reflex-therapy/install/reflex-exo/lib/reflex-exo/sensor_node.py
+[57.931s] -- Installing: /home/ubuntu/reflex-therapy/install/reflex-exo/share/ament_index/resource_index/package_run_dependencies/reflex-exo
+[57.935s] -- Installing: /home/ubuntu/reflex-therapy/install/reflex-exo/share/ament_index/resource_index/parent_prefix_path/reflex-exo
+[57.952s] -- Installing: /home/ubuntu/reflex-therapy/install/reflex-exo/share/reflex-exo/environment/ament_prefix_path.sh
+[57.955s] -- Installing: /home/ubuntu/reflex-therapy/install/reflex-exo/share/reflex-exo/environment/ament_prefix_path.dsv
+[57.958s] -- Installing: /home/ubuntu/reflex-therapy/install/reflex-exo/share/reflex-exo/environment/path.sh
+[57.960s] -- Installing: /home/ubuntu/reflex-therapy/install/reflex-exo/share/reflex-exo/environment/path.dsv
+[57.963s] -- Installing: /home/ubuntu/reflex-therapy/install/reflex-exo/share/reflex-exo/local_setup.bash
+[57.965s] -- Installing: /home/ubuntu/reflex-therapy/install/reflex-exo/share/reflex-exo/local_setup.sh
+[57.967s] -- Installing: /home/ubuntu/reflex-therapy/install/reflex-exo/share/reflex-exo/local_setup.zsh
+[57.969s] -- Installing: /home/ubuntu/reflex-therapy/install/reflex-exo/share/reflex-exo/local_setup.dsv
+[57.971s] -- Installing: /home/ubuntu/reflex-therapy/install/reflex-exo/share/reflex-exo/package.dsv
+[57.975s] -- Installing: /home/ubuntu/reflex-therapy/install/reflex-exo/share/ament_index/resource_index/packages/reflex-exo
+[57.977s] -- Installing: /home/ubuntu/reflex-therapy/install/reflex-exo/share/reflex-exo/cmake/reflex-exoConfig.cmake
+[57.979s] -- Installing: /home/ubuntu/reflex-therapy/install/reflex-exo/share/reflex-exo/cmake/reflex-exoConfig-version.cmake
+[57.981s] -- Installing: /home/ubuntu/reflex-therapy/install/reflex-exo/share/reflex-exo/package.xml
+[58.008s] Invoked command in '/home/ubuntu/reflex-therapy/build/reflex-exo' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ubuntu/reflex-therapy/install/reflex_readings_py:/opt/ros/humble /usr/bin/cmake --install /home/ubuntu/reflex-therapy/build/reflex-exo

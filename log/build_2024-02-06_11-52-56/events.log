@@ -1,0 +1,108 @@
+[0.000000] (-) TimerEvent: {}
+[0.002087] (reflex_readings_py) JobQueued: {'identifier': 'reflex_readings_py', 'dependencies': OrderedDict()}
+[0.002865] (reflex_readings_py) JobStarted: {'identifier': 'reflex_readings_py'}
+[0.095697] (-) TimerEvent: {}
+[0.196693] (-) TimerEvent: {}
+[0.297880] (-) TimerEvent: {}
+[0.399211] (-) TimerEvent: {}
+[0.501459] (-) TimerEvent: {}
+[0.607424] (-) TimerEvent: {}
+[0.715229] (-) TimerEvent: {}
+[0.819156] (-) TimerEvent: {}
+[0.920079] (-) TimerEvent: {}
+[1.020943] (-) TimerEvent: {}
+[1.122014] (-) TimerEvent: {}
+[1.223429] (-) TimerEvent: {}
+[1.324230] (-) TimerEvent: {}
+[1.425144] (-) TimerEvent: {}
+[1.526412] (-) TimerEvent: {}
+[1.627856] (-) TimerEvent: {}
+[1.728925] (-) TimerEvent: {}
+[1.829677] (-) TimerEvent: {}
+[1.930434] (-) TimerEvent: {}
+[2.031245] (-) TimerEvent: {}
+[2.132017] (-) TimerEvent: {}
+[2.232855] (-) TimerEvent: {}
+[2.333776] (-) TimerEvent: {}
+[2.435256] (-) TimerEvent: {}
+[2.536218] (-) TimerEvent: {}
+[2.637033] (-) TimerEvent: {}
+[2.738375] (-) TimerEvent: {}
+[2.839228] (-) TimerEvent: {}
+[2.940058] (-) TimerEvent: {}
+[3.040840] (-) TimerEvent: {}
+[3.141727] (-) TimerEvent: {}
+[3.242475] (-) TimerEvent: {}
+[3.343359] (-) TimerEvent: {}
+[3.444140] (-) TimerEvent: {}
+[3.544870] (-) TimerEvent: {}
+[3.645616] (-) TimerEvent: {}
+[3.746364] (-) TimerEvent: {}
+[3.847106] (-) TimerEvent: {}
+[3.947838] (-) TimerEvent: {}
+[4.048578] (-) TimerEvent: {}
+[4.149431] (-) TimerEvent: {}
+[4.250315] (-) TimerEvent: {}
+[4.351102] (-) TimerEvent: {}
+[4.451890] (-) TimerEvent: {}
+[4.552819] (-) TimerEvent: {}
+[4.620401] (reflex_readings_py) Command: {'cmd': ['/usr/bin/python3', 'setup.py', 'egg_info', '--egg-base', '../../build/reflex_readings_py', 'build', '--build-base', '/home/ubuntu/reflex-therapy/build/reflex_readings_py/build', 'install', '--record', '/home/ubuntu/reflex-therapy/build/reflex_readings_py/install.log', '--single-version-externally-managed'], 'cwd': '/home/ubuntu/reflex-therapy/src/reflex_readings_py', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'ubuntu', 'XDG_SESSION_TYPE': 'wayland', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/home/ubuntu', 'OLDPWD': '/home/ubuntu/reflex-therapy/src', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'SYSTEMD_EXEC_PID': '2214', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'ROS_DISTRO': 'humble', 'LOGNAME': 'ubuntu', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'ubuntu', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/ubuntu-rpi:@/tmp/.ICE-unix/1888,unix/ubuntu-rpi:/tmp/.ICE-unix/1888', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/a2e0a1a5_c92e_4757_b969_a5b3bb7de458', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'es_ES.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.RLIPI2', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'GNOME_TERMINAL_SERVICE': ':1.823', 'SSH_AGENT_LAUNCHER': 'gnome-keyring', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'ROS_DOMAIN_ID': '12', 'AMENT_PREFIX_PATH': '/opt/ros/humble', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/ubuntu/reflex-therapy/build/reflex_readings_py', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/ubuntu/reflex-therapy/build/reflex_readings_py/prefix_override:/home/ubuntu/reflex-therapy/install/reflex_readings_py/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1', 'VTE_VERSION': '6800'}, 'shell': False}
+[4.653085] (-) TimerEvent: {}
+[4.754105] (-) TimerEvent: {}
+[4.855451] (-) TimerEvent: {}
+[4.956321] (-) TimerEvent: {}
+[5.057158] (-) TimerEvent: {}
+[5.157950] (-) TimerEvent: {}
+[5.258697] (-) TimerEvent: {}
+[5.359452] (-) TimerEvent: {}
+[5.460219] (-) TimerEvent: {}
+[5.560978] (-) TimerEvent: {}
+[5.661743] (-) TimerEvent: {}
+[5.762534] (-) TimerEvent: {}
+[5.863282] (-) TimerEvent: {}
+[5.917259] (reflex_readings_py) StdoutLine: {'line': b'running egg_info\n'}
+[5.920056] (reflex_readings_py) StdoutLine: {'line': b'creating ../../build/reflex_readings_py/reflex_readings_py.egg-info\n'}
+[5.921036] (reflex_readings_py) StdoutLine: {'line': b'writing ../../build/reflex_readings_py/reflex_readings_py.egg-info/PKG-INFO\n'}
+[5.922385] (reflex_readings_py) StdoutLine: {'line': b'writing dependency_links to ../../build/reflex_readings_py/reflex_readings_py.egg-info/dependency_links.txt\n'}
+[5.923981] (reflex_readings_py) StdoutLine: {'line': b'writing entry points to ../../build/reflex_readings_py/reflex_readings_py.egg-info/entry_points.txt\n'}
+[5.924732] (reflex_readings_py) StdoutLine: {'line': b'writing requirements to ../../build/reflex_readings_py/reflex_readings_py.egg-info/requires.txt\n'}
+[5.925456] (reflex_readings_py) StdoutLine: {'line': b'writing top-level names to ../../build/reflex_readings_py/reflex_readings_py.egg-info/top_level.txt\n'}
+[5.926549] (reflex_readings_py) StdoutLine: {'line': b"writing manifest file '../../build/reflex_readings_py/reflex_readings_py.egg-info/SOURCES.txt'\n"}
+[5.934406] (reflex_readings_py) StdoutLine: {'line': b"reading manifest file '../../build/reflex_readings_py/reflex_readings_py.egg-info/SOURCES.txt'\n"}
+[5.938192] (reflex_readings_py) StdoutLine: {'line': b"writing manifest file '../../build/reflex_readings_py/reflex_readings_py.egg-info/SOURCES.txt'\n"}
+[5.939018] (reflex_readings_py) StdoutLine: {'line': b'running build\n'}
+[5.939606] (reflex_readings_py) StdoutLine: {'line': b'running build_py\n'}
+[5.940209] (reflex_readings_py) StdoutLine: {'line': b'creating /home/ubuntu/reflex-therapy/build/reflex_readings_py/build\n'}
+[5.940911] (reflex_readings_py) StdoutLine: {'line': b'creating /home/ubuntu/reflex-therapy/build/reflex_readings_py/build/lib\n'}
+[5.941581] (reflex_readings_py) StdoutLine: {'line': b'creating /home/ubuntu/reflex-therapy/build/reflex_readings_py/build/lib/reflex_readings_py\n'}
+[5.942020] (reflex_readings_py) StdoutLine: {'line': b'copying reflex_readings_py/sensor_node.py -> /home/ubuntu/reflex-therapy/build/reflex_readings_py/build/lib/reflex_readings_py\n'}
+[5.942983] (reflex_readings_py) StdoutLine: {'line': b'copying reflex_readings_py/__init__.py -> /home/ubuntu/reflex-therapy/build/reflex_readings_py/build/lib/reflex_readings_py\n'}
+[5.944206] (reflex_readings_py) StdoutLine: {'line': b'running install\n'}
+[5.945741] (reflex_readings_py) StderrLine: {'line': b'/usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.\n'}
+[5.946564] (reflex_readings_py) StderrLine: {'line': b'  warnings.warn(\n'}
+[5.947462] (reflex_readings_py) StdoutLine: {'line': b'running install_lib\n'}
+[5.951451] (reflex_readings_py) StdoutLine: {'line': b'creating /home/ubuntu/reflex-therapy/install/reflex_readings_py/lib/python3.10/site-packages/reflex_readings_py\n'}
+[5.952168] (reflex_readings_py) StdoutLine: {'line': b'copying /home/ubuntu/reflex-therapy/build/reflex_readings_py/build/lib/reflex_readings_py/sensor_node.py -> /home/ubuntu/reflex-therapy/install/reflex_readings_py/lib/python3.10/site-packages/reflex_readings_py\n'}
+[5.953217] (reflex_readings_py) StdoutLine: {'line': b'copying /home/ubuntu/reflex-therapy/build/reflex_readings_py/build/lib/reflex_readings_py/__init__.py -> /home/ubuntu/reflex-therapy/install/reflex_readings_py/lib/python3.10/site-packages/reflex_readings_py\n'}
+[5.956272] (reflex_readings_py) StdoutLine: {'line': b'byte-compiling /home/ubuntu/reflex-therapy/install/reflex_readings_py/lib/python3.10/site-packages/reflex_readings_py/sensor_node.py to sensor_node.cpython-310.pyc\n'}
+[5.958136] (reflex_readings_py) StdoutLine: {'line': b'byte-compiling /home/ubuntu/reflex-therapy/install/reflex_readings_py/lib/python3.10/site-packages/reflex_readings_py/__init__.py to __init__.cpython-310.pyc\n'}
+[5.959280] (reflex_readings_py) StdoutLine: {'line': b'running install_data\n'}
+[5.961745] (reflex_readings_py) StdoutLine: {'line': b'creating /home/ubuntu/reflex-therapy/install/reflex_readings_py/share/ament_index\n'}
+[5.962547] (reflex_readings_py) StdoutLine: {'line': b'creating /home/ubuntu/reflex-therapy/install/reflex_readings_py/share/ament_index/resource_index\n'}
+[5.963155] (reflex_readings_py) StdoutLine: {'line': b'creating /home/ubuntu/reflex-therapy/install/reflex_readings_py/share/ament_index/resource_index/packages\n'}
+[5.963561] (-) TimerEvent: {}
+[5.964245] (reflex_readings_py) StdoutLine: {'line': b'copying resource/reflex_readings_py -> /home/ubuntu/reflex-therapy/install/reflex_readings_py/share/ament_index/resource_index/packages\n'}
+[5.964787] (reflex_readings_py) StdoutLine: {'line': b'copying package.xml -> /home/ubuntu/reflex-therapy/install/reflex_readings_py/share/reflex_readings_py\n'}
+[5.965332] (reflex_readings_py) StdoutLine: {'line': b'running install_egg_info\n'}
+[5.972269] (reflex_readings_py) StdoutLine: {'line': b'Copying ../../build/reflex_readings_py/reflex_readings_py.egg-info to /home/ubuntu/reflex-therapy/install/reflex_readings_py/lib/python3.10/site-packages/reflex_readings_py-0.0.0-py3.10.egg-info\n'}
+[5.978868] (reflex_readings_py) StdoutLine: {'line': b'running install_scripts\n'}
+[6.063774] (-) TimerEvent: {}
+[6.073502] (reflex_readings_py) StdoutLine: {'line': b'Installing sensor_node script to /home/ubuntu/reflex-therapy/install/reflex_readings_py/lib/reflex_readings_py\n'}
+[6.075437] (reflex_readings_py) StdoutLine: {'line': b"writing list of installed files to '/home/ubuntu/reflex-therapy/build/reflex_readings_py/install.log'\n"}
+[6.164103] (-) TimerEvent: {}
+[6.211100] (reflex_readings_py) CommandEnded: {'returncode': 0}
+[6.264313] (-) TimerEvent: {}
+[6.365094] (-) TimerEvent: {}
+[6.466330] (-) TimerEvent: {}
+[6.514271] (reflex_readings_py) JobEnded: {'identifier': 'reflex_readings_py', 'rc': 0}
+[6.517748] (-) EventReactorShutdown: {}

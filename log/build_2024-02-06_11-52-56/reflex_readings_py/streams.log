@@ -1,0 +1,39 @@
+[4.620s] Invoking command in '/home/ubuntu/reflex-therapy/src/reflex_readings_py': PYTHONPATH=/home/ubuntu/reflex-therapy/build/reflex_readings_py/prefix_override:/home/ubuntu/reflex-therapy/install/reflex_readings_py/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/reflex_readings_py build --build-base /home/ubuntu/reflex-therapy/build/reflex_readings_py/build install --record /home/ubuntu/reflex-therapy/build/reflex_readings_py/install.log --single-version-externally-managed
+[5.915s] running egg_info
+[5.917s] creating ../../build/reflex_readings_py/reflex_readings_py.egg-info
+[5.918s] writing ../../build/reflex_readings_py/reflex_readings_py.egg-info/PKG-INFO
+[5.920s] writing dependency_links to ../../build/reflex_readings_py/reflex_readings_py.egg-info/dependency_links.txt
+[5.921s] writing entry points to ../../build/reflex_readings_py/reflex_readings_py.egg-info/entry_points.txt
+[5.922s] writing requirements to ../../build/reflex_readings_py/reflex_readings_py.egg-info/requires.txt
+[5.923s] writing top-level names to ../../build/reflex_readings_py/reflex_readings_py.egg-info/top_level.txt
+[5.924s] writing manifest file '../../build/reflex_readings_py/reflex_readings_py.egg-info/SOURCES.txt'
+[5.932s] reading manifest file '../../build/reflex_readings_py/reflex_readings_py.egg-info/SOURCES.txt'
+[5.935s] writing manifest file '../../build/reflex_readings_py/reflex_readings_py.egg-info/SOURCES.txt'
+[5.936s] running build
+[5.937s] running build_py
+[5.938s] creating /home/ubuntu/reflex-therapy/build/reflex_readings_py/build
+[5.938s] creating /home/ubuntu/reflex-therapy/build/reflex_readings_py/build/lib
+[5.939s] creating /home/ubuntu/reflex-therapy/build/reflex_readings_py/build/lib/reflex_readings_py
+[5.939s] copying reflex_readings_py/sensor_node.py -> /home/ubuntu/reflex-therapy/build/reflex_readings_py/build/lib/reflex_readings_py
+[5.940s] copying reflex_readings_py/__init__.py -> /home/ubuntu/reflex-therapy/build/reflex_readings_py/build/lib/reflex_readings_py
+[5.941s] running install
+[5.943s] /usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[5.944s]   warnings.warn(
+[5.945s] running install_lib
+[5.949s] creating /home/ubuntu/reflex-therapy/install/reflex_readings_py/lib/python3.10/site-packages/reflex_readings_py
+[5.949s] copying /home/ubuntu/reflex-therapy/build/reflex_readings_py/build/lib/reflex_readings_py/sensor_node.py -> /home/ubuntu/reflex-therapy/install/reflex_readings_py/lib/python3.10/site-packages/reflex_readings_py
+[5.950s] copying /home/ubuntu/reflex-therapy/build/reflex_readings_py/build/lib/reflex_readings_py/__init__.py -> /home/ubuntu/reflex-therapy/install/reflex_readings_py/lib/python3.10/site-packages/reflex_readings_py
+[5.954s] byte-compiling /home/ubuntu/reflex-therapy/install/reflex_readings_py/lib/python3.10/site-packages/reflex_readings_py/sensor_node.py to sensor_node.cpython-310.pyc
+[5.955s] byte-compiling /home/ubuntu/reflex-therapy/install/reflex_readings_py/lib/python3.10/site-packages/reflex_readings_py/__init__.py to __init__.cpython-310.pyc
+[5.956s] running install_data
+[5.959s] creating /home/ubuntu/reflex-therapy/install/reflex_readings_py/share/ament_index
+[5.960s] creating /home/ubuntu/reflex-therapy/install/reflex_readings_py/share/ament_index/resource_index
+[5.960s] creating /home/ubuntu/reflex-therapy/install/reflex_readings_py/share/ament_index/resource_index/packages
+[5.961s] copying resource/reflex_readings_py -> /home/ubuntu/reflex-therapy/install/reflex_readings_py/share/ament_index/resource_index/packages
+[5.962s] copying package.xml -> /home/ubuntu/reflex-therapy/install/reflex_readings_py/share/reflex_readings_py
+[5.962s] running install_egg_info
+[5.970s] Copying ../../build/reflex_readings_py/reflex_readings_py.egg-info to /home/ubuntu/reflex-therapy/install/reflex_readings_py/lib/python3.10/site-packages/reflex_readings_py-0.0.0-py3.10.egg-info
+[5.976s] running install_scripts
+[6.071s] Installing sensor_node script to /home/ubuntu/reflex-therapy/install/reflex_readings_py/lib/reflex_readings_py
+[6.073s] writing list of installed files to '/home/ubuntu/reflex-therapy/build/reflex_readings_py/install.log'
+[6.209s] Invoked command in '/home/ubuntu/reflex-therapy/src/reflex_readings_py' returned '0': PYTHONPATH=/home/ubuntu/reflex-therapy/build/reflex_readings_py/prefix_override:/home/ubuntu/reflex-therapy/install/reflex_readings_py/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/reflex_readings_py build --build-base /home/ubuntu/reflex-therapy/build/reflex_readings_py/build install --record /home/ubuntu/reflex-therapy/build/reflex_readings_py/install.log --single-version-externally-managed

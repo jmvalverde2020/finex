@@ -1,0 +1,170 @@
+[5.765s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--packages-select', 'reflex-control-cpp']
+[5.765s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=4, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=['reflex-control-cpp'], packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0xffff94f06da0>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0xffff951be830>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0xffff951be830>>)
+[6.001s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[6.002s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[6.002s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[6.002s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[6.003s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[6.003s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[6.003s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/ubuntu/reflex-therapy'
+[6.004s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[6.004s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[6.004s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[6.005s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[6.005s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[6.005s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[6.005s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[6.006s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[6.006s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[6.058s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[6.059s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[6.059s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[6.059s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[6.059s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[6.060s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[6.061s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[6.061s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[6.062s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[6.062s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[6.062s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[6.063s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[6.063s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[6.064s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[6.064s] Level 1:colcon.colcon_core.package_identification:_identify(sensor_tests) by extensions ['ignore', 'ignore_ament_install']
+[6.064s] Level 1:colcon.colcon_core.package_identification:_identify(sensor_tests) by extension 'ignore'
+[6.065s] Level 1:colcon.colcon_core.package_identification:_identify(sensor_tests) by extension 'ignore_ament_install'
+[6.065s] Level 1:colcon.colcon_core.package_identification:_identify(sensor_tests) by extensions ['colcon_pkg']
+[6.065s] Level 1:colcon.colcon_core.package_identification:_identify(sensor_tests) by extension 'colcon_pkg'
+[6.065s] Level 1:colcon.colcon_core.package_identification:_identify(sensor_tests) by extensions ['colcon_meta']
+[6.066s] Level 1:colcon.colcon_core.package_identification:_identify(sensor_tests) by extension 'colcon_meta'
+[6.066s] Level 1:colcon.colcon_core.package_identification:_identify(sensor_tests) by extensions ['ros']
+[6.066s] Level 1:colcon.colcon_core.package_identification:_identify(sensor_tests) by extension 'ros'
+[6.066s] Level 1:colcon.colcon_core.package_identification:_identify(sensor_tests) by extensions ['cmake', 'python']
+[6.066s] Level 1:colcon.colcon_core.package_identification:_identify(sensor_tests) by extension 'cmake'
+[6.067s] Level 1:colcon.colcon_core.package_identification:_identify(sensor_tests) by extension 'python'
+[6.067s] Level 1:colcon.colcon_core.package_identification:_identify(sensor_tests) by extensions ['python_setup_py']
+[6.067s] Level 1:colcon.colcon_core.package_identification:_identify(sensor_tests) by extension 'python_setup_py'
+[6.068s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[6.068s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[6.068s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[6.068s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[6.069s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[6.069s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[6.069s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[6.069s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[6.069s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[6.070s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[6.070s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[6.070s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[6.070s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[6.070s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[6.071s] Level 1:colcon.colcon_core.package_identification:_identify(src/reflex-control-cpp) by extensions ['ignore', 'ignore_ament_install']
+[6.071s] Level 1:colcon.colcon_core.package_identification:_identify(src/reflex-control-cpp) by extension 'ignore'
+[6.072s] Level 1:colcon.colcon_core.package_identification:_identify(src/reflex-control-cpp) by extension 'ignore_ament_install'
+[6.072s] Level 1:colcon.colcon_core.package_identification:_identify(src/reflex-control-cpp) by extensions ['colcon_pkg']
+[6.072s] Level 1:colcon.colcon_core.package_identification:_identify(src/reflex-control-cpp) by extension 'colcon_pkg'
+[6.072s] Level 1:colcon.colcon_core.package_identification:_identify(src/reflex-control-cpp) by extensions ['colcon_meta']
+[6.073s] Level 1:colcon.colcon_core.package_identification:_identify(src/reflex-control-cpp) by extension 'colcon_meta'
+[6.073s] Level 1:colcon.colcon_core.package_identification:_identify(src/reflex-control-cpp) by extensions ['ros']
+[6.073s] Level 1:colcon.colcon_core.package_identification:_identify(src/reflex-control-cpp) by extension 'ros'
+[6.083s] DEBUG:colcon.colcon_core.package_identification:Package 'src/reflex-control-cpp' with type 'ros.ament_cmake' and name 'reflex-control-cpp'
+[6.084s] Level 1:colcon.colcon_core.package_identification:_identify(src/reflex-exo) by extensions ['ignore', 'ignore_ament_install']
+[6.085s] Level 1:colcon.colcon_core.package_identification:_identify(src/reflex-exo) by extension 'ignore'
+[6.085s] Level 1:colcon.colcon_core.package_identification:_identify(src/reflex-exo) ignored
+[6.086s] Level 1:colcon.colcon_core.package_identification:_identify(src/reflex_readings_py) by extensions ['ignore', 'ignore_ament_install']
+[6.086s] Level 1:colcon.colcon_core.package_identification:_identify(src/reflex_readings_py) by extension 'ignore'
+[6.086s] Level 1:colcon.colcon_core.package_identification:_identify(src/reflex_readings_py) by extension 'ignore_ament_install'
+[6.087s] Level 1:colcon.colcon_core.package_identification:_identify(src/reflex_readings_py) by extensions ['colcon_pkg']
+[6.087s] Level 1:colcon.colcon_core.package_identification:_identify(src/reflex_readings_py) by extension 'colcon_pkg'
+[6.087s] Level 1:colcon.colcon_core.package_identification:_identify(src/reflex_readings_py) by extensions ['colcon_meta']
+[6.087s] Level 1:colcon.colcon_core.package_identification:_identify(src/reflex_readings_py) by extension 'colcon_meta'
+[6.087s] Level 1:colcon.colcon_core.package_identification:_identify(src/reflex_readings_py) by extensions ['ros']
+[6.088s] Level 1:colcon.colcon_core.package_identification:_identify(src/reflex_readings_py) by extension 'ros'
+[6.090s] DEBUG:colcon.colcon_core.package_identification:Package 'src/reflex_readings_py' with type 'ros.ament_python' and name 'reflex_readings_py'
+[6.090s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[6.090s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[6.090s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[6.091s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[6.091s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[6.437s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'reflex_readings_py' in 'src/reflex_readings_py'
+[6.711s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[6.712s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[6.906s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 270 installed packages in /opt/ros/humble
+[6.913s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[7.381s] Level 5:colcon.colcon_core.verb:set package 'reflex-control-cpp' build argument 'cmake_args' from command line to 'None'
+[7.382s] Level 5:colcon.colcon_core.verb:set package 'reflex-control-cpp' build argument 'cmake_target' from command line to 'None'
+[7.382s] Level 5:colcon.colcon_core.verb:set package 'reflex-control-cpp' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[7.382s] Level 5:colcon.colcon_core.verb:set package 'reflex-control-cpp' build argument 'cmake_clean_cache' from command line to 'False'
+[7.382s] Level 5:colcon.colcon_core.verb:set package 'reflex-control-cpp' build argument 'cmake_clean_first' from command line to 'False'
+[7.382s] Level 5:colcon.colcon_core.verb:set package 'reflex-control-cpp' build argument 'cmake_force_configure' from command line to 'False'
+[7.382s] Level 5:colcon.colcon_core.verb:set package 'reflex-control-cpp' build argument 'ament_cmake_args' from command line to 'None'
+[7.382s] Level 5:colcon.colcon_core.verb:set package 'reflex-control-cpp' build argument 'catkin_cmake_args' from command line to 'None'
+[7.383s] Level 5:colcon.colcon_core.verb:set package 'reflex-control-cpp' build argument 'catkin_skip_building_tests' from command line to 'False'
+[7.383s] DEBUG:colcon.colcon_core.verb:Building package 'reflex-control-cpp' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/ubuntu/reflex-therapy/build/reflex-control-cpp', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/ubuntu/reflex-therapy/install/reflex-control-cpp', 'merge_install': False, 'path': '/home/ubuntu/reflex-therapy/src/reflex-control-cpp', 'symlink_install': False, 'test_result_base': None}
+[7.452s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[7.530s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[7.531s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/ubuntu/reflex-therapy/src/reflex-control-cpp' with build type 'ament_cmake'
+[7.532s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/ubuntu/reflex-therapy/src/reflex-control-cpp'
+[7.620s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[7.621s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[7.621s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[7.826s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ubuntu/reflex-therapy/build/reflex-control-cpp': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/ubuntu/reflex-therapy/src/reflex-control-cpp -DCMAKE_INSTALL_PREFIX=/home/ubuntu/reflex-therapy/install/reflex-control-cpp
+[19.349s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ubuntu/reflex-therapy/build/reflex-control-cpp' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/ubuntu/reflex-therapy/src/reflex-control-cpp -DCMAKE_INSTALL_PREFIX=/home/ubuntu/reflex-therapy/install/reflex-control-cpp
+[19.360s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ubuntu/reflex-therapy/build/reflex-control-cpp': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/ubuntu/reflex-therapy/build/reflex-control-cpp -- -j4 -l4
+[66.488s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ubuntu/reflex-therapy/build/reflex-control-cpp' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/ubuntu/reflex-therapy/build/reflex-control-cpp -- -j4 -l4
+[66.740s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ubuntu/reflex-therapy/build/reflex-control-cpp': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/ubuntu/reflex-therapy/build/reflex-control-cpp
+[66.868s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(reflex-control-cpp)
+[66.875s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ubuntu/reflex-therapy/build/reflex-control-cpp' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/ubuntu/reflex-therapy/build/reflex-control-cpp
+[67.979s] Level 1:colcon.colcon_core.environment:checking '/home/ubuntu/reflex-therapy/install/reflex-control-cpp' for CMake module files
+[67.985s] Level 1:colcon.colcon_core.environment:checking '/home/ubuntu/reflex-therapy/install/reflex-control-cpp' for CMake config files
+[67.989s] Level 1:colcon.colcon_core.shell:create_environment_hook('reflex-control-cpp', 'cmake_prefix_path')
+[68.084s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ubuntu/reflex-therapy/install/reflex-control-cpp/share/reflex-control-cpp/hook/cmake_prefix_path.ps1'
+[68.113s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ubuntu/reflex-therapy/install/reflex-control-cpp/share/reflex-control-cpp/hook/cmake_prefix_path.dsv'
+[68.125s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ubuntu/reflex-therapy/install/reflex-control-cpp/share/reflex-control-cpp/hook/cmake_prefix_path.sh'
+[68.135s] Level 1:colcon.colcon_core.environment:checking '/home/ubuntu/reflex-therapy/install/reflex-control-cpp/lib'
+[68.136s] Level 1:colcon.colcon_core.environment:checking '/home/ubuntu/reflex-therapy/install/reflex-control-cpp/bin'
+[68.136s] Level 1:colcon.colcon_core.environment:checking '/home/ubuntu/reflex-therapy/install/reflex-control-cpp/lib/pkgconfig/reflex-control-cpp.pc'
+[68.142s] Level 1:colcon.colcon_core.environment:checking '/home/ubuntu/reflex-therapy/install/reflex-control-cpp/lib/python3.10/site-packages'
+[68.143s] Level 1:colcon.colcon_core.environment:checking '/home/ubuntu/reflex-therapy/install/reflex-control-cpp/bin'
+[68.246s] INFO:colcon.colcon_core.shell:Creating package script '/home/ubuntu/reflex-therapy/install/reflex-control-cpp/share/reflex-control-cpp/package.ps1'
+[68.254s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/ubuntu/reflex-therapy/install/reflex-control-cpp/share/reflex-control-cpp/package.dsv'
+[68.260s] INFO:colcon.colcon_core.shell:Creating package script '/home/ubuntu/reflex-therapy/install/reflex-control-cpp/share/reflex-control-cpp/package.sh'
+[68.267s] INFO:colcon.colcon_core.shell:Creating package script '/home/ubuntu/reflex-therapy/install/reflex-control-cpp/share/reflex-control-cpp/package.bash'
+[68.276s] INFO:colcon.colcon_core.shell:Creating package script '/home/ubuntu/reflex-therapy/install/reflex-control-cpp/share/reflex-control-cpp/package.zsh'
+[68.284s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/ubuntu/reflex-therapy/install/reflex-control-cpp/share/colcon-core/packages/reflex-control-cpp)
+[68.613s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(reflex-control-cpp)
+[68.775s] Level 1:colcon.colcon_core.environment:checking '/home/ubuntu/reflex-therapy/install/reflex-control-cpp' for CMake module files
+[68.778s] Level 1:colcon.colcon_core.environment:checking '/home/ubuntu/reflex-therapy/install/reflex-control-cpp' for CMake config files
+[68.781s] Level 1:colcon.colcon_core.shell:create_environment_hook('reflex-control-cpp', 'cmake_prefix_path')
+[68.875s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ubuntu/reflex-therapy/install/reflex-control-cpp/share/reflex-control-cpp/hook/cmake_prefix_path.ps1'
+[68.878s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ubuntu/reflex-therapy/install/reflex-control-cpp/share/reflex-control-cpp/hook/cmake_prefix_path.dsv'
+[68.880s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ubuntu/reflex-therapy/install/reflex-control-cpp/share/reflex-control-cpp/hook/cmake_prefix_path.sh'
+[68.883s] Level 1:colcon.colcon_core.environment:checking '/home/ubuntu/reflex-therapy/install/reflex-control-cpp/lib'
+[68.885s] Level 1:colcon.colcon_core.environment:checking '/home/ubuntu/reflex-therapy/install/reflex-control-cpp/bin'
+[68.885s] Level 1:colcon.colcon_core.environment:checking '/home/ubuntu/reflex-therapy/install/reflex-control-cpp/lib/pkgconfig/reflex-control-cpp.pc'
+[68.887s] Level 1:colcon.colcon_core.environment:checking '/home/ubuntu/reflex-therapy/install/reflex-control-cpp/lib/python3.10/site-packages'
+[68.888s] Level 1:colcon.colcon_core.environment:checking '/home/ubuntu/reflex-therapy/install/reflex-control-cpp/bin'
+[69.001s] INFO:colcon.colcon_core.shell:Creating package script '/home/ubuntu/reflex-therapy/install/reflex-control-cpp/share/reflex-control-cpp/package.ps1'
+[69.004s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/ubuntu/reflex-therapy/install/reflex-control-cpp/share/reflex-control-cpp/package.dsv'
+[69.009s] INFO:colcon.colcon_core.shell:Creating package script '/home/ubuntu/reflex-therapy/install/reflex-control-cpp/share/reflex-control-cpp/package.sh'
+[69.018s] INFO:colcon.colcon_core.shell:Creating package script '/home/ubuntu/reflex-therapy/install/reflex-control-cpp/share/reflex-control-cpp/package.bash'
+[69.025s] INFO:colcon.colcon_core.shell:Creating package script '/home/ubuntu/reflex-therapy/install/reflex-control-cpp/share/reflex-control-cpp/package.zsh'
+[69.036s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/ubuntu/reflex-therapy/install/reflex-control-cpp/share/colcon-core/packages/reflex-control-cpp)
+[69.048s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[69.054s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[69.055s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[69.056s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[69.449s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[69.450s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[69.451s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[69.873s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[70.054s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/ubuntu/reflex-therapy/install/local_setup.ps1'
+[70.062s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/ubuntu/reflex-therapy/install/_local_setup_util_ps1.py'
+[70.070s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/ubuntu/reflex-therapy/install/setup.ps1'
+[70.151s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/ubuntu/reflex-therapy/install/local_setup.sh'
+[70.156s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/ubuntu/reflex-therapy/install/_local_setup_util_sh.py'
+[70.159s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/ubuntu/reflex-therapy/install/setup.sh'
+[70.239s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/ubuntu/reflex-therapy/install/local_setup.bash'
+[70.242s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/ubuntu/reflex-therapy/install/setup.bash'
+[70.322s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/ubuntu/reflex-therapy/install/local_setup.zsh'
+[70.326s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/ubuntu/reflex-therapy/install/setup.zsh'

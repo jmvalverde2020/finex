@@ -1,0 +1,126 @@
+[4.888s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--packages-select', 'reflex-readings-py']
+[4.889s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=4, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=['reflex-readings-py'], packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0xffffbca5ac20>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0xffffbcd365c0>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0xffffbcd365c0>>)
+[5.123s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[5.123s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[5.123s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[5.124s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[5.124s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[5.124s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[5.124s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/ubuntu/reflex-therapy'
+[5.125s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[5.125s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[5.126s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[5.126s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[5.126s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[5.126s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[5.126s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[5.127s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[5.127s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[5.177s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[5.177s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[5.177s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[5.178s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[5.178s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[5.178s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[5.179s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[5.179s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[5.180s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[5.180s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[5.180s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[5.181s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[5.181s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[5.181s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[5.182s] Level 1:colcon.colcon_core.package_identification:_identify(sensor_tests) by extensions ['ignore', 'ignore_ament_install']
+[5.182s] Level 1:colcon.colcon_core.package_identification:_identify(sensor_tests) by extension 'ignore'
+[5.182s] Level 1:colcon.colcon_core.package_identification:_identify(sensor_tests) by extension 'ignore_ament_install'
+[5.182s] Level 1:colcon.colcon_core.package_identification:_identify(sensor_tests) by extensions ['colcon_pkg']
+[5.183s] Level 1:colcon.colcon_core.package_identification:_identify(sensor_tests) by extension 'colcon_pkg'
+[5.183s] Level 1:colcon.colcon_core.package_identification:_identify(sensor_tests) by extensions ['colcon_meta']
+[5.183s] Level 1:colcon.colcon_core.package_identification:_identify(sensor_tests) by extension 'colcon_meta'
+[5.183s] Level 1:colcon.colcon_core.package_identification:_identify(sensor_tests) by extensions ['ros']
+[5.183s] Level 1:colcon.colcon_core.package_identification:_identify(sensor_tests) by extension 'ros'
+[5.184s] Level 1:colcon.colcon_core.package_identification:_identify(sensor_tests) by extensions ['cmake', 'python']
+[5.184s] Level 1:colcon.colcon_core.package_identification:_identify(sensor_tests) by extension 'cmake'
+[5.184s] Level 1:colcon.colcon_core.package_identification:_identify(sensor_tests) by extension 'python'
+[5.184s] Level 1:colcon.colcon_core.package_identification:_identify(sensor_tests) by extensions ['python_setup_py']
+[5.184s] Level 1:colcon.colcon_core.package_identification:_identify(sensor_tests) by extension 'python_setup_py'
+[5.185s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[5.185s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[5.185s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[5.186s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[5.186s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[5.186s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[5.186s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[5.186s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[5.186s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[5.187s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[5.187s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[5.187s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[5.187s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[5.187s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[5.188s] Level 1:colcon.colcon_core.package_identification:_identify(src/reflex-control-cpp) by extensions ['ignore', 'ignore_ament_install']
+[5.188s] Level 1:colcon.colcon_core.package_identification:_identify(src/reflex-control-cpp) by extension 'ignore'
+[5.189s] Level 1:colcon.colcon_core.package_identification:_identify(src/reflex-control-cpp) by extension 'ignore_ament_install'
+[5.189s] Level 1:colcon.colcon_core.package_identification:_identify(src/reflex-control-cpp) by extensions ['colcon_pkg']
+[5.189s] Level 1:colcon.colcon_core.package_identification:_identify(src/reflex-control-cpp) by extension 'colcon_pkg'
+[5.189s] Level 1:colcon.colcon_core.package_identification:_identify(src/reflex-control-cpp) by extensions ['colcon_meta']
+[5.189s] Level 1:colcon.colcon_core.package_identification:_identify(src/reflex-control-cpp) by extension 'colcon_meta'
+[5.190s] Level 1:colcon.colcon_core.package_identification:_identify(src/reflex-control-cpp) by extensions ['ros']
+[5.190s] Level 1:colcon.colcon_core.package_identification:_identify(src/reflex-control-cpp) by extension 'ros'
+[5.200s] DEBUG:colcon.colcon_core.package_identification:Package 'src/reflex-control-cpp' with type 'ros.ament_cmake' and name 'reflex-control-cpp'
+[5.201s] Level 1:colcon.colcon_core.package_identification:_identify(src/reflex-exo) by extensions ['ignore', 'ignore_ament_install']
+[5.201s] Level 1:colcon.colcon_core.package_identification:_identify(src/reflex-exo) by extension 'ignore'
+[5.202s] Level 1:colcon.colcon_core.package_identification:_identify(src/reflex-exo) by extension 'ignore_ament_install'
+[5.202s] Level 1:colcon.colcon_core.package_identification:_identify(src/reflex-exo) by extensions ['colcon_pkg']
+[5.202s] Level 1:colcon.colcon_core.package_identification:_identify(src/reflex-exo) by extension 'colcon_pkg'
+[5.202s] Level 1:colcon.colcon_core.package_identification:_identify(src/reflex-exo) by extensions ['colcon_meta']
+[5.202s] Level 1:colcon.colcon_core.package_identification:_identify(src/reflex-exo) by extension 'colcon_meta'
+[5.203s] Level 1:colcon.colcon_core.package_identification:_identify(src/reflex-exo) by extensions ['ros']
+[5.203s] Level 1:colcon.colcon_core.package_identification:_identify(src/reflex-exo) by extension 'ros'
+[5.206s] DEBUG:colcon.colcon_core.package_identification:Package 'src/reflex-exo' with type 'ros.ament_cmake' and name 'reflex-exo'
+[5.207s] Level 1:colcon.colcon_core.package_identification:_identify(src/reflex_readings_py) by extensions ['ignore', 'ignore_ament_install']
+[5.207s] Level 1:colcon.colcon_core.package_identification:_identify(src/reflex_readings_py) by extension 'ignore'
+[5.207s] Level 1:colcon.colcon_core.package_identification:_identify(src/reflex_readings_py) by extension 'ignore_ament_install'
+[5.208s] Level 1:colcon.colcon_core.package_identification:_identify(src/reflex_readings_py) by extensions ['colcon_pkg']
+[5.208s] Level 1:colcon.colcon_core.package_identification:_identify(src/reflex_readings_py) by extension 'colcon_pkg'
+[5.208s] Level 1:colcon.colcon_core.package_identification:_identify(src/reflex_readings_py) by extensions ['colcon_meta']
+[5.208s] Level 1:colcon.colcon_core.package_identification:_identify(src/reflex_readings_py) by extension 'colcon_meta'
+[5.208s] Level 1:colcon.colcon_core.package_identification:_identify(src/reflex_readings_py) by extensions ['ros']
+[5.208s] Level 1:colcon.colcon_core.package_identification:_identify(src/reflex_readings_py) by extension 'ros'
+[5.210s] DEBUG:colcon.colcon_core.package_identification:Package 'src/reflex_readings_py' with type 'ros.ament_python' and name 'reflex_readings_py'
+[5.211s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[5.211s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[5.211s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[5.211s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[5.211s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[5.284s] WARNING:colcon.colcon_core.package_selection:ignoring unknown package 'reflex-readings-py' in --packages-select
+[5.513s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'reflex-control-cpp' in 'src/reflex-control-cpp'
+[5.513s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'reflex-exo' in 'src/reflex-exo'
+[5.513s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'reflex_readings_py' in 'src/reflex_readings_py'
+[5.649s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[5.650s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[5.723s] WARNING:colcon.colcon_ros.prefix_path.ament:The path '/home/ubuntu/reflex-therapy/install/reflex-readings-py' in the environment variable AMENT_PREFIX_PATH doesn't exist
+[5.802s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 0 installed packages in /home/ubuntu/reflex-therapy/install
+[5.879s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 270 installed packages in /opt/ros/humble
+[5.886s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[6.382s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[6.453s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[6.453s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[6.454s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[6.455s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[6.455s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[6.557s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[6.557s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[6.557s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[6.614s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[6.719s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[6.720s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/ubuntu/reflex-therapy/install/local_setup.ps1'
+[6.724s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/ubuntu/reflex-therapy/install/_local_setup_util_ps1.py'
+[6.730s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/ubuntu/reflex-therapy/install/setup.ps1'
+[6.817s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/ubuntu/reflex-therapy/install/local_setup.sh'
+[6.819s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/ubuntu/reflex-therapy/install/_local_setup_util_sh.py'
+[6.822s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/ubuntu/reflex-therapy/install/setup.sh'
+[6.894s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/ubuntu/reflex-therapy/install/local_setup.bash'
+[6.896s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/ubuntu/reflex-therapy/install/setup.bash'
+[6.986s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/ubuntu/reflex-therapy/install/local_setup.zsh'
+[6.988s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/ubuntu/reflex-therapy/install/setup.zsh'

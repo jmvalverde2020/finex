@@ -1,4 +1,0 @@
-Invoking command in '/home/ubuntu/reflex-therapy/build/reflex-therapy': /usr/bin/cmake /home/ubuntu/reflex-therapy/src/reflex-therapy -DCMAKE_INSTALL_PREFIX=/home/ubuntu/reflex-therapy/install/reflex-therapy
-Invoked command in '/home/ubuntu/reflex-therapy/build/reflex-therapy' returned '0': /usr/bin/cmake /home/ubuntu/reflex-therapy/src/reflex-therapy -DCMAKE_INSTALL_PREFIX=/home/ubuntu/reflex-therapy/install/reflex-therapy
-Invoking command in '/home/ubuntu/reflex-therapy/build/reflex-therapy': /usr/bin/cmake --build /home/ubuntu/reflex-therapy/build/reflex-therapy -- -j4 -l4
-Invoked command in '/home/ubuntu/reflex-therapy/build/reflex-therapy' returned '0': /usr/bin/cmake --build /home/ubuntu/reflex-therapy/build/reflex-therapy -- -j4 -l4

@@ -1,2 +1,0 @@
-/home/ubuntu/reflex-therapy/build/reflex-therapy/CMakeFiles/edit_cache.dir
-/home/ubuntu/reflex-therapy/build/reflex-therapy/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,6 @@
+Invoking command in '/home/ubuntu/reflex-therapy/build/reflex-control-cpp': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/ubuntu/reflex-therapy/src/reflex-control-cpp -DCMAKE_INSTALL_PREFIX=/home/ubuntu/reflex-therapy/install/reflex-control-cpp
+Invoked command in '/home/ubuntu/reflex-therapy/build/reflex-control-cpp' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/ubuntu/reflex-therapy/src/reflex-control-cpp -DCMAKE_INSTALL_PREFIX=/home/ubuntu/reflex-therapy/install/reflex-control-cpp
+Invoking command in '/home/ubuntu/reflex-therapy/build/reflex-control-cpp': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/ubuntu/reflex-therapy/build/reflex-control-cpp -- -j4 -l4
+Invoked command in '/home/ubuntu/reflex-therapy/build/reflex-control-cpp' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/ubuntu/reflex-therapy/build/reflex-control-cpp -- -j4 -l4
+Invoking command in '/home/ubuntu/reflex-therapy/build/reflex-control-cpp': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/ubuntu/reflex-therapy/build/reflex-control-cpp
+Invoked command in '/home/ubuntu/reflex-therapy/build/reflex-control-cpp' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/ubuntu/reflex-therapy/build/reflex-control-cpp
