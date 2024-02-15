@@ -620,4 +620,8 @@ CMakeFiles/control_node.dir/src/control_node.cpp.o: \
  /opt/ros/humble/include/std_msgs/std_msgs/msg/float32.hpp \
  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float32__struct.hpp \
  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float32__builder.hpp \
- /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float32__traits.hpp
+ /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/float32__traits.hpp \
+ /opt/ros/humble/include/std_msgs/std_msgs/msg/u_int16.hpp \
+ /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/u_int16__struct.hpp \
+ /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/u_int16__builder.hpp \
+ /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/u_int16__traits.hpp

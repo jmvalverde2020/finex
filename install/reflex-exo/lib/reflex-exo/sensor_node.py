@@ -10,6 +10,7 @@ import numpy as np
 
 from rclpy.node import Node
 from std_msgs.msg import Float32
+from std_msgs.msg import UInt16
 
 from numpy import convolve as np_convolve
 from collections import deque
@@ -22,12 +23,16 @@ class SensorNode(Node):
         self.init_pubs_()
 
     def init_pubs_(self):
-        self.pot_pub = self.create_publisher(Float32, '/reflex/readings/reflex_pot', 100)
+        self.pot_pub = self.create_publisher(UInt16, '/reflex/readings/reflex_pot', 100)
         self.gauge_pub = self.create_publisher(Float32, '/reflex/readings/reflex_gauge', 100)
+        self.pot_raw = self.create_publisher(UInt16, '/reflex/readings/pot_raw', 100)
+        self.gauge_raw = self.create_publisher(UInt16, '/reflex/readings/gauge_raw', 100)
 
 filter_states = [0.0]*2
 gauge_data  = [0] * 318 # gauge_data  = [None] * 318
-pot_params = [-0.105, 98]
+pot_params = [-0.10483871, 99.701613]
+gauge_params = [-0.0206526316, 12.8046316]
+DEBUG = True
 
 """FIR filter for gauge readings (Values exported from Simulink)"""
 def FIR_filter(raw_gauge):
@@ -65,11 +70,14 @@ def pot2angle(pot):
     # the output angle can be obtained with the given formula:
     return pot_params[0]*pot + pot_params[1]
 
+""" Process the potentiometer readings and returns the
+    corresponding angle in degrees. """
 def pot_proc(msg):
     return pot2angle(biquad_filter(msg))
 
+""" Process the gauge readings. """
 def gauge_proc(msg):
-    return -172.1 + 0.30333*FIR_filter(msg)
+    return gauge_params[0]*FIR_filter(msg) + gauge_params[1]
 
 def get_sensor_data(msg):
     ''' Bytearray decoding returns tuple. Meaning of arguments:
@@ -77,26 +85,47 @@ def get_sensor_data(msg):
     pot_msg = struct.unpack('<H', msg[:2])[0]    # 2 most significant bytes correspond to potentiometer reading
     gauge_msg = struct.unpack('<H', msg[2:4])[0]   # 3-4 bytes correspond to strain_gauge reading
 
-    return pot_proc(pot_msg), gauge_proc(gauge_msg)
+    return max(0, round(pot_proc(pot_msg))), gauge_proc(gauge_msg)
+
+def get_data_raw(msg):
+    ''' Bytearray decoding returns tuple. Meaning of arguments:
+    >: big endian, <: little endian, H: unsigned short (2 bytes), B: unsigned char'''
+    pot_msg = struct.unpack('<H', msg[:2])[0]    # 2 most significant bytes correspond to potentiometer reading
+    gauge_msg = struct.unpack('<H', msg[2:4])[0]   # 3-4 bytes correspond to strain_gauge reading
+
+    return pot_msg, gauge_msg
 
 def main(args=None):
     rclpy.init(args=args)
-    sensor_node = SensorNode()
 
+    sensor_node = SensorNode()
     can_bus = CANbus(channel="can0")
+
     sensor_node.get_logger().info("[Reflex] Reading sensor data...")
     while rclpy.ok():
+        ''' Need to send a msg with the correct ID to receive the
+            sensor readings. '''
         can_bus.send_command()
         msg = can_bus.receive_data()
         if msg is not None:
-            pot_msg = Float32()
+            pot_msg = UInt16()
             gauge_msg = Float32()
 
             pot_msg.data, gauge_msg.data = get_sensor_data(msg.data)
-            if pot_msg is not None:
+
+            if pot_msg.data is not None:
                 sensor_node.pot_pub.publish(pot_msg)
-            if gauge_msg is not None:
+            if gauge_msg.data is not None:
                 sensor_node.gauge_pub.publish(gauge_msg)
+
+            if DEBUG:
+                pot_msg_raw = UInt16()
+                gauge_msg_raw = UInt16()
+                pot_msg_raw.data, gauge_msg_raw.data = get_data_raw(msg.data)
+                if pot_msg_raw.data is not None:
+                    sensor_node.pot_raw.publish(pot_msg_raw)
+                if gauge_msg_raw.data is not None:
+                    sensor_node.gauge_raw.publish(gauge_msg_raw)
     
     sensor_node.destroy_node()
     rclpy.shutdown()

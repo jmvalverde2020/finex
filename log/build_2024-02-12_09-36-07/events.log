@@ -1,0 +1,565 @@
+[0.000000] (-) TimerEvent: {}
+[0.001718] (reflex-exo) JobQueued: {'identifier': 'reflex-exo', 'dependencies': OrderedDict()}
+[0.002421] (reflex-exo) JobStarted: {'identifier': 'reflex-exo'}
+[0.098926] (-) TimerEvent: {}
+[0.200728] (-) TimerEvent: {}
+[0.302044] (-) TimerEvent: {}
+[0.403945] (-) TimerEvent: {}
+[0.505971] (-) TimerEvent: {}
+[0.612154] (-) TimerEvent: {}
+[0.717595] (-) TimerEvent: {}
+[0.721229] (reflex-exo) JobProgress: {'identifier': 'reflex-exo', 'progress': 'cmake'}
+[0.726961] (reflex-exo) JobProgress: {'identifier': 'reflex-exo', 'progress': 'build'}
+[0.731241] (reflex-exo) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/ubuntu/reflex-therapy/build/reflex-exo', '--', '-j4', '-l4'], 'cwd': '/home/ubuntu/reflex-therapy/build/reflex-exo', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'ubuntu'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/ubuntu'), ('OLDPWD', '/home/ubuntu'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('SYSTEMD_EXEC_PID', '3253'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/ubuntu/reflex-therapy/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'ubuntu'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'ubuntu'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/ubuntu-rpi:@/tmp/.ICE-unix/2941,unix/ubuntu-rpi:/tmp/.ICE-unix/2941'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/9eced903_84d1_41f1_90c6_1944ed78e15a'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'es_ES.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.XONXI2'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.111'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '12'), ('AMENT_PREFIX_PATH', '/home/ubuntu/reflex-therapy/install/reflex_readings_py:/home/ubuntu/reflex-therapy/install/reflex-exo:/home/ubuntu/reflex-therapy/install/reflex-control-cpp:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/ubuntu/reflex-therapy/build/reflex-exo'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/ubuntu/reflex-therapy/install/reflex_readings_py/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/ubuntu/reflex-therapy/install/reflex-exo:/home/ubuntu/reflex-therapy/install/reflex-control-cpp:/home/ubuntu/reflex-therapy/install/reflex_readings_py:/opt/ros/humble')]), 'shell': False}
+[0.820148] (-) TimerEvent: {}
+[0.922322] (-) TimerEvent: {}
+[1.024176] (-) TimerEvent: {}
+[1.125643] (-) TimerEvent: {}
+[1.228518] (-) TimerEvent: {}
+[1.268201] (reflex-exo) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target control_node\x1b[0m\n'}
+[1.329020] (-) TimerEvent: {}
+[1.431531] (-) TimerEvent: {}
+[1.507376] (reflex-exo) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/control_node.dir/src/control_node.cpp.o\x1b[0m\n'}
+[1.531878] (-) TimerEvent: {}
+[1.633388] (-) TimerEvent: {}
+[1.734970] (-) TimerEvent: {}
+[1.836896] (-) TimerEvent: {}
+[1.938006] (-) TimerEvent: {}
+[2.039197] (-) TimerEvent: {}
+[2.140716] (-) TimerEvent: {}
+[2.243019] (-) TimerEvent: {}
+[2.345118] (-) TimerEvent: {}
+[2.446976] (-) TimerEvent: {}
+[2.548847] (-) TimerEvent: {}
+[2.651001] (-) TimerEvent: {}
+[2.751823] (-) TimerEvent: {}
+[2.852693] (-) TimerEvent: {}
+[2.953781] (-) TimerEvent: {}
+[3.054987] (-) TimerEvent: {}
+[3.156320] (-) TimerEvent: {}
+[3.257319] (-) TimerEvent: {}
+[3.358199] (-) TimerEvent: {}
+[3.459512] (-) TimerEvent: {}
+[3.560654] (-) TimerEvent: {}
+[3.663278] (-) TimerEvent: {}
+[3.764734] (-) TimerEvent: {}
+[3.866629] (-) TimerEvent: {}
+[3.968766] (-) TimerEvent: {}
+[4.070807] (-) TimerEvent: {}
+[4.172638] (-) TimerEvent: {}
+[4.274648] (-) TimerEvent: {}
+[4.375857] (-) TimerEvent: {}
+[4.476985] (-) TimerEvent: {}
+[4.578427] (-) TimerEvent: {}
+[4.679937] (-) TimerEvent: {}
+[4.782025] (-) TimerEvent: {}
+[4.884057] (-) TimerEvent: {}
+[4.988314] (-) TimerEvent: {}
+[5.094246] (-) TimerEvent: {}
+[5.195866] (-) TimerEvent: {}
+[5.297485] (-) TimerEvent: {}
+[5.399181] (-) TimerEvent: {}
+[5.501352] (-) TimerEvent: {}
+[5.604143] (-) TimerEvent: {}
+[5.706017] (-) TimerEvent: {}
+[5.808346] (-) TimerEvent: {}
+[5.910632] (-) TimerEvent: {}
+[6.012423] (-) TimerEvent: {}
+[6.114288] (-) TimerEvent: {}
+[6.216307] (-) TimerEvent: {}
+[6.318246] (-) TimerEvent: {}
+[6.420058] (-) TimerEvent: {}
+[6.523845] (-) TimerEvent: {}
+[6.625533] (-) TimerEvent: {}
+[6.727500] (-) TimerEvent: {}
+[6.829773] (-) TimerEvent: {}
+[6.932617] (-) TimerEvent: {}
+[7.035165] (-) TimerEvent: {}
+[7.137025] (-) TimerEvent: {}
+[7.237980] (-) TimerEvent: {}
+[7.338920] (-) TimerEvent: {}
+[7.440003] (-) TimerEvent: {}
+[7.540932] (-) TimerEvent: {}
+[7.641886] (-) TimerEvent: {}
+[7.742744] (-) TimerEvent: {}
+[7.843625] (-) TimerEvent: {}
+[7.944593] (-) TimerEvent: {}
+[8.045491] (-) TimerEvent: {}
+[8.146380] (-) TimerEvent: {}
+[8.247351] (-) TimerEvent: {}
+[8.348267] (-) TimerEvent: {}
+[8.449427] (-) TimerEvent: {}
+[8.550315] (-) TimerEvent: {}
+[8.651218] (-) TimerEvent: {}
+[8.752182] (-) TimerEvent: {}
+[8.853077] (-) TimerEvent: {}
+[8.953978] (-) TimerEvent: {}
+[9.054981] (-) TimerEvent: {}
+[9.156175] (-) TimerEvent: {}
+[9.257048] (-) TimerEvent: {}
+[9.357922] (-) TimerEvent: {}
+[9.458768] (-) TimerEvent: {}
+[9.559867] (-) TimerEvent: {}
+[9.660773] (-) TimerEvent: {}
+[9.761689] (-) TimerEvent: {}
+[9.862578] (-) TimerEvent: {}
+[9.967955] (-) TimerEvent: {}
+[10.068903] (-) TimerEvent: {}
+[10.170168] (-) TimerEvent: {}
+[10.271175] (-) TimerEvent: {}
+[10.372488] (-) TimerEvent: {}
+[10.473401] (-) TimerEvent: {}
+[10.574344] (-) TimerEvent: {}
+[10.675268] (-) TimerEvent: {}
+[10.776160] (-) TimerEvent: {}
+[10.876994] (-) TimerEvent: {}
+[10.977897] (-) TimerEvent: {}
+[11.079004] (-) TimerEvent: {}
+[11.179920] (-) TimerEvent: {}
+[11.280778] (-) TimerEvent: {}
+[11.381701] (-) TimerEvent: {}
+[11.482636] (-) TimerEvent: {}
+[11.583545] (-) TimerEvent: {}
+[11.684458] (-) TimerEvent: {}
+[11.785374] (-) TimerEvent: {}
+[11.886343] (-) TimerEvent: {}
+[11.987255] (-) TimerEvent: {}
+[12.088174] (-) TimerEvent: {}
+[12.189045] (-) TimerEvent: {}
+[12.289999] (-) TimerEvent: {}
+[12.390956] (-) TimerEvent: {}
+[12.492039] (-) TimerEvent: {}
+[12.593120] (-) TimerEvent: {}
+[12.693978] (-) TimerEvent: {}
+[12.794882] (-) TimerEvent: {}
+[12.895832] (-) TimerEvent: {}
+[12.996728] (-) TimerEvent: {}
+[13.097679] (-) TimerEvent: {}
+[13.198594] (-) TimerEvent: {}
+[13.299636] (-) TimerEvent: {}
+[13.400852] (-) TimerEvent: {}
+[13.502086] (-) TimerEvent: {}
+[13.603042] (-) TimerEvent: {}
+[13.704092] (-) TimerEvent: {}
+[13.805070] (-) TimerEvent: {}
+[13.906000] (-) TimerEvent: {}
+[14.006944] (-) TimerEvent: {}
+[14.107956] (-) TimerEvent: {}
+[14.208869] (-) TimerEvent: {}
+[14.309805] (-) TimerEvent: {}
+[14.410879] (-) TimerEvent: {}
+[14.511955] (-) TimerEvent: {}
+[14.612916] (-) TimerEvent: {}
+[14.713837] (-) TimerEvent: {}
+[14.814717] (-) TimerEvent: {}
+[14.915627] (-) TimerEvent: {}
+[15.016624] (-) TimerEvent: {}
+[15.117786] (-) TimerEvent: {}
+[15.218768] (-) TimerEvent: {}
+[15.319641] (-) TimerEvent: {}
+[15.420550] (-) TimerEvent: {}
+[15.521413] (-) TimerEvent: {}
+[15.622343] (-) TimerEvent: {}
+[15.723232] (-) TimerEvent: {}
+[15.824191] (-) TimerEvent: {}
+[15.925072] (-) TimerEvent: {}
+[16.026065] (-) TimerEvent: {}
+[16.126970] (-) TimerEvent: {}
+[16.227893] (-) TimerEvent: {}
+[16.328773] (-) TimerEvent: {}
+[16.392836] (reflex-exo) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24\x1b[m\x1b[K,\n'}
+[16.394699] (reflex-exo) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40\x1b[m\x1b[K,\n'}
+[16.395682] (reflex-exo) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24\x1b[m\x1b[K,\n'}
+[16.396757] (reflex-exo) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20\x1b[m\x1b[K,\n'}
+[16.397646] (reflex-exo) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25\x1b[m\x1b[K,\n'}
+[16.398612] (reflex-exo) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18\x1b[m\x1b[K,\n'}
+[16.399561] (reflex-exo) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20\x1b[m\x1b[K,\n'}
+[16.400789] (reflex-exo) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37\x1b[m\x1b[K,\n'}
+[16.401758] (reflex-exo) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25\x1b[m\x1b[K,\n'}
+[16.402716] (reflex-exo) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21\x1b[m\x1b[K,\n'}
+[16.403534] (reflex-exo) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155\x1b[m\x1b[K,\n'}
+[16.404744] (reflex-exo) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ubuntu/reflex-therapy/src/reflex-exo/include/reflex-exo/control_node.hpp:5\x1b[m\x1b[K,\n'}
+[16.405680] (reflex-exo) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/ubuntu/reflex-therapy/src/reflex-exo/src/control_node.cpp:2\x1b[m\x1b[K:\n'}
+[16.406577] (reflex-exo) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/reflex-therapy/src/reflex-exo/include/reflex-exo/control_node.hpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid reflex_exo::ControlNode::gauge_callback(const UInt16&) const\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[16.407417] (reflex-exo) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/reflex-therapy/src/reflex-exo/include/reflex-exo/control_node.hpp:35:41:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kformat \xe2\x80\x98\x1b[01m\x1b[K%f\x1b[m\x1b[K\xe2\x80\x99 expects argument of type \xe2\x80\x98\x1b[01m\x1b[Kdouble\x1b[m\x1b[K\xe2\x80\x99, but argument 5 has type \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat=\x07-Wformat=\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[16.408077] (reflex-exo) StderrLine: {'line': b'   35 |         RCLCPP_INFO(this->get_logger(), \x1b[01;35m\x1b[K"Recibido de la galga: \'%f\'"\x1b[m\x1b[K, \x1b[32m\x1b[Kmsg.data\x1b[m\x1b[K);\n'}
+[16.408544] (reflex-exo) StderrLine: {'line': b'      |                                         \x1b[01;35m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K  \x1b[32m\x1b[K~~~~~~~~\x1b[m\x1b[K\n'}
+[16.408989] (reflex-exo) StderrLine: {'line': b'      |                                                                           \x1b[32m\x1b[K|\x1b[m\x1b[K\n'}
+[16.409444] (reflex-exo) StderrLine: {'line': b'      |                                                                           \x1b[32m\x1b[Kint\x1b[m\x1b[K\n'}
+[16.409905] (reflex-exo) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/ubuntu/reflex-therapy/src/reflex-exo/src/control_node.cpp:2\x1b[m\x1b[K:\n'}
+[16.410369] (reflex-exo) StderrLine: {'line': b'\x1b[01m\x1b[K/home/ubuntu/reflex-therapy/src/reflex-exo/include/reflex-exo/control_node.hpp:35:66:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kformat string is defined here\n'}
+[16.410856] (reflex-exo) StderrLine: {'line': b'   35 |    RCLCPP_INFO(this->get_logger(), "Recibido de la galga: \'\x1b[01;36m\x1b[K%f\x1b[m\x1b[K\'", msg.data);\n'}
+[16.411298] (reflex-exo) StderrLine: {'line': b'      |                                                            \x1b[01;36m\x1b[K~^\x1b[m\x1b[K\n'}
+[16.411849] (reflex-exo) StderrLine: {'line': b'      |                                                             \x1b[01;36m\x1b[K|\x1b[m\x1b[K\n'}
+[16.412576] (reflex-exo) StderrLine: {'line': b'      |                                                             \x1b[01;36m\x1b[Kdouble\x1b[m\x1b[K\n'}
+[16.413114] (reflex-exo) StderrLine: {'line': b'      |                                                            \x1b[32m\x1b[K%d\x1b[m\x1b[K\n'}
+[16.428958] (-) TimerEvent: {}
+[16.529855] (-) TimerEvent: {}
+[16.630883] (-) TimerEvent: {}
+[16.731877] (-) TimerEvent: {}
+[16.832795] (-) TimerEvent: {}
+[16.933848] (-) TimerEvent: {}
+[17.034799] (-) TimerEvent: {}
+[17.135827] (-) TimerEvent: {}
+[17.236713] (-) TimerEvent: {}
+[17.337723] (-) TimerEvent: {}
+[17.438866] (-) TimerEvent: {}
+[17.539869] (-) TimerEvent: {}
+[17.640876] (-) TimerEvent: {}
+[17.741832] (-) TimerEvent: {}
+[17.842733] (-) TimerEvent: {}
+[17.943625] (-) TimerEvent: {}
+[18.044575] (-) TimerEvent: {}
+[18.145467] (-) TimerEvent: {}
+[18.246413] (-) TimerEvent: {}
+[18.347397] (-) TimerEvent: {}
+[18.448374] (-) TimerEvent: {}
+[18.549262] (-) TimerEvent: {}
+[18.650156] (-) TimerEvent: {}
+[18.751071] (-) TimerEvent: {}
+[18.852088] (-) TimerEvent: {}
+[18.953488] (-) TimerEvent: {}
+[19.054548] (-) TimerEvent: {}
+[19.155498] (-) TimerEvent: {}
+[19.256415] (-) TimerEvent: {}
+[19.357278] (-) TimerEvent: {}
+[19.458136] (-) TimerEvent: {}
+[19.559107] (-) TimerEvent: {}
+[19.660033] (-) TimerEvent: {}
+[19.760918] (-) TimerEvent: {}
+[19.861818] (-) TimerEvent: {}
+[19.962771] (-) TimerEvent: {}
+[20.063700] (-) TimerEvent: {}
+[20.164643] (-) TimerEvent: {}
+[20.265641] (-) TimerEvent: {}
+[20.366716] (-) TimerEvent: {}
+[20.467658] (-) TimerEvent: {}
+[20.568591] (-) TimerEvent: {}
+[20.669480] (-) TimerEvent: {}
+[20.770478] (-) TimerEvent: {}
+[20.871373] (-) TimerEvent: {}
+[20.972376] (-) TimerEvent: {}
+[21.073354] (-) TimerEvent: {}
+[21.174362] (-) TimerEvent: {}
+[21.275276] (-) TimerEvent: {}
+[21.376311] (-) TimerEvent: {}
+[21.477275] (-) TimerEvent: {}
+[21.578255] (-) TimerEvent: {}
+[21.679123] (-) TimerEvent: {}
+[21.780006] (-) TimerEvent: {}
+[21.880920] (-) TimerEvent: {}
+[21.981801] (-) TimerEvent: {}
+[22.082699] (-) TimerEvent: {}
+[22.183619] (-) TimerEvent: {}
+[22.284572] (-) TimerEvent: {}
+[22.385523] (-) TimerEvent: {}
+[22.486485] (-) TimerEvent: {}
+[22.587364] (-) TimerEvent: {}
+[22.688315] (-) TimerEvent: {}
+[22.789204] (-) TimerEvent: {}
+[22.890077] (-) TimerEvent: {}
+[22.990984] (-) TimerEvent: {}
+[23.091888] (-) TimerEvent: {}
+[23.192788] (-) TimerEvent: {}
+[23.293675] (-) TimerEvent: {}
+[23.394641] (-) TimerEvent: {}
+[23.495844] (-) TimerEvent: {}
+[23.596776] (-) TimerEvent: {}
+[23.697802] (-) TimerEvent: {}
+[23.798956] (-) TimerEvent: {}
+[23.899907] (-) TimerEvent: {}
+[24.000807] (-) TimerEvent: {}
+[24.101644] (-) TimerEvent: {}
+[24.202564] (-) TimerEvent: {}
+[24.303436] (-) TimerEvent: {}
+[24.404330] (-) TimerEvent: {}
+[24.505235] (-) TimerEvent: {}
+[24.606162] (-) TimerEvent: {}
+[24.707061] (-) TimerEvent: {}
+[24.808035] (-) TimerEvent: {}
+[24.909116] (-) TimerEvent: {}
+[25.010022] (-) TimerEvent: {}
+[25.110931] (-) TimerEvent: {}
+[25.212179] (-) TimerEvent: {}
+[25.313619] (-) TimerEvent: {}
+[25.414462] (-) TimerEvent: {}
+[25.515276] (-) TimerEvent: {}
+[25.616284] (-) TimerEvent: {}
+[25.717131] (-) TimerEvent: {}
+[25.818341] (-) TimerEvent: {}
+[25.920361] (-) TimerEvent: {}
+[26.022310] (-) TimerEvent: {}
+[26.123375] (-) TimerEvent: {}
+[26.224354] (-) TimerEvent: {}
+[26.325280] (-) TimerEvent: {}
+[26.426195] (-) TimerEvent: {}
+[26.527139] (-) TimerEvent: {}
+[26.628241] (-) TimerEvent: {}
+[26.729653] (-) TimerEvent: {}
+[26.830747] (-) TimerEvent: {}
+[26.931790] (-) TimerEvent: {}
+[27.032760] (-) TimerEvent: {}
+[27.133686] (-) TimerEvent: {}
+[27.234543] (-) TimerEvent: {}
+[27.335487] (-) TimerEvent: {}
+[27.436655] (-) TimerEvent: {}
+[27.537827] (-) TimerEvent: {}
+[27.639027] (-) TimerEvent: {}
+[27.740369] (-) TimerEvent: {}
+[27.841251] (-) TimerEvent: {}
+[27.942124] (-) TimerEvent: {}
+[28.043027] (-) TimerEvent: {}
+[28.143992] (-) TimerEvent: {}
+[28.245086] (-) TimerEvent: {}
+[28.346298] (-) TimerEvent: {}
+[28.447294] (-) TimerEvent: {}
+[28.548608] (-) TimerEvent: {}
+[28.649504] (-) TimerEvent: {}
+[28.750398] (-) TimerEvent: {}
+[28.851280] (-) TimerEvent: {}
+[28.952197] (-) TimerEvent: {}
+[29.053088] (-) TimerEvent: {}
+[29.153952] (-) TimerEvent: {}
+[29.254945] (-) TimerEvent: {}
+[29.355877] (-) TimerEvent: {}
+[29.456736] (-) TimerEvent: {}
+[29.557584] (-) TimerEvent: {}
+[29.658495] (-) TimerEvent: {}
+[29.759365] (-) TimerEvent: {}
+[29.860258] (-) TimerEvent: {}
+[29.961174] (-) TimerEvent: {}
+[30.062317] (-) TimerEvent: {}
+[30.163354] (-) TimerEvent: {}
+[30.264361] (-) TimerEvent: {}
+[30.365212] (-) TimerEvent: {}
+[30.466274] (-) TimerEvent: {}
+[30.567701] (-) TimerEvent: {}
+[30.670345] (-) TimerEvent: {}
+[30.771280] (-) TimerEvent: {}
+[30.872183] (-) TimerEvent: {}
+[30.973013] (-) TimerEvent: {}
+[31.073885] (-) TimerEvent: {}
+[31.174746] (-) TimerEvent: {}
+[31.275664] (-) TimerEvent: {}
+[31.376560] (-) TimerEvent: {}
+[31.477442] (-) TimerEvent: {}
+[31.578408] (-) TimerEvent: {}
+[31.679360] (-) TimerEvent: {}
+[31.780241] (-) TimerEvent: {}
+[31.881111] (-) TimerEvent: {}
+[31.981984] (-) TimerEvent: {}
+[32.082885] (-) TimerEvent: {}
+[32.183857] (-) TimerEvent: {}
+[32.284716] (-) TimerEvent: {}
+[32.385579] (-) TimerEvent: {}
+[32.486479] (-) TimerEvent: {}
+[32.587477] (-) TimerEvent: {}
+[32.688396] (-) TimerEvent: {}
+[32.789312] (-) TimerEvent: {}
+[32.890346] (-) TimerEvent: {}
+[32.991315] (-) TimerEvent: {}
+[33.092270] (-) TimerEvent: {}
+[33.193434] (-) TimerEvent: {}
+[33.294298] (-) TimerEvent: {}
+[33.395135] (-) TimerEvent: {}
+[33.496086] (-) TimerEvent: {}
+[33.597151] (-) TimerEvent: {}
+[33.698132] (-) TimerEvent: {}
+[33.799013] (-) TimerEvent: {}
+[33.899926] (-) TimerEvent: {}
+[34.000814] (-) TimerEvent: {}
+[34.101704] (-) TimerEvent: {}
+[34.202576] (-) TimerEvent: {}
+[34.303444] (-) TimerEvent: {}
+[34.404374] (-) TimerEvent: {}
+[34.505295] (-) TimerEvent: {}
+[34.606160] (-) TimerEvent: {}
+[34.707020] (-) TimerEvent: {}
+[34.808088] (-) TimerEvent: {}
+[34.909147] (-) TimerEvent: {}
+[35.010180] (-) TimerEvent: {}
+[35.111098] (-) TimerEvent: {}
+[35.212108] (-) TimerEvent: {}
+[35.312985] (-) TimerEvent: {}
+[35.413826] (-) TimerEvent: {}
+[35.514674] (-) TimerEvent: {}
+[35.615898] (-) TimerEvent: {}
+[35.716790] (-) TimerEvent: {}
+[35.817717] (-) TimerEvent: {}
+[35.918704] (-) TimerEvent: {}
+[36.019905] (-) TimerEvent: {}
+[36.120776] (-) TimerEvent: {}
+[36.221663] (-) TimerEvent: {}
+[36.322593] (-) TimerEvent: {}
+[36.423518] (-) TimerEvent: {}
+[36.524405] (-) TimerEvent: {}
+[36.625276] (-) TimerEvent: {}
+[36.726146] (-) TimerEvent: {}
+[36.827072] (-) TimerEvent: {}
+[36.928105] (-) TimerEvent: {}
+[37.028998] (-) TimerEvent: {}
+[37.129977] (-) TimerEvent: {}
+[37.230941] (-) TimerEvent: {}
+[37.331841] (-) TimerEvent: {}
+[37.432713] (-) TimerEvent: {}
+[37.533669] (-) TimerEvent: {}
+[37.634846] (-) TimerEvent: {}
+[37.735826] (-) TimerEvent: {}
+[37.836673] (-) TimerEvent: {}
+[37.937625] (-) TimerEvent: {}
+[38.038500] (-) TimerEvent: {}
+[38.139349] (-) TimerEvent: {}
+[38.240295] (-) TimerEvent: {}
+[38.341212] (-) TimerEvent: {}
+[38.442163] (-) TimerEvent: {}
+[38.543072] (-) TimerEvent: {}
+[38.644061] (-) TimerEvent: {}
+[38.744983] (-) TimerEvent: {}
+[38.845859] (-) TimerEvent: {}
+[38.946745] (-) TimerEvent: {}
+[39.047613] (-) TimerEvent: {}
+[39.148498] (-) TimerEvent: {}
+[39.249413] (-) TimerEvent: {}
+[39.350304] (-) TimerEvent: {}
+[39.451199] (-) TimerEvent: {}
+[39.552233] (-) TimerEvent: {}
+[39.653353] (-) TimerEvent: {}
+[39.754440] (-) TimerEvent: {}
+[39.855470] (-) TimerEvent: {}
+[39.956570] (-) TimerEvent: {}
+[40.057698] (-) TimerEvent: {}
+[40.158670] (-) TimerEvent: {}
+[40.259986] (-) TimerEvent: {}
+[40.361285] (-) TimerEvent: {}
+[40.462543] (-) TimerEvent: {}
+[40.563635] (-) TimerEvent: {}
+[40.664706] (-) TimerEvent: {}
+[40.765639] (-) TimerEvent: {}
+[40.866645] (-) TimerEvent: {}
+[40.967805] (-) TimerEvent: {}
+[41.068688] (-) TimerEvent: {}
+[41.169665] (-) TimerEvent: {}
+[41.270580] (-) TimerEvent: {}
+[41.371425] (-) TimerEvent: {}
+[41.472333] (-) TimerEvent: {}
+[41.573293] (-) TimerEvent: {}
+[41.674126] (-) TimerEvent: {}
+[41.775005] (-) TimerEvent: {}
+[41.875892] (-) TimerEvent: {}
+[41.976757] (-) TimerEvent: {}
+[42.077637] (-) TimerEvent: {}
+[42.178533] (-) TimerEvent: {}
+[42.279429] (-) TimerEvent: {}
+[42.380394] (-) TimerEvent: {}
+[42.481343] (-) TimerEvent: {}
+[42.582253] (-) TimerEvent: {}
+[42.683359] (-) TimerEvent: {}
+[42.785063] (-) TimerEvent: {}
+[42.886198] (-) TimerEvent: {}
+[42.987079] (-) TimerEvent: {}
+[43.088116] (-) TimerEvent: {}
+[43.189196] (-) TimerEvent: {}
+[43.290142] (-) TimerEvent: {}
+[43.390912] (-) TimerEvent: {}
+[43.491736] (-) TimerEvent: {}
+[43.592797] (-) TimerEvent: {}
+[43.694026] (-) TimerEvent: {}
+[43.795422] (-) TimerEvent: {}
+[43.896523] (-) TimerEvent: {}
+[43.997563] (-) TimerEvent: {}
+[44.102551] (reflex-exo) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable control_node\x1b[0m\n'}
+[44.156231] (-) TimerEvent: {}
+[44.257483] (-) TimerEvent: {}
+[44.358449] (-) TimerEvent: {}
+[44.459616] (-) TimerEvent: {}
+[44.561389] (-) TimerEvent: {}
+[44.662793] (-) TimerEvent: {}
+[44.763842] (-) TimerEvent: {}
+[44.865392] (-) TimerEvent: {}
+[44.966413] (-) TimerEvent: {}
+[45.067853] (-) TimerEvent: {}
+[45.169115] (-) TimerEvent: {}
+[45.270678] (-) TimerEvent: {}
+[45.372525] (-) TimerEvent: {}
+[45.473817] (-) TimerEvent: {}
+[45.576543] (-) TimerEvent: {}
+[45.689217] (-) TimerEvent: {}
+[45.790292] (-) TimerEvent: {}
+[45.892330] (-) TimerEvent: {}
+[45.994028] (-) TimerEvent: {}
+[46.095877] (-) TimerEvent: {}
+[46.196773] (-) TimerEvent: {}
+[46.297776] (-) TimerEvent: {}
+[46.399289] (-) TimerEvent: {}
+[46.500142] (-) TimerEvent: {}
+[46.602344] (-) TimerEvent: {}
+[46.703978] (-) TimerEvent: {}
+[46.806265] (-) TimerEvent: {}
+[46.908675] (-) TimerEvent: {}
+[47.011375] (-) TimerEvent: {}
+[47.114955] (-) TimerEvent: {}
+[47.217951] (-) TimerEvent: {}
+[47.324921] (-) TimerEvent: {}
+[47.431558] (-) TimerEvent: {}
+[47.535162] (-) TimerEvent: {}
+[47.636916] (-) TimerEvent: {}
+[47.737792] (-) TimerEvent: {}
+[47.832538] (reflex-exo) StdoutLine: {'line': b'[100%] Built target control_node\n'}
+[47.838000] (-) TimerEvent: {}
+[47.943373] (-) TimerEvent: {}
+[47.980641] (reflex-exo) CommandEnded: {'returncode': 0}
+[48.043930] (-) TimerEvent: {}
+[48.145899] (-) TimerEvent: {}
+[48.220157] (reflex-exo) JobProgress: {'identifier': 'reflex-exo', 'progress': 'install'}
+[48.246426] (-) TimerEvent: {}
+[48.316492] (reflex-exo) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/ubuntu/reflex-therapy/build/reflex-exo'], 'cwd': '/home/ubuntu/reflex-therapy/build/reflex-exo', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'ubuntu'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/ubuntu'), ('OLDPWD', '/home/ubuntu'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('SYSTEMD_EXEC_PID', '3253'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/ubuntu/reflex-therapy/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'ubuntu'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'ubuntu'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/ubuntu-rpi:@/tmp/.ICE-unix/2941,unix/ubuntu-rpi:/tmp/.ICE-unix/2941'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/9eced903_84d1_41f1_90c6_1944ed78e15a'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'es_ES.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.XONXI2'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.111'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '12'), ('AMENT_PREFIX_PATH', '/home/ubuntu/reflex-therapy/install/reflex_readings_py:/home/ubuntu/reflex-therapy/install/reflex-exo:/home/ubuntu/reflex-therapy/install/reflex-control-cpp:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/ubuntu/reflex-therapy/build/reflex-exo'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/ubuntu/reflex-therapy/install/reflex_readings_py/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/ubuntu/reflex-therapy/install/reflex-exo:/home/ubuntu/reflex-therapy/install/reflex-control-cpp:/home/ubuntu/reflex-therapy/install/reflex_readings_py:/opt/ros/humble')]), 'shell': False}
+[48.349284] (-) TimerEvent: {}
+[48.374479] (reflex-exo) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[48.396705] (reflex-exo) StdoutLine: {'line': b'-- Installing: /home/ubuntu/reflex-therapy/install/reflex-exo/lib/reflex-exo/control_node\n'}
+[48.447027] (reflex-exo) StdoutLine: {'line': b'-- Set runtime path of "/home/ubuntu/reflex-therapy/install/reflex-exo/lib/reflex-exo/control_node" to ""\n'}
+[48.449541] (-) TimerEvent: {}
+[48.460241] (reflex-exo) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/reflex-therapy/install/reflex-exo/lib/reflex-exo/sensor_node.py\n'}
+[48.469648] (reflex-exo) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/reflex-therapy/install/reflex-exo/share/ament_index/resource_index/package_run_dependencies/reflex-exo\n'}
+[48.473888] (reflex-exo) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/reflex-therapy/install/reflex-exo/share/ament_index/resource_index/parent_prefix_path/reflex-exo\n'}
+[48.484575] (reflex-exo) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/reflex-therapy/install/reflex-exo/share/reflex-exo/environment/ament_prefix_path.sh\n'}
+[48.496588] (reflex-exo) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/reflex-therapy/install/reflex-exo/share/reflex-exo/environment/ament_prefix_path.dsv\n'}
+[48.498169] (reflex-exo) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/reflex-therapy/install/reflex-exo/share/reflex-exo/environment/path.sh\n'}
+[48.499665] (reflex-exo) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/reflex-therapy/install/reflex-exo/share/reflex-exo/environment/path.dsv\n'}
+[48.508669] (reflex-exo) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/reflex-therapy/install/reflex-exo/share/reflex-exo/local_setup.bash\n'}
+[48.510074] (reflex-exo) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/reflex-therapy/install/reflex-exo/share/reflex-exo/local_setup.sh\n'}
+[48.511036] (reflex-exo) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/reflex-therapy/install/reflex-exo/share/reflex-exo/local_setup.zsh\n'}
+[48.513227] (reflex-exo) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/reflex-therapy/install/reflex-exo/share/reflex-exo/local_setup.dsv\n'}
+[48.514218] (reflex-exo) StdoutLine: {'line': b'-- Installing: /home/ubuntu/reflex-therapy/install/reflex-exo/share/reflex-exo/package.dsv\n'}
+[48.517192] (reflex-exo) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/reflex-therapy/install/reflex-exo/share/ament_index/resource_index/packages/reflex-exo\n'}
+[48.518132] (reflex-exo) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/reflex-therapy/install/reflex-exo/share/reflex-exo/cmake/reflex-exoConfig.cmake\n'}
+[48.519042] (reflex-exo) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/reflex-therapy/install/reflex-exo/share/reflex-exo/cmake/reflex-exoConfig-version.cmake\n'}
+[48.541437] (reflex-exo) StdoutLine: {'line': b'-- Up-to-date: /home/ubuntu/reflex-therapy/install/reflex-exo/share/reflex-exo/package.xml\n'}
+[48.542959] (reflex-exo) CommandEnded: {'returncode': 0}
+[48.557757] (-) TimerEvent: {}
+[48.662402] (-) TimerEvent: {}
+[48.764557] (-) TimerEvent: {}
+[48.867279] (-) TimerEvent: {}
+[48.969497] (-) TimerEvent: {}
+[49.071344] (-) TimerEvent: {}
+[49.174380] (-) TimerEvent: {}
+[49.276981] (-) TimerEvent: {}
+[49.379401] (-) TimerEvent: {}
+[49.481052] (-) TimerEvent: {}
+[49.584668] (-) TimerEvent: {}
+[49.687452] (-) TimerEvent: {}
+[49.788512] (-) TimerEvent: {}
+[49.891397] (-) TimerEvent: {}
+[49.993822] (-) TimerEvent: {}
+[50.096318] (-) TimerEvent: {}
+[50.198288] (-) TimerEvent: {}
+[50.300908] (-) TimerEvent: {}
+[50.402451] (-) TimerEvent: {}
+[50.509978] (-) TimerEvent: {}
+[50.612232] (-) TimerEvent: {}
+[50.713036] (-) TimerEvent: {}
+[50.813980] (-) TimerEvent: {}
+[50.914931] (-) TimerEvent: {}
+[51.016149] (-) TimerEvent: {}
+[51.117021] (-) TimerEvent: {}
+[51.182228] (reflex-exo) JobEnded: {'identifier': 'reflex-exo', 'rc': 0}
+[51.186185] (-) EventReactorShutdown: {}

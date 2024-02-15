@@ -1,0 +1,24 @@
+[0.412s] Invoking command in '/home/ubuntu/reflex-therapy/build/reflex-exo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ubuntu/reflex-therapy/install/reflex_readings_py:/opt/ros/humble /usr/bin/cmake --build /home/ubuntu/reflex-therapy/build/reflex-exo -- -j4 -l4
+[0.768s] [35m[1mConsolidate compiler generated dependencies of target control_node[0m
+[1.000s] [100%] Built target control_node
+[1.048s] Invoked command in '/home/ubuntu/reflex-therapy/build/reflex-exo' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ubuntu/reflex-therapy/install/reflex_readings_py:/opt/ros/humble /usr/bin/cmake --build /home/ubuntu/reflex-therapy/build/reflex-exo -- -j4 -l4
+[1.240s] Invoking command in '/home/ubuntu/reflex-therapy/build/reflex-exo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ubuntu/reflex-therapy/install/reflex_readings_py:/opt/ros/humble /usr/bin/cmake --install /home/ubuntu/reflex-therapy/build/reflex-exo
+[1.280s] -- Install configuration: ""
+[1.281s] -- Up-to-date: /home/ubuntu/reflex-therapy/install/reflex-exo/lib/reflex-exo/control_node
+[1.283s] -- Installing: /home/ubuntu/reflex-therapy/install/reflex-exo/lib/reflex-exo/sensor_node.py
+[1.285s] -- Up-to-date: /home/ubuntu/reflex-therapy/install/reflex-exo/share/ament_index/resource_index/package_run_dependencies/reflex-exo
+[1.285s] -- Up-to-date: /home/ubuntu/reflex-therapy/install/reflex-exo/share/ament_index/resource_index/parent_prefix_path/reflex-exo
+[1.286s] -- Up-to-date: /home/ubuntu/reflex-therapy/install/reflex-exo/share/reflex-exo/environment/ament_prefix_path.sh
+[1.286s] -- Up-to-date: /home/ubuntu/reflex-therapy/install/reflex-exo/share/reflex-exo/environment/ament_prefix_path.dsv
+[1.287s] -- Up-to-date: /home/ubuntu/reflex-therapy/install/reflex-exo/share/reflex-exo/environment/path.sh
+[1.287s] -- Up-to-date: /home/ubuntu/reflex-therapy/install/reflex-exo/share/reflex-exo/environment/path.dsv
+[1.288s] -- Up-to-date: /home/ubuntu/reflex-therapy/install/reflex-exo/share/reflex-exo/local_setup.bash
+[1.288s] -- Up-to-date: /home/ubuntu/reflex-therapy/install/reflex-exo/share/reflex-exo/local_setup.sh
+[1.289s] -- Up-to-date: /home/ubuntu/reflex-therapy/install/reflex-exo/share/reflex-exo/local_setup.zsh
+[1.289s] -- Up-to-date: /home/ubuntu/reflex-therapy/install/reflex-exo/share/reflex-exo/local_setup.dsv
+[1.290s] -- Installing: /home/ubuntu/reflex-therapy/install/reflex-exo/share/reflex-exo/package.dsv
+[1.291s] -- Up-to-date: /home/ubuntu/reflex-therapy/install/reflex-exo/share/ament_index/resource_index/packages/reflex-exo
+[1.291s] -- Up-to-date: /home/ubuntu/reflex-therapy/install/reflex-exo/share/reflex-exo/cmake/reflex-exoConfig.cmake
+[1.292s] -- Up-to-date: /home/ubuntu/reflex-therapy/install/reflex-exo/share/reflex-exo/cmake/reflex-exoConfig-version.cmake
+[1.292s] -- Up-to-date: /home/ubuntu/reflex-therapy/install/reflex-exo/share/reflex-exo/package.xml
+[1.298s] Invoked command in '/home/ubuntu/reflex-therapy/build/reflex-exo' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/ubuntu/reflex-therapy/install/reflex_readings_py:/opt/ros/humble /usr/bin/cmake --install /home/ubuntu/reflex-therapy/build/reflex-exo
