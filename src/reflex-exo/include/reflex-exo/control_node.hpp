@@ -2,6 +2,9 @@
 #ifndef REFLEX_EXO_CONTROLNODE_HPP_
 #define REFLEX_EXO_CONTROLNODE_HPP_
 
+#include <iostream>
+#include <bcm2835.h>
+#include <stdlib.h>
 #include "rclcpp/rclcpp.hpp"
 #include "std_msgs/msg/float32.hpp"
 #include "std_msgs/msg/u_int16.hpp"
