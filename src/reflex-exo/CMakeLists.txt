@@ -11,14 +11,13 @@ find_package(ament_cmake_python REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(rclpy REQUIRED)
 find_package(std_msgs REQUIRED)
-find_package(bcm2835 REQUIRED)
 
 # include cpp "include" directory
 include_directories(include)
 
 # create cpp executables
 add_executable(control_node src/control_node.cpp)
-ament_target_dependencies(control_node rclcpp std_msgs bcm2835)
+ament_target_dependencies(control_node rclcpp std_msgs)
 
 # install cpp executables
 install(TARGETS
