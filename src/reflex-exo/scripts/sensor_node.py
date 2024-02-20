@@ -7,6 +7,7 @@ import can
 import struct
 import rclpy
 import numpy as np
+import argparse
 
 from rclpy.node import Node
 from std_msgs.msg import Float32
@@ -25,14 +26,16 @@ class SensorNode(Node):
     def init_pubs_(self):
         self.pot_pub = self.create_publisher(UInt16, '/reflex/readings/reflex_pot', 100)
         self.gauge_pub = self.create_publisher(Float32, '/reflex/readings/reflex_gauge', 100)
-        self.pot_raw = self.create_publisher(UInt16, '/reflex/readings/pot_raw', 100)
-        self.gauge_raw = self.create_publisher(UInt16, '/reflex/readings/gauge_raw', 100)
+
+        if debug:
+            self.pot_raw = self.create_publisher(UInt16, '/reflex/readings/pot_raw', 100)
+            self.gauge_raw = self.create_publisher(UInt16, '/reflex/readings/gauge_raw', 100)
 
 filter_states = [0.0]*2
 gauge_data  = [0] * 318 # gauge_data  = [None] * 318
 pot_params = [-0.10483871, 99.701613]
 gauge_params = [-0.0206526316, 12.8046316]
-DEBUG = True
+debug = False
 
 """FIR filter for gauge readings (Values exported from Simulink)"""
 def FIR_filter(raw_gauge):
@@ -77,6 +80,10 @@ def pot_proc(msg):
 
 """ Process the gauge readings. """
 def gauge_proc(msg):
+
+    if debug:
+        return FIR_filter(msg)
+    
     return gauge_params[0]*FIR_filter(msg) + gauge_params[1]
 
 def get_sensor_data(msg):
@@ -96,11 +103,19 @@ def get_data_raw(msg):
     return pot_msg, gauge_msg
 
 def main(args=None):
+    global debug
+
     rclpy.init(args=args)
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-D', action='store_true')
+    debug = parser.parse_args().D
 
     sensor_node = SensorNode()
     can_bus = CANbus(channel="can0")
 
+    if debug:
+        sensor_node.get_logger().info("[Reflex] Programm in debug mode...")
     sensor_node.get_logger().info("[Reflex] Reading sensor data...")
     while rclpy.ok():
         ''' Need to send a msg with the correct ID to receive the
@@ -118,7 +133,7 @@ def main(args=None):
             if gauge_msg.data is not None:
                 sensor_node.gauge_pub.publish(gauge_msg)
 
-            if DEBUG:
+            if debug:
                 pot_msg_raw = UInt16()
                 gauge_msg_raw = UInt16()
                 pot_msg_raw.data, gauge_msg_raw.data = get_data_raw(msg.data)
