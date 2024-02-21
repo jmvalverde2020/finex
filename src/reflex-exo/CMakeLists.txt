@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.8)
 project(reflex-exo)
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
-  add_compile_options(-Wall -Wextra -Wpedantic)
+  add_compile_options(-Wall -Wextra -Wpedantic -l bcm2835)
 endif()
 
 
@@ -12,10 +12,6 @@ find_package(ament_cmake_python REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(rclpy REQUIRED)
 find_package(std_msgs REQUIRED)
-find_package(bcm2835 REQUIRED)
-
-include_directories(${bcm2835_INCLUDE_DIRS})
-link_directories(${bcm2835_LIBRARY_DIRS})
 
 # include cpp "include" directory
 include_directories(include)
@@ -24,7 +20,8 @@ include_directories(include)
 add_executable(control_node src/control_node.cpp)
 target_include_directories(control_node PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-  $<INSTALL_INTERFACE:include>)
+  $<INSTALL_INTERFACE:include>
+  bcm2835)
 
 ament_target_dependencies(control_node 
   rclcpp 
