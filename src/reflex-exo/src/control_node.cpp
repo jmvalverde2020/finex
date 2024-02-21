@@ -41,8 +41,8 @@ void sendData(float voltage) {
 
   last_voltage_ = voltage;
 
-  uint16_t data_ = static_cast<uint16_t > (voltage * 3364.2 + 30215.3); //AD5570 callibration
-  char buf[2] = {data_ >> 8, data_ & 0xFF};
+  uint16_t data_ = static_cast<uint16_t >(voltage * 3364.2 + 30215.3); //AD5570 callibration
+  char buf[2] = [data_ >> 8, data_ & 0xFF];
   bcm2835_gpio_write(RPI_BPLUS_GPIO_J8_29,LOW);
 
   bcm2835_aux_spi_transfern(buf, sizeof(buf));

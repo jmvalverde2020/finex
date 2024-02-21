@@ -19,7 +19,10 @@ include_directories(include)
 
 # create cpp executables
 add_executable(control_node src/control_node.cpp)
-ament_target_dependencies(control_node rclcpp std_msgs)
+ament_target_dependencies(control_node 
+  rclcpp 
+  std_msgs
+  )
 
 # install cpp executables
 install(TARGETS
