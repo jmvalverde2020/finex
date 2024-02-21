@@ -4,10 +4,12 @@
 float last_voltage_ = 0;
 float VOL = 2.5;
 
+auto node = std::make_shared<reflex_exo::ControlNode>();
+
 bool SPI_init() {
   //Checking it is possible to acess bcm2835 librry:
   if (!bcm2835_init()) {
-    ROS_ERROR("BCM2835 INIT ERROR: bcm2835_init failed. ¿Are you running as root?");
+    RCLCPP_ERROR(node->get_logger(), "BCM2835 INIT ERROR: bcm2835_init failed. ¿Are you running as root?");
     return 0;
   }
   //Select the GPIO's used as Chanel Select as outputs. (Selected 29)
@@ -17,7 +19,7 @@ bool SPI_init() {
   bcm2835_gpio_write(RPI_BPLUS_GPIO_J8_29, HIGH);
   //Start SPI operations.
   if (!bcm2835_aux_spi_begin()) {
-   ROS_ERROR("SPI INIT ERROR: bcm2835_spi_init failed. ¿Are you running as root?");
+   RCLCPP_ERROR(node->get_logger(), "SPI INIT ERROR: bcm2835_spi_init failed. ¿Are you running as root?");
    return 0;
   }
   bcm2835_spi_setBitOrder(BCM2835_SPI_BIT_ORDER_MSBFIRST);      // In AD5570: "Data is t$
@@ -39,7 +41,7 @@ void sendData(float voltage) {
 
   last_voltage_ = voltage;
 
-  data_ = static_cast<uint16_t > (voltage * 3364.2 + 30215.3); //AD5570 callibration
+  uint16_t data_ = static_cast<uint16_t > (voltage * 3364.2 + 30215.3); //AD5570 callibration
   char buf[2] = {data_ >> 8, data_ & 0xFF};
   bcm2835_gpio_write(RPI_BPLUS_GPIO_J8_29,LOW);
 
@@ -64,7 +66,6 @@ int main(int argc, char * argv[])
 {
     rclcpp::init(argc, argv);
 
-    auto node = std::make_shared<reflex_exo::ControlNode>();
     if (!SPI_init()) {
         RCLCPP_ERROR(node->get_logger(), "SPI initialization failed");
     }
