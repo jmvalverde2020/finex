@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.8)
 project(reflex-exo)
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
-  add_compile_options(-Wall -Wextra -Wpedantic)
+  add_compile_options(-Wall -Wextra -Wpedantic -lbcm2835)
 endif()
 
 list(APPEND CMAKE_PREFIX_PATH "/usr/include/")
@@ -13,7 +13,6 @@ find_package(ament_cmake_python REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(rclpy REQUIRED)
 find_package(std_msgs REQUIRED)
-find_package(bcm2835 REQUIRED)
 
 # include cpp "include" directory
 include_directories(include)
