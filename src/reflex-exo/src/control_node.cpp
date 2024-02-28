@@ -38,7 +38,7 @@ int main(int argc, char * argv[])
     }
 
     auto start = std::chrono::high_resolution_clock::now();
-    std::chrono::microseconds goal = 99999;
+    std::chrono::microseconds goal(99999);
 
     while (rclcpp::ok()) {
         rclcpp::spin_some(node);
