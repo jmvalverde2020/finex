@@ -49,6 +49,8 @@ int main(int argc, char * argv[])
         stop = std::chrono::high_resolution_clock::now();
         if (std::chrono::duration_cast<std::chrono::microseconds>(stop - start) > goal){
             printf("hz = %d\n", count);
+            start = std::chrono::high_resolution_clock::now();
+            count = 0;
         }
     }
     

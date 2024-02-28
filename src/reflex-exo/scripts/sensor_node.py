@@ -169,8 +169,10 @@ def main(args=None):
                 sensor_node.gauge_pub.publish(gauge_msg)
             
             counter += 1
-            if time.time() - start == 1:
+            if (time.time() - start) == 1:
                 print("Hz:", counter)
+                counter = 0
+                start = time.time()
     
             if debug:
                 pot_msg_raw = UInt16()
