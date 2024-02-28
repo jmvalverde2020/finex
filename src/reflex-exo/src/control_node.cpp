@@ -46,7 +46,7 @@ int main(int argc, char * argv[])
         spi.sendData(vel);
         count++;
         stop = std::chrono::high_resolution_clock::now();
-        if (std::chrono::duration_cast<microseconds>(stop - start) > 99999){
+        if (std::chrono::duration_cast<std::chrono::microseconds>(stop - start) > 99999){
             printf("hz = %d\n", count);
         }
     }
