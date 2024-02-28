@@ -148,6 +148,9 @@ def main(args=None):
     if debug:
         sensor_node.get_logger().info("[Reflex] Programm in debug mode...")
     sensor_node.get_logger().info("[Reflex] Reading sensor data...")
+
+    start = time.time()
+    counter = 0
     while rclpy.ok():
         ''' Need to send a msg with the correct ID to receive the
             sensor readings. '''
@@ -159,12 +162,16 @@ def main(args=None):
 
             pot_msg.data, gauge_msg.data = get_sensor_data(msg.data)
             if pot_msg.data is not None:
-                print("sending:", pot_msg)
+                #print("sending:", pot_msg)
                 sensor_node.pot_pub.publish(pot_msg)
             if gauge_msg.data is not None:
-                print("sending:", gauge_msg)
+                #print("sending:", gauge_msg)
                 sensor_node.gauge_pub.publish(gauge_msg)
-
+            
+            counter += 1
+            if time.time() - start == 1:
+                print("Hz:", counter)
+    
             if debug:
                 pot_msg_raw = UInt16()
                 gauge_msg_raw = UInt16()

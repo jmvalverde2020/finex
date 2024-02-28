@@ -6,7 +6,7 @@ SPI spi;
 reflex_exo::ControlNode::SharedPtr node;
 
 void exit_handler(int s) {
-    // spi.end();
+    spi.end();
     rclcpp::shutdown();
     fprintf(stderr, "Signal %d\n", s);
     exit(0);
@@ -26,6 +26,8 @@ int main(int argc, char * argv[])
 {   
     signal(SIGINT, exit_handler);
     double vel;
+    int count = 0;
+    std::chrono::high_resolution_clock stop;
     rclcpp::init(argc, argv);
 
     node = std::make_shared<reflex_exo::ControlNode>();
@@ -35,11 +37,18 @@ int main(int argc, char * argv[])
         exit(EXIT_FAILURE);
     }
 
+    auto start = std::chrono::high_resolution_clock::now();
+
     while (rclcpp::ok()) {
-        vel = get_vel();
-        printf("vel %lf\n", vel);
-        spi.sendData(vel);
         rclcpp::spin_some(node);
+        vel = get_vel();
+        // printf("vel %lf\n", vel);
+        spi.sendData(vel);
+        count++;
+        stop = std::chrono::high_resolution_clock::now()
+        if (std::chrono::duration_cast<microseconds>(stop - start) > 99999){
+            printf("hz = %d\n", count);
+        }
     }
     
     spi.end();
