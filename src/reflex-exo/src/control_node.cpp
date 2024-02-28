@@ -6,7 +6,7 @@ SPI spi;
 reflex_exo::ControlNode::SharedPtr node;
 
 void exit_handler(int s) {
-    spi.end();
+    // spi.end();
     rclcpp::shutdown();
     fprintf(stderr, "Signal %d\n", s);
     exit(0);
@@ -18,8 +18,6 @@ double get_vel(){
 
     vel = std::min(vel, 9.0);
     vel = std::max(vel, -9.0);
-
-    
 
     return vel;
 }
@@ -34,6 +32,7 @@ int main(int argc, char * argv[])
 
     if (!spi.init(node)) {
         RCLCPP_ERROR(node->get_logger(), "SPI initialization failed");
+        exit(EXIT_FAILURE);
     }
 
     while (rclcpp::ok()) {

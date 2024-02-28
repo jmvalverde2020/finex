@@ -143,7 +143,7 @@ def main(args=None):
     debug = parser.parse_args().D
 
     sensor_node = SensorNode()
-    can_bus = CANbus(channel="can0")
+    #can_bus = CANbus(channel="can0")
 
     if debug:
         sensor_node.get_logger().info("[Reflex] Programm in debug mode...")
@@ -151,14 +151,16 @@ def main(args=None):
     while rclpy.ok():
         ''' Need to send a msg with the correct ID to receive the
             sensor readings. '''
-        can_bus.send_command()
-        msg = can_bus.receive_data()
+        #can_bus.send_command()
+        #msg = can_bus.receive_data()
+        msg = 3
         if msg is not None:
             pot_msg = UInt16()
             gauge_msg = Float32()
 
-            pot_msg.data, gauge_msg.data = get_sensor_data(msg.data)
-
+            #pot_msg.data, gauge_msg.data = get_sensor_data(msg.data)
+            pot_msg.data = 5
+            gauge_msg.data = 5.3
             if pot_msg.data is not None:
                 print("sending:", pot_msg)
                 sensor_node.pot_pub.publish(pot_msg)

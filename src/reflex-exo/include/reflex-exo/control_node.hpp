@@ -20,7 +20,7 @@ public:
     ControlNode()
     : Node("control_node")
     {
-        pot_sub_ = this->create_subscription<std_msgs::msg::UInt16>("/reflex/readings/gauge_raw", 100, 
+        pot_sub_ = this->create_subscription<std_msgs::msg::UInt16>("/reflex/readings/reflex_pot", 100, 
         std::bind(&ControlNode::pot_callback, this, _1));
 
         gauge_sub_ = this->create_subscription<std_msgs::msg::Float32>("/reflex/readings/reflex_gauge", 100, 
@@ -35,7 +35,7 @@ public:
 private:
     void pot_callback(std_msgs::msg::UInt16 msg)
     {
-        RCLCPP_INFO(this->get_logger(), "Recibido de la galga (raw): '%d'", msg.data);
+        RCLCPP_INFO(this->get_logger(), "Recibido del potenciometro: '%d'", msg.data);
         angle = msg.data;
     }
 
