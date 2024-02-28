@@ -27,7 +27,7 @@ int main(int argc, char * argv[])
     signal(SIGINT, exit_handler);
     double vel;
     int count = 0;
-    std::chrono::high_resolution_clock stop;
+    std::chrono::high_resolution_clock::time_point stop;
     rclcpp::init(argc, argv);
 
     node = std::make_shared<reflex_exo::ControlNode>();
