@@ -38,6 +38,7 @@ int main(int argc, char * argv[])
     }
 
     auto start = std::chrono::high_resolution_clock::now();
+    std::chrono::microseconds goal = 99999;
 
     while (rclcpp::ok()) {
         rclcpp::spin_some(node);
@@ -46,7 +47,7 @@ int main(int argc, char * argv[])
         spi.sendData(vel);
         count++;
         stop = std::chrono::high_resolution_clock::now();
-        if (std::chrono::duration_cast<std::chrono::microseconds>(stop - start) > std::chrono::duration_cast<std::chrono::microseconds>(99999)){
+        if (std::chrono::duration_cast<std::chrono::microseconds>(stop - start) > goal){
             printf("hz = %d\n", count);
         }
     }
