@@ -4,7 +4,7 @@
 #include <iostream>
 #include <bcm2835.h>
 #include <stdlib.h>
-#include "reflex-exo/control_node.hpp"
+#include "reflex-exo/Controller.hpp"
 #include "rclcpp/rclcpp.hpp"
 
 class SPI {
@@ -12,7 +12,7 @@ class SPI {
    SPI();
 
    //Initiate bc2835 and set up spi.
-   bool init(reflex_exo::ControlNode::SharedPtr node);
+   bool init(reflex_exo::Controller::SharedPtr node);
 
    //Send data to the selected joint.
    void sendData(float voltage);
@@ -23,7 +23,7 @@ class SPI {
  private:
    uint16_t data_;
    float last_voltage_;
-   reflex_exo::ControlNode::SharedPtr node_;
+   reflex_exo::Controller::SharedPtr node_;
 };
 
 #endif // REFLEX_EXO_SPI_HPP_

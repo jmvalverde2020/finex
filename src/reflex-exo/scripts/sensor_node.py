@@ -167,9 +167,9 @@ def main(args=None):
             if gauge_msg.data is not None:
                 #print("sending:", gauge_msg)
                 sensor_node.gauge_pub.publish(gauge_msg)
-            
+
             counter += 1
-            if (time.time() - start) == 1:
+            if (time.time() - start) > 0.99999:
                 print("Hz:", counter)
                 counter = 0
                 start = time.time()

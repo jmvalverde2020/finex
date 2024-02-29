@@ -7,7 +7,7 @@ SPI::SPI() {
   last_voltage_ = 0;
 }
 
-bool SPI::init(reflex_exo::ControlNode::SharedPtr node) {
+bool SPI::init(reflex_exo::Controller::SharedPtr node) {
 
   node_ = node;
   //Checking it is possible to acess bcm2835 library:

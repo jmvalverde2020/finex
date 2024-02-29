@@ -16,7 +16,12 @@ find_package(std_msgs REQUIRED)
 include_directories(include)
 
 # create cpp executables
-add_executable(control_node src/control_node.cpp src/SPI.cpp)
+add_executable(control_node 
+    src/control_node.cpp 
+    src/reflex-exo/SPI.cpp 
+    src/reflex-exo/Controller.cpp
+)
+
 target_include_directories(control_node PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include>
