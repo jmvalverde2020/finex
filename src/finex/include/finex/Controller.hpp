@@ -1,6 +1,6 @@
-
-#ifndef REFLEX_EXO_CONTROLLER_HPP_
-#define REFLEX_EXO_CONTROLLER_HPP_
+ 
+#ifndef FINEX_CONTROLLER_HPP_
+#define FINEX_CONTROLLER_HPP_
 
 #include <iostream>
 #include <stdlib.h>
@@ -8,11 +8,10 @@
 #include <chrono>
 #include "rclcpp/rclcpp.hpp"
 #include "std_msgs/msg/float32.hpp"
+#include "std_msgs/msg/float64.hpp"
 #include "std_msgs/msg/u_int16.hpp"
 
-using std::placeholders::_1;
-
-namespace reflex_exo
+namespace finex
 {
 
 class Controller : public rclcpp::Node
@@ -20,11 +19,9 @@ class Controller : public rclcpp::Node
 public:
     Controller();
 
-    void update_state();
+    double update();
 
-    double get_state();
-
-
+    double get_vel();
 
 private:
     void pot_callback(std_msgs::msg::UInt16 msg);
@@ -35,6 +32,7 @@ private:
 
     rclcpp::Subscription<std_msgs::msg::UInt16>::SharedPtr pot_sub_;
     rclcpp::Subscription<std_msgs::msg::Float32>::SharedPtr gauge_sub_;
+    rclcpp::Publisher<std_msgs::msg::Float64>::SharedPtr vel_pub_;
 
     double vel;
     int angle_;
@@ -42,6 +40,6 @@ private:
     
 };
 
-} // namespace reflex_exo
+} // namespace finex
 
-#endif // REFLEX_EXO_CONTROLLER_HPP_
+#endif // FINEX_CONTROLLER_HPP_

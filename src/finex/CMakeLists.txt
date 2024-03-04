@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.8)
-project(reflex-exo)
+project(finex)
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic -lbcm2835)
@@ -18,8 +18,8 @@ include_directories(include)
 # create cpp executables
 add_executable(control_node 
     src/control_node.cpp 
-    src/reflex-exo/SPI.cpp 
-    src/reflex-exo/Controller.cpp
+    src/finex/SPI.cpp 
+    src/finex/Controller.cpp
 )
 
 target_include_directories(control_node PUBLIC

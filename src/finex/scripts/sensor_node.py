@@ -55,12 +55,12 @@ class SensorNode(Node):
         self.init_pubs_()
 
     def init_pubs_(self):
-        self.pot_pub = self.create_publisher(UInt16, '/reflex/readings/reflex_pot', 100)
-        self.gauge_pub = self.create_publisher(Float32, '/reflex/readings/reflex_gauge', 100)
+        self.pot_pub = self.create_publisher(UInt16, '/finex/readings/finex_pot', 100)
+        self.gauge_pub = self.create_publisher(Float32, '/finex/readings/finex_gauge', 100)
 
         if debug:
-            self.pot_raw = self.create_publisher(UInt16, '/reflex/readings/pot_raw', 100)
-            self.gauge_raw = self.create_publisher(UInt16, '/reflex/readings/gauge_raw', 100)
+            self.pot_raw = self.create_publisher(UInt16, '/finex/readings/pot_raw', 100)
+            self.gauge_raw = self.create_publisher(UInt16, '/finex/readings/gauge_raw', 100)
 
 filter_states = [0.0]*2
 gauge_data  = [0] * 318 # gauge_data  = [None] * 318
@@ -146,8 +146,8 @@ def main(args=None):
     can_bus = CANbus(channel="can0")
 
     if debug:
-        sensor_node.get_logger().info("[Reflex] Programm in debug mode...")
-    sensor_node.get_logger().info("[Reflex] Reading sensor data...")
+        sensor_node.get_logger().info("[finex] Programm in debug mode...")
+    sensor_node.get_logger().info("[finex] Reading sensor data...")
 
     start = time.time()
     counter = 0
