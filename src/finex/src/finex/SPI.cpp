@@ -1,7 +1,7 @@
 
 #include "finex/SPI.hpp"
 
-float VoutZero = 0;
+float VoutZero = 0.759;
 
 SPI::SPI() {
   last_voltage_ = 0;
@@ -41,9 +41,10 @@ void SPI::sendData(float voltage) {
     voltage = 9;
   if (voltage <= -9)
     voltage = -9;
-
+  
   last_voltage_ = voltage;
 
+  printf("sending: %f\n", voltage);
   uint16_t data_ = static_cast<uint16_t>(voltage * 3364.2 + 30215.3); //AD5570 callibration
   char buf[2] = {static_cast<char>(data_ >> 8), static_cast<char>(data_ & 0xFF)};
   bcm2835_gpio_write(RPI_BPLUS_GPIO_J8_32,LOW);

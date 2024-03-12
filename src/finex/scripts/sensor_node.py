@@ -10,6 +10,7 @@ import numpy as np
 import argparse
 
 from rclpy.node import Node
+from rclpy import qos
 from std_msgs.msg import Float32
 from std_msgs.msg import UInt16
 
@@ -55,8 +56,9 @@ class SensorNode(Node):
         self.init_pubs_()
 
     def init_pubs_(self):
-        self.pot_pub = self.create_publisher(UInt16, '/finex/readings/finex_pot', 100)
-        self.gauge_pub = self.create_publisher(Float32, '/finex/readings/finex_gauge', 100)
+        qos_sensor = qos.qos_profile_sensor_data
+        self.pot_pub = self.create_publisher(UInt16, '/finex/readings/finex_pot', qos_profile=qos_sensor)
+        self.gauge_pub = self.create_publisher(Float32, '/finex/readings/finex_gauge', qos_profile=qos_sensor)
 
         if debug:
             self.pot_raw = self.create_publisher(UInt16, '/finex/readings/pot_raw', 100)
@@ -168,13 +170,15 @@ def main(args=None):
                 #print("sending:", gauge_msg)
                 sensor_node.gauge_pub.publish(gauge_msg)
 
-            counter += 1
-            if (time.time() - start) > 0.99999:
-                print("Hz:", counter)
-                counter = 0
-                start = time.time()
+            
     
             if debug:
+                counter += 1
+                if (time.time() - start) > 0.99999:
+                    print("Hz:", counter)
+                    counter = 0
+                    start = time.time()
+
                 pot_msg_raw = UInt16()
                 gauge_msg_raw = UInt16()
                 pot_msg_raw.data, gauge_msg_raw.data = get_data_raw(msg.data)

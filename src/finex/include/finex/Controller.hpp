@@ -19,6 +19,9 @@ class Controller : public rclcpp::Node
 public:
     Controller();
 
+    void init(double ts);
+    void init(double kp, double ki, double kd, double ts);
+
     double update();
 
     double get_vel();
@@ -28,15 +31,33 @@ private:
 
     void gauge_callback(std_msgs::msg::Float32 msg);
 
+    void timeOut_callback();
+
     void publish_vel();
+
+    double f_update();
+
+    double p_update();
+
+    double apply_PID(double error);
+
+    double check_limits();
 
     rclcpp::Subscription<std_msgs::msg::UInt16>::SharedPtr pot_sub_;
     rclcpp::Subscription<std_msgs::msg::Float32>::SharedPtr gauge_sub_;
     rclcpp::Publisher<std_msgs::msg::Float64>::SharedPtr vel_pub_;
+    rclcpp::TimerBase::SharedPtr time_out;
 
-    double vel;
+    double KP_, KD_, KI_;
+    double cp, cd, ci;
+    double prev_error, Ts;
+
+    double vel, MINV = -8.0, MAXV = 8.0;
+    double OFFSET=0.76;
+
     int angle_;
     float force_;
+    int control_mode=0;
     
 };
 

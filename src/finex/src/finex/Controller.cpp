@@ -1,47 +1,97 @@
 #include "finex/Controller.hpp"
 
+using std::placeholders::_1;
+using namespace std::chrono_literals;
+
 namespace finex
 {
 
 Controller::Controller()
 : Node("control_node")
 {
-    pot_sub_ = create_subscription<std_msgs::msg::UInt16>("/finex/readings/finex_pot", 100, 
+    rclcpp::QoS sensor_qos = rclcpp::SensorDataQoS();
+    pot_sub_ = this->create_subscription<std_msgs::msg::UInt16>("/finex/readings/finex_pot", sensor_qos, 
     std::bind(&Controller::pot_callback, this, _1));
 
-    gauge_sub_ = create_subscription<std_msgs::msg::Float32>("/finex/readings/finex_gauge", 100, 
+    gauge_sub_ = this->create_subscription<std_msgs::msg::Float32>("/finex/readings/finex_gauge", sensor_qos, 
     std::bind(&Controller::gauge_callback, this, _1));
 
-    vel_pub_ = create_publisher<std_msgs::msg::Float64>("/finex/velocity", 100);
+    vel_pub_ = this->create_publisher<std_msgs::msg::Float64>("/finex/velocity", sensor_qos);
 
-    declare_parameter("vel", 2.0);
+    time_out = this->create_wall_timer(
+      2ms, std::bind(&Controller::timeOut_callback, this));
+
+    declare_parameter("vel", 1.0);
+    declare_parameter("angle", 45);
+    declare_parameter("force", 0.0);
+
+    declare_parameter("kp", 0.1);
+    declare_parameter("kd", 0.0);
+    declare_parameter("ki", 0.0);
+}
+
+void
+Controller::init(double ts)
+{
+    double kp = this->get_parameter("kp").as_double();
+    double kd = this->get_parameter("kd").as_double();
+    double ki = this->get_parameter("ki").as_double();
+
+    KP_ = kp;
+    KI_ = ki;
+    KD_ = kd;
+
+    Ts = ts;
+
+    cp = 0.0;
+    ci = 0.0;
+    cd = 0.0;
+
+    vel = 0.0;
+    prev_error = 0.0;
+}
+
+void
+Controller::init(double kp, double ki, double kd, double ts)
+{
+    KP_ = kp;
+    KI_ = ki;
+    KD_ = kd;
+
+    Ts = ts;
+
+    cp = 0.0;
+    ci = 0.0;
+    cd = 0.0;
 }
 
 double
 Controller::update()
 {
-    vel = this->get_parameter("vel").as_double();
+    double error;
 
-    vel = std::min(vel, 9.0);
-    vel = std::max(vel, -9.0);
+    switch(control_mode) {
+        case 0:
+            error = p_update();
+            break;
 
-    printf("Force: %f\n", force_);
-    printf("Angle: %d\n", angle_);
+        case 1:
+            error = f_update();
+            break;
+
+        default:
+            return OFFSET;
+    }
+
+    vel = apply_PID(error);
+    vel = check_limits();
+
+    // vel = this->get_parameter("vel").as_double(); // For debuging purposes
     publish_vel();
 
+    printf("velocity: %f\n", vel);
+    vel = vel+OFFSET;
     return vel;
-}
-
-double
-Controller::get_vel()
-{
-    return vel;
-}
-
-void
-Controller::publish_vel()
-{
-    vel_pub_->publish(vel);
 }
 
 void 
@@ -58,4 +108,78 @@ Controller::gauge_callback(std_msgs::msg::Float32 msg)
     force_ = msg.data;
 }
 
+void 
+Controller::timeOut_callback()
+{
+    angle_ = -1;
+    force_ = 0.0;
+}
+
+void
+Controller::publish_vel()
+{
+    auto msg = std_msgs::msg::Float64();
+    msg.data = vel;
+    vel_pub_->publish(msg);
+}
+
+double
+Controller::p_update()
+{
+    int goal = this->get_parameter("angle").as_int();
+
+    if (angle_ < 0) {
+        return 0.0;
+    }
+
+    if (!(goal > 0 && goal < 90) || !(angle_ > 0 && angle_ < 90)) {
+        return prev_error;
+    }
+
+    double error = static_cast<double>(goal - angle_);
+
+    return error;
+}
+
+double
+Controller::f_update()
+{
+    int goal = this->get_parameter("force").as_double();
+    double error = goal - force_;
+
+    return error;
+}
+
+double
+Controller::apply_PID(double error)
+{
+    // Proportional controller
+    cp = error * KP_;
+
+    // Integrative controller
+    ci += error * Ts * KI_;
+
+    // Derivative controller
+    cd = ((error - prev_error) / Ts) * KD_;
+
+    vel = cp + ci + cd;
+
+    prev_error = error;
+
+    return vel;
+}
+
+double
+Controller::check_limits()
+{
+    vel = std::clamp(vel, MINV, MAXV);
+    if (angle_ < 5 && vel < 0.0) {
+        vel = 0.0;
+    }
+    else if (angle_ > 85 && vel > 0.0) {
+        vel = 0.0;
+    }
+
+    return vel;
+}
 } // namespace finex

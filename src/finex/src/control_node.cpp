@@ -2,10 +2,9 @@
 #include "finex/Controller.hpp"
 #include "finex/SPI.hpp"
 
-using namespace std::chrono_literals;
-
 SPI spi;
-finex::Controller::SharedPtr node;
+
+using namespace std::chrono_literals;
 
 void exit_handler(int s) {
     spi.end();
@@ -18,25 +17,30 @@ int main(int argc, char * argv[])
 {   
     signal(SIGINT, exit_handler);
 
-    double vel;
+    int FRQ = 400;
+    double Ts = 1.0/FRQ;
 
+    double vel = 0.0;
     int count = 0;
     std::chrono::high_resolution_clock::time_point stop;
 
-    rclcpp::WallRate loop_rate(2500us); // 400Hz
+    rclcpp::WallRate loop_rate(FRQ); // 400Hz
     rclcpp::init(argc, argv);
-    node = std::make_shared<finex::Controller>();
 
-    if (!spi.init(node)) {
-        RCLCPP_ERROR(node->get_logger(), "SPI initialization failed");
+    auto controller = std::make_shared<finex::Controller>();
+
+    if (!spi.init(controller)) {
+        RCLCPP_ERROR(controller->get_logger(), "SPI initialization failed");
         exit(EXIT_FAILURE);
     }
 
+    controller->init(Ts);
+
     auto start = std::chrono::high_resolution_clock::now();
     while (rclcpp::ok()) {
-        rclcpp::spin_some(node);
+        rclcpp::spin_some(controller);
 
-        vel = node->update();
+        vel = controller->update();
         spi.sendData(vel);
 
         count++;
