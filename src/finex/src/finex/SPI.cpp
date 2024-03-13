@@ -3,8 +3,21 @@
 
 float VoutZero = 0.759;
 
+enum {
+  BUFF_SIZE = 2,
+};
+
 SPI::SPI() {
   last_voltage_ = 0;
+}
+
+void
+printBuff(char *buff)
+{
+  for(int i = 0; i < BUFF_SIZE; i++) {
+    printf("%02x", buff[i]);
+  }
+  printf("\n");
 }
 
 bool SPI::init(finex::Controller::SharedPtr node) {
@@ -37,17 +50,16 @@ bool SPI::init(finex::Controller::SharedPtr node) {
 void SPI::sendData(float voltage) {
 
   // Motor Driver limitations
-  if (voltage >= 9)
-    voltage = 9;
-  if (voltage <= -9)
-    voltage = -9;
+  voltage = std::clamp(voltage, MINV, MAXV);
   
   last_voltage_ = voltage;
 
-  printf("sending: %f\n", voltage);
+  // printf("sending: %f\n", voltage);
   uint16_t data_ = static_cast<uint16_t>(voltage * 3364.2 + 30215.3); //AD5570 callibration
   char buf[2] = {static_cast<char>(data_ >> 8), static_cast<char>(data_ & 0xFF)};
   bcm2835_gpio_write(RPI_BPLUS_GPIO_J8_32,LOW);
+
+  // printBuff(buf);
 
   bcm2835_aux_spi_transfern(buf, sizeof(buf));
 

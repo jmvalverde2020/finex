@@ -35,6 +35,8 @@ private:
 
     void publish_vel();
 
+    void publish_goal(int goal);
+
     double f_update();
 
     double p_update();
@@ -46,13 +48,13 @@ private:
     rclcpp::Subscription<std_msgs::msg::UInt16>::SharedPtr pot_sub_;
     rclcpp::Subscription<std_msgs::msg::Float32>::SharedPtr gauge_sub_;
     rclcpp::Publisher<std_msgs::msg::Float64>::SharedPtr vel_pub_;
+    rclcpp::Publisher<std_msgs::msg::UInt16>::SharedPtr goal_pub_;
     rclcpp::TimerBase::SharedPtr time_out;
 
-    double KP_, KD_, KI_;
     double cp, cd, ci;
     double prev_error, Ts;
 
-    double vel, MINV = -8.0, MAXV = 8.0;
+    double vel, MINV = -3.0, MAXV = 3.0;
     double OFFSET=0.76;
 
     int angle_;

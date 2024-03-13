@@ -3,6 +3,12 @@
 using std::placeholders::_1;
 using namespace std::chrono_literals;
 
+enum gains {
+    KP = 0.144,
+    KD = 0.0,
+    KI = 0.2866
+};
+
 namespace finex
 {
 
@@ -17,6 +23,7 @@ Controller::Controller()
     std::bind(&Controller::gauge_callback, this, _1));
 
     vel_pub_ = this->create_publisher<std_msgs::msg::Float64>("/finex/velocity", sensor_qos);
+    goal_pub_ = this->create_publisher<std_msgs::msg::UInt16>("/finex/goal_pot", sensor_qos);
 
     time_out = this->create_wall_timer(
       2ms, std::bind(&Controller::timeOut_callback, this));
@@ -25,21 +32,17 @@ Controller::Controller()
     declare_parameter("angle", 45);
     declare_parameter("force", 0.0);
 
-    declare_parameter("kp", 0.1);
-    declare_parameter("kd", 0.0);
-    declare_parameter("ki", 0.0);
+    declare_parameter("kp", KP);
+    declare_parameter("kd", KD);
+    declare_parameter("ki", KI);
 }
 
 void
 Controller::init(double ts)
 {
-    double kp = this->get_parameter("kp").as_double();
-    double kd = this->get_parameter("kd").as_double();
-    double ki = this->get_parameter("ki").as_double();
-
-    KP_ = kp;
-    KI_ = ki;
-    KD_ = kd;
+    KP_ = KP;
+    KI_ = KI;
+    KD_ = KD;
 
     Ts = ts;
 
@@ -123,6 +126,14 @@ Controller::publish_vel()
     vel_pub_->publish(msg);
 }
 
+void
+Controller::publish_goal(int goal)
+{
+    auto msg = std_msgs::msg::UInt16();
+    msg.data = goal;
+    goal_pub_->publish(msg);
+}
+
 double
 Controller::p_update()
 {
@@ -136,6 +147,7 @@ Controller::p_update()
         return prev_error;
     }
 
+    publish_goal(goal);
     double error = static_cast<double>(goal - angle_);
 
     return error;
@@ -153,8 +165,14 @@ Controller::f_update()
 double
 Controller::apply_PID(double error)
 {
+    KP_ = this->get_parameter("kp").as_double();
+    KD_ = this->get_parameter("kd").as_double();
+    KI_ = this->get_parameter("ki").as_double();
+
     // Proportional controller
     cp = error * KP_;
+
+    printf("Kp = %f, cp = %f\n", KP_, cp);
 
     // Integrative controller
     ci += error * Ts * KI_;

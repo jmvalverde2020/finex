@@ -23,6 +23,7 @@ class SPI {
  private:
    uint16_t data_;
    float last_voltage_;
+   float MINV = -3.0, MAXV = 3.0;
    finex::Controller::SharedPtr node_;
 };
 
