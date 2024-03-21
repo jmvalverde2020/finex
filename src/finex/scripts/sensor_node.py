@@ -62,12 +62,12 @@ class SensorNode(Node):
 
         if debug:
             self.pot_raw = self.create_publisher(UInt16, '/finex/readings/pot_raw', 100)
-            self.gauge_raw = self.create_publisher(UInt16, '/finex/readings/gauge_raw', 100)
+            self.gauge_raw = self.create_publisher(Float32, '/finex/readings/gauge_raw', 100)
 
 filter_states = [0.0]*2
 gauge_data  = [0] * 318 # gauge_data  = [None] * 318
 pot_params = [-0.10483871, 99.701613]
-gauge_params = [-0.0206526316, 12.8046316]
+gauge_params = [0.0282302158273381, -15.950071942446]
 debug = False
 
 """FIR filter for gauge readings (Values exported from Simulink)"""
@@ -113,10 +113,6 @@ def pot_proc(msg):
 
 """ Process the gauge readings. """
 def gauge_proc(msg):
-
-    if debug:
-        return FIR_filter(msg)
-    
     return gauge_params[0]*FIR_filter(msg) + gauge_params[1]
 
 def get_sensor_data(msg):
@@ -133,7 +129,7 @@ def get_data_raw(msg):
     pot_msg = struct.unpack('<H', msg[:2])[0]    # 2 most significant bytes correspond to potentiometer reading
     gauge_msg = struct.unpack('<H', msg[2:4])[0]   # 3-4 bytes correspond to strain_gauge reading
 
-    return pot_msg, gauge_msg
+    return max(0, round(biquad_filter(pot_msg))), FIR_filter(gauge_msg)
 
 def main(args=None):
     global debug
@@ -180,7 +176,7 @@ def main(args=None):
                     start = time.time()
 
                 pot_msg_raw = UInt16()
-                gauge_msg_raw = UInt16()
+                gauge_msg_raw = Float32()
                 pot_msg_raw.data, gauge_msg_raw.data = get_data_raw(msg.data)
                 if pot_msg_raw.data is not None:
                     sensor_node.pot_raw.publish(pot_msg_raw)
