@@ -23,6 +23,12 @@ Controller::Controller()
     time_out = this->create_wall_timer(
       2ms, std::bind(&Controller::timeOut_callback, this));
 
+    init_params();
+}
+
+void
+Controller::init_params()
+{
     this->declare_parameter("vel", 1.0);
     this->declare_parameter("angle", 45);
 
@@ -35,20 +41,35 @@ Controller::Controller()
     this->declare_parameter("ks", 0.1);
 
     // Params for controlling via GUI
-    this->declare_parameter("start", 0);
-    start_param_ = std::make_shared<rclcpp::ParametersEventHandler>(this);
-    startcb_handle_ = start_param_->add_parameter_callback("start", &Controller::set_start);
-
-    this->declare_parameter("record", 0);
-    this->declare_parameter("mode", 1);
     this->declare_parameter("trajectory", 0);
     this->declare_parameter("impedance_level", 0);
-}
 
-void
-Controller::set_start()
-{
-    start = this->get_parameter("start").as_int();
+    // Init Start param and callback
+    this->declare_parameter("start", 0);
+    start_param_ = std::make_shared<rclcpp::ParameterEventHandler>(this);
+    auto set_start = [this](const rclcpp::Parameter & p) {
+        start = p.as_int();
+    };
+    start_cb_handle_ = start_param_->add_parameter_callback("start", set_start);
+
+    // Init Record param and callback
+    this->declare_parameter("record", 0);
+    record_param_ = std::make_shared<rclcpp::ParameterEventHandler>(this);
+    auto set_record = [this](const rclcpp::Parameter & p) {
+        record = p.as_int();
+    };
+    record_cb_handle_ = record_param_->add_parameter_callback("record", set_record);
+
+    // Init Mode param and callback
+    this->declare_parameter("mode", 1);
+    mode_param_ = std::make_shared<rclcpp::ParameterEventHandler>(this);
+    auto set_mode = [this](const rclcpp::Parameter & p) {
+        control_mode = p.as_int();
+        set_gains();
+    };
+    mode_cb_handle_ = mode_param_->add_parameter_callback("mode", set_mode);
+
+    
 }
 
 int
@@ -343,8 +364,9 @@ Controller::t_loop()
         }
 
         if (t_goal == P_MIN) {
-            t_state = GO;
-            return t_goal;
+            t_state = END;
+            t_path = FREE;
+            return -1;
         }
     }
 
@@ -399,36 +421,6 @@ Controller::t_stand()
     return t_goal;
 }
 
-void
-Controller::ask_trajectory()
-{
-    int t_aux;
-
-    std::cout << "Please enter the desired trajectory (1 -> loop | 2 -> sit | 3 -> stand)\n";
-    std::cin >> t_aux;
-
-    switch (t_aux) {
-        case LOOP:
-            t_path = LOOP;
-            break;
-        
-        case SIT:
-            t_path = SIT;
-            break;
-        
-        case STAND:
-            t_path = STAND;
-            break;
-        
-        default:
-            std::cout << "Invalid trajectory, please try again\n";
-            t_path = FREE;
-            break;
-    }
-
-    t_state = START;
-}
-
 int
 Controller::get_trajectory()
 {
@@ -452,6 +444,8 @@ Controller::get_trajectory()
             break;
     }
 
+    
+
     return t_goal;
 }
 
@@ -464,6 +458,8 @@ Controller::impedance()
     level = this->get_parameter("impedance_level").as_int();
 
     KS_ = (level * KS_MAX) / 5.0;
+
+    printf("Impedance gain: %f\n", KS_);
 
     goal = get_trajectory();
 

@@ -46,7 +46,7 @@ public:
     double update();
 private:
 
-    void set_start();
+    void init_params();
     int set_gains();
     void pot_callback(std_msgs::msg::UInt16 msg);
     void gauge_callback(std_msgs::msg::Float32 msg);
@@ -67,7 +67,6 @@ private:
     int t_sit();
     int t_loop();
 
-    void ask_trajectory();
     int get_trajectory();
 
     double impedance();
@@ -80,7 +79,13 @@ private:
     rclcpp::TimerBase::SharedPtr time_out;
 
     std::shared_ptr<rclcpp::ParameterEventHandler> start_param_;
-    std::shared_ptr<rclcpp::ParameterCallbackHandle> startcb_handle_;
+    std::shared_ptr<rclcpp::ParameterCallbackHandle> start_cb_handle_;
+
+    std::shared_ptr<rclcpp::ParameterEventHandler> record_param_;
+    std::shared_ptr<rclcpp::ParameterCallbackHandle> record_cb_handle_;
+
+    std::shared_ptr<rclcpp::ParameterEventHandler> mode_param_;
+    std::shared_ptr<rclcpp::ParameterCallbackHandle> mode_cb_handle_;
 
     double KP_, KI_, KD_, KS_;
     double cp, ci, cd;
@@ -95,6 +100,7 @@ private:
     float force_;
 
     int start = 0;
+    int record = 0;
     // Control modes: positon -> 0, transparent -> 1, impedance -> 2.
     int control_mode=-1;
 
