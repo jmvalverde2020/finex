@@ -33,6 +33,13 @@ Controller::Controller()
 
     // For tunning the impedance model
     this->declare_parameter("ks", 0.1);
+
+    // Params for controlling via GUI
+    this->declare_parameter("start", 0);
+    this->declare_parameter("record", 0);
+    this->declare_parameter("mode", 1);
+    this->declare_parameter("trajectory", 0);
+    this->declare_parameter("impedance_level", 0);
 }
 
 int
@@ -105,6 +112,8 @@ double
 Controller::update()
 {
     double error, f_goal, p_goal;
+
+    control_mode = this->get_parameter("mode").as_int();
 
     switch(control_mode) {
         case POSITION:
@@ -243,7 +252,6 @@ Controller::f_update(double goal)
 double
 Controller::apply_PID(double error)
 {
-
     // For tunning the controller
     KP_ = this->get_parameter("kp").as_double();
     KD_ = this->get_parameter("kd").as_double();
@@ -407,7 +415,7 @@ Controller::get_trajectory()
             break;
         
         default:
-            ask_trajectory();
+            t_path = this->get_parameter("trajectory").as_int();
             t_goal = -1;
             break;
     }
@@ -418,9 +426,12 @@ Controller::get_trajectory()
 double
 Controller::impedance()
 {
-    int goal; // = this->get_parameter("angle").as_int();
+    int goal, level;
     double error, imp;
-    KS_ = this->get_parameter("ks").as_double();
+
+    level = this->get_parameter("impedance_level").as_int();
+
+    KS_ = (level * KS_MAX) / 5.0;
 
     goal = get_trajectory();
 

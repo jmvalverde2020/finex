@@ -27,9 +27,9 @@ enum trajectories {
 
 enum states {
     BACK = -1,
-    START = 0,
-    GO = 1,
-    END = 2
+    START,
+    GO,
+    END
 };
 
 namespace finex
@@ -44,9 +44,6 @@ public:
     void init(double kp, double ki, double kd, double ts, int mode);
 
     double update();
-
-    double get_vel();
-
 private:
     void pot_callback(std_msgs::msg::UInt16 msg);
     void gauge_callback(std_msgs::msg::Float32 msg);
@@ -57,7 +54,6 @@ private:
     void publish_force(double goal);
 
     double f_update(double goal);
-    double imp_update(double goal);
     double p_update(int goal);
 
     double apply_PID(double error);
@@ -117,7 +113,7 @@ private:
     const double KD_T = 0.0;
 
     // Gains for impredance
-    const double KS_I = 0.7;
+    const double KS_I = 0.7, KS_MAX = 3;
 };
 
 } // namespace finex

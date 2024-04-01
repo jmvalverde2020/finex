@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>finex_gui</name>
+  <version>0.0.1</version>
+  <description>
+     GUI for finex exoskeleton
+  </description>
+  <license>BSD-3-Clause</license>
+  <maintainer email="juanmivalverde2@gmail.com">Juanmi Valverde</maintainer>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <build_depend>interactive_markers</build_depend>
+  <build_depend>qtbase5-dev</build_depend>
+  <build_depend>qtdeclarative5-dev</build_depend>
+  <build_depend>rclcpp</build_depend>
+  <build_depend>rclcpp_components</build_depend>
+
+  <exec_depend>libqt5-core</exec_depend>
+  <exec_depend>libqt5-gui</exec_depend>
+  <exec_depend>libqt5-quick</exec_depend>
+  <exec_depend>libqt5-widgets</exec_depend>
+  
+  <exec_depend>rclcpp</exec_depend>
+  <exec_depend>rclcpp_components</exec_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
