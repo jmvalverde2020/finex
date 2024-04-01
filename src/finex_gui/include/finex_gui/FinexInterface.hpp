@@ -40,6 +40,8 @@ private:
 
     int set_impedance_level(int level);
 
+    void show_progress();
+
     bool recording = false;
 
     Ui::FinexInterface *ui;

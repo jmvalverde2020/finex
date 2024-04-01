@@ -36,10 +36,19 @@ Controller::Controller()
 
     // Params for controlling via GUI
     this->declare_parameter("start", 0);
+    start_param_ = std::make_shared<rclcpp::ParametersEventHandler>(this);
+    startcb_handle_ = start_param_->add_parameter_callback("start", &Controller::set_start);
+
     this->declare_parameter("record", 0);
     this->declare_parameter("mode", 1);
     this->declare_parameter("trajectory", 0);
     this->declare_parameter("impedance_level", 0);
+}
+
+void
+Controller::set_start()
+{
+    start = this->get_parameter("start").as_int();
 }
 
 int
@@ -47,38 +56,9 @@ Controller::init(double ts, int mode)
 {  
     control_mode = mode;
 
-    switch (control_mode) {
-        case POSITION:
-            KP_ = KP_A;
-            KI_ = KI_A;
-            KD_ = KD_A;
-            break;
-
-        case TRANSPARENT:
-            KP_ = KP_T;
-            KI_ = KI_T;
-            KD_ = KD_T;
-            break;
-        
-        case IMPEDANCE:
-            KP_ = KP_T;
-            KI_ = KI_T;
-            KD_ = KD_T;
-            KS_ = KS_I;
-            break;
-
-        default:
-            return 0;
+    if (!set_gains()) {
+        return 0;
     }
-    
-    std::vector<rclcpp::Parameter> all_new_parameters{
-    rclcpp::Parameter("kp", KP_), 
-    rclcpp::Parameter("ki", KI_),
-    rclcpp::Parameter("kd", KD_),
-    rclcpp::Parameter("ks", KS_)
-    };
-
-    this->set_parameters(all_new_parameters);
 
     Ts = ts;
 
@@ -113,7 +93,12 @@ Controller::update()
 {
     double error, f_goal, p_goal;
 
-    control_mode = this->get_parameter("mode").as_int();
+    if (!start) {
+        printf("STOP\n");
+        return OFFSET;
+    }
+
+    printf("RUNNING\n");
 
     switch(control_mode) {
         case POSITION:
@@ -135,7 +120,7 @@ Controller::update()
             break;
 
         default:
-            printf("STOP\n");
+            printf("No control\n");
             return OFFSET;
     }
 
@@ -149,6 +134,53 @@ Controller::update()
     vel = vel+OFFSET;
 
     return vel;
+}
+
+int
+Controller::set_gains()
+{
+    switch (control_mode) {
+        case POSITION:
+            KP_ = KP_A;
+            KI_ = KI_A;
+            KD_ = KD_A;
+            break;
+
+        case TRANSPARENT:
+            KP_ = KP_T;
+            KI_ = KI_T;
+            KD_ = KD_T;
+            break;
+        
+        case IMPEDANCE:
+            KP_ = KP_T;
+            KI_ = KI_T;
+            KD_ = KD_T;
+            KS_ = KS_I;
+            break;
+
+        default:
+            return 0;
+    }
+    
+    std::vector<rclcpp::Parameter> all_new_parameters{
+    rclcpp::Parameter("kp", KP_), 
+    rclcpp::Parameter("ki", KI_),
+    rclcpp::Parameter("kd", KD_),
+    rclcpp::Parameter("ks", KS_)
+    };
+
+    auto results = this->set_parameters(all_new_parameters);
+
+    // Check to see if it was set.
+    for (auto & result : results) {
+        if (!result.successful) {
+        fprintf(stderr, "Failed to set parameter: %s", result.reason.c_str());
+        return 0;
+        }
+    }
+
+    return 1;
 }
 
 void 

@@ -19,6 +19,8 @@ FinexInterface::FinexInterface(QWidget *parent)
 
   connect(ui->Impedance_slider, &QSlider::valueChanged, this, &FinexInterface::set_impedance_level);
   connect(ui->Control_dial, &QDial::valueChanged, this, &FinexInterface::change_mode);
+
+  show_progress();
 }
 
 FinexInterface::~FinexInterface()
@@ -29,16 +31,16 @@ FinexInterface::~FinexInterface()
 int
 FinexInterface::set_start()
 { 
-  // std::vector<rclcpp::Parameter> param {rclcpp::Parameter("start", 1)};
-  // auto set_results = parameters_client->set_parameters(param);
+  std::vector<rclcpp::Parameter> param {rclcpp::Parameter("start", 1)};
+  auto set_results = parameters_client->set_parameters(param);
 
-  // // Check to see if it was set.
-  // for (auto & result : set_results) {
-  //   if (!result.successful) {
-  //     fprintf(stderr, "Failed to set parameter: %s", result.reason.c_str());
-  //     return 0;
-  //   }
-  // }
+  // Check to see if it was set.
+  for (auto & result : set_results) {
+    if (!result.successful) {
+      fprintf(stderr, "Failed to set parameter: %s", result.reason.c_str());
+      return 0;
+    }
+  }
 
   printf("OLE OLE\n");
 
@@ -48,16 +50,16 @@ FinexInterface::set_start()
 int
 FinexInterface::set_stop()
 {
-  // std::vector<rclcpp::Parameter> param {rclcpp::Parameter("start", 0)};
-  // auto set_results = parameters_client->set_parameters(param);
+  std::vector<rclcpp::Parameter> param {rclcpp::Parameter("start", 0)};
+  auto set_results = parameters_client->set_parameters(param);
 
-  // // Check to see if it was set.
-  // for (auto & result : set_results) {
-  //   if (!result.successful) {
-  //     fprintf(stderr, "Failed to set parameter: %s", result.reason.c_str());
-  //     return 0;
-  //   }
-  // }
+  // Check to see if it was set.
+  for (auto & result : set_results) {
+    if (!result.successful) {
+      fprintf(stderr, "Failed to set parameter: %s", result.reason.c_str());
+      return 0;
+    }
+  }
 
   printf("NOOOOO\n");
 
@@ -67,16 +69,16 @@ FinexInterface::set_stop()
 int
 FinexInterface::record()
 {
-  // std::vector<rclcpp::Parameter> param {rclcpp::Parameter("record", recording)};
-  // auto set_results = parameters_client->set_parameters(param);
+  std::vector<rclcpp::Parameter> param {rclcpp::Parameter("record", recording)};
+  auto set_results = parameters_client->set_parameters(param);
 
-  // // Check to see if it was set.
-  // for (auto & result : set_results) {
-  //   if (!result.successful) {
-  //     fprintf(stderr, "Failed to set parameter: %s", result.reason.c_str());
-  //     return 0;
-  //   }
-  // }
+  // Check to see if it was set.
+  for (auto & result : set_results) {
+    if (!result.successful) {
+      fprintf(stderr, "Failed to set parameter: %s", result.reason.c_str());
+      return 0;
+    }
+  }
 
   recording = !recording;
 
@@ -87,16 +89,16 @@ FinexInterface::record()
 int
 FinexInterface::change_mode(int mode)
 {
-  // std::vector<rclcpp::Parameter> param {rclcpp::Parameter("mode", mode)};
-  // auto set_results = parameters_client->set_parameters(param);
+  std::vector<rclcpp::Parameter> param {rclcpp::Parameter("mode", mode)};
+  auto set_results = parameters_client->set_parameters(param);
 
-  // // Check to see if it was set.
-  // for (auto & result : set_results) {
-  //   if (!result.successful) {
-  //     fprintf(stderr, "Failed to set parameter: %s", result.reason.c_str());
-  //     return 0;
-  //   }
-  // }
+  // Check to see if it was set.
+  for (auto & result : set_results) {
+    if (!result.successful) {
+      fprintf(stderr, "Failed to set parameter: %s", result.reason.c_str());
+      return 0;
+    }
+  }
 
   printf("Toca esto: %d\n", mode);
   return 1;
@@ -106,9 +108,9 @@ int
 FinexInterface::set_loop()
 { 
   
-  // if !(change_trajectory(1)) {
-  //   return 0;
-  // }
+  if (!change_trajectory(1)) {
+    return 0;
+  }
 
   printf("LOOP\n");
 
@@ -119,9 +121,9 @@ int
 FinexInterface::set_sit()
 { 
   
-  // if !(change_trajectory(2)) {
-  //   return 0;
-  // }
+  if (!change_trajectory(2)) {
+    return 0;
+  }
 
   printf("SIT\n");
 
@@ -132,9 +134,9 @@ int
 FinexInterface::set_stand()
 { 
   
-  // if !(change_trajectory(3)) {
-  //   return 0;
-  // }
+  if (!change_trajectory(3)) {
+    return 0;
+  }
 
   printf("STAND\n");
 
@@ -155,24 +157,31 @@ FinexInterface::change_trajectory(int path)
     }
   }
 
+  ui->Progress_Bar->setValue(0);
   return 1;
 }
 
 int
 FinexInterface::set_impedance_level(int level)
 {
-  // std::vector<rclcpp::Parameter> param {rclcpp::Parameter("impedance_level", level)};
-  // auto set_results = parameters_client->set_parameters(param);
+  std::vector<rclcpp::Parameter> param {rclcpp::Parameter("impedance_level", level)};
+  auto set_results = parameters_client->set_parameters(param);
 
-  // // Check to see if it was set.
-  // for (auto & result : set_results) {
-  //   if (!result.successful) {
-  //     fprintf(stderr, "Failed to set parameter: %s", result.reason.c_str());
-  //     return 0;
-  //   }
-  // }
+  // Check to see if it was set.
+  for (auto & result : set_results) {
+    if (!result.successful) {
+      fprintf(stderr, "Failed to set parameter: %s", result.reason.c_str());
+      return 0;
+    }
+  }
 
   printf("Quiero %d empanadas porfi\n", level);
 
   return 1;
+}
+
+void
+FinexInterface::show_progress()
+{
+  ui->Progress_Bar->setValue(10);
 }

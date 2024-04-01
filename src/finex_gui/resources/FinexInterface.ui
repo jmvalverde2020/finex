@@ -283,7 +283,7 @@ gridline-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(
      <number>1</number>
     </property>
    </widget>
-   <widget class="QProgressBar" name="progressBar">
+   <widget class="QProgressBar" name="Progress_Bar">
     <property name="geometry">
      <rect>
       <x>340</x>

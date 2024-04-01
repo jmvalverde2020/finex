@@ -45,6 +45,9 @@ public:
 
     double update();
 private:
+
+    void set_start();
+    int set_gains();
     void pot_callback(std_msgs::msg::UInt16 msg);
     void gauge_callback(std_msgs::msg::Float32 msg);
     void timeOut_callback();
@@ -76,6 +79,9 @@ private:
     rclcpp::Publisher<std_msgs::msg::Float64>::SharedPtr force_pub_;
     rclcpp::TimerBase::SharedPtr time_out;
 
+    std::shared_ptr<rclcpp::ParameterEventHandler> start_param_;
+    std::shared_ptr<rclcpp::ParameterCallbackHandle> startcb_handle_;
+
     double KP_, KI_, KD_, KS_;
     double cp, ci, cd;
     double prev_error, Ts;
@@ -88,8 +94,9 @@ private:
     int angle_;
     float force_;
 
-    // Control modes: positon -> 0, transparent -> 1.
-    int control_mode=POSITION;
+    int start = 0;
+    // Control modes: positon -> 0, transparent -> 1, impedance -> 2.
+    int control_mode=-1;
 
     /*--------CONSTANTS-------*/
 
