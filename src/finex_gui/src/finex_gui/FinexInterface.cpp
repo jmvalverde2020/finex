@@ -157,8 +157,8 @@ FinexInterface::set_impedance_level(int level)
 void
 FinexInterface::show_progress()
 { 
-  std::string name = "progress";
-  int value = parameters_client->get_parameter("progress").as_int();
+  int value;
+  value = parameters_client->get_parameters({"progress"})[0].as_int();
 
   ui->Progress_Bar->setValue(value);
 }
