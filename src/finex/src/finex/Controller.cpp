@@ -454,7 +454,7 @@ Controller::check_progress(double error)
     int value = static_cast<int>(100 - error);
 
     std::vector<rclcpp::Parameter> param {rclcpp::Parameter("progress", value)};
-    auto set_results = parameters_client->set_parameters(param);
+    auto set_results = this->set_parameters(param);
 
     // Check to see if it was set.
     for (auto & result : set_results) {
