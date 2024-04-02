@@ -68,6 +68,7 @@ private:
     int t_loop();
 
     int get_trajectory();
+    void check_progress(double error);
 
     double impedance();
 
@@ -100,7 +101,7 @@ private:
     float force_;
 
     int start = 0;
-    int record = 0;
+    bool record = false;
     // Control modes: positon -> 0, transparent -> 1, impedance -> 2.
     int control_mode=-1;
 

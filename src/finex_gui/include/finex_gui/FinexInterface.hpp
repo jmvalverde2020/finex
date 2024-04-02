@@ -26,6 +26,7 @@ public:
 
 private:
 
+    int update_param(std::vector<rclcpp::Parameter> param);
     int set_start();
     int set_stop();
 

@@ -43,6 +43,7 @@ Controller::init_params()
     // Params for controlling via GUI
     this->declare_parameter("trajectory", 0);
     this->declare_parameter("impedance_level", 0);
+    this->declare_parameter("progress", 0);
 
     // Init Start param and callback
     this->declare_parameter("start", 0);
@@ -53,10 +54,10 @@ Controller::init_params()
     start_cb_handle_ = start_param_->add_parameter_callback("start", set_start);
 
     // Init Record param and callback
-    this->declare_parameter("record", 0);
+    this->declare_parameter("record", false);
     record_param_ = std::make_shared<rclcpp::ParameterEventHandler>(this);
     auto set_record = [this](const rclcpp::Parameter & p) {
-        record = p.as_int();
+        record = p.as_bool();
     };
     record_cb_handle_ = record_param_->add_parameter_callback("record", set_record);
 
@@ -68,8 +69,6 @@ Controller::init_params()
         set_gains();
     };
     mode_cb_handle_ = mode_param_->add_parameter_callback("mode", set_mode);
-
-    
 }
 
 int
@@ -449,6 +448,22 @@ Controller::get_trajectory()
     return t_goal;
 }
 
+void
+Controller::check_progress(double error)
+{
+    int value = static_cast<int>(100 - error);
+
+    std::vector<rclcpp::Parameter> param {rclcpp::Parameter("progress", value)};
+    auto set_results = parameters_client->set_parameters(param);
+
+    // Check to see if it was set.
+    for (auto & result : set_results) {
+        if (!result.successful) {
+        fprintf(stderr, "Failed to set parameter: %s", result.reason.c_str());
+        }
+    }
+}
+
 double
 Controller::impedance()
 {
@@ -468,6 +483,8 @@ Controller::impedance()
     }
 
     error = p_update(goal);
+    check_progress(error);
+
     imp = error * KS_;
     printf("Impedancia: %f\n", imp);
 

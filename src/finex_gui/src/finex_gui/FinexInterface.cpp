@@ -29,9 +29,8 @@ FinexInterface::~FinexInterface()
 }
 
 int
-FinexInterface::set_start()
-{ 
-  std::vector<rclcpp::Parameter> param {rclcpp::Parameter("start", 1)};
+FinexInterface::update_param(std::vector<rclcpp::Parameter> param)
+{
   auto set_results = parameters_client->set_parameters(param);
 
   // Check to see if it was set.
@@ -42,7 +41,17 @@ FinexInterface::set_start()
     }
   }
 
-  printf("OLE OLE\n");
+  return 1;
+}
+
+int
+FinexInterface::set_start()
+{ 
+  std::vector<rclcpp::Parameter> param {rclcpp::Parameter("start", 1)};
+  
+  if (!update_param(param)) {
+    return 0;
+  }
 
   return 1;
 }
@@ -51,17 +60,10 @@ int
 FinexInterface::set_stop()
 {
   std::vector<rclcpp::Parameter> param {rclcpp::Parameter("start", 0)};
-  auto set_results = parameters_client->set_parameters(param);
 
-  // Check to see if it was set.
-  for (auto & result : set_results) {
-    if (!result.successful) {
-      fprintf(stderr, "Failed to set parameter: %s", result.reason.c_str());
-      return 0;
-    }
+  if (!update_param(param)) {
+    return 0;
   }
-
-  printf("NOOOOO\n");
 
   return 1;
 }
@@ -70,19 +72,13 @@ int
 FinexInterface::record()
 {
   std::vector<rclcpp::Parameter> param {rclcpp::Parameter("record", recording)};
-  auto set_results = parameters_client->set_parameters(param);
 
-  // Check to see if it was set.
-  for (auto & result : set_results) {
-    if (!result.successful) {
-      fprintf(stderr, "Failed to set parameter: %s", result.reason.c_str());
-      return 0;
-    }
+  if (!update_param(param)) {
+    return 0;
   }
 
   recording = !recording;
 
-  printf("PUE GRABANDO? %d\n", recording);
   return 1;
 }
 
@@ -90,17 +86,11 @@ int
 FinexInterface::change_mode(int mode)
 {
   std::vector<rclcpp::Parameter> param {rclcpp::Parameter("mode", mode)};
-  auto set_results = parameters_client->set_parameters(param);
 
-  // Check to see if it was set.
-  for (auto & result : set_results) {
-    if (!result.successful) {
-      fprintf(stderr, "Failed to set parameter: %s", result.reason.c_str());
-      return 0;
-    }
+  if (!update_param(param)) {
+    return 0;
   }
 
-  printf("Toca esto: %d\n", mode);
   return 1;
 }
 
@@ -112,7 +102,6 @@ FinexInterface::set_loop()
     return 0;
   }
 
-  printf("LOOP\n");
 
   return 1;
 }
@@ -125,7 +114,6 @@ FinexInterface::set_sit()
     return 0;
   }
 
-  printf("SIT\n");
 
   return 1;
 }
@@ -138,7 +126,6 @@ FinexInterface::set_stand()
     return 0;
   }
 
-  printf("STAND\n");
 
   return 1;
 }
@@ -147,17 +134,11 @@ int
 FinexInterface::change_trajectory(int path)
 {
   std::vector<rclcpp::Parameter> param {rclcpp::Parameter("trajectory", path)};
-  auto set_results = parameters_client->set_parameters(param);
-
-  // Check to see if it was set.
-  for (auto & result : set_results) {
-    if (!result.successful) {
-      fprintf(stderr, "Failed to set parameter: %s", result.reason.c_str());
-      return 0;
-    }
+  
+  if (!update_param(param)) {
+    return 0;
   }
 
-  ui->Progress_Bar->setValue(0);
   return 1;
 }
 
@@ -165,23 +146,19 @@ int
 FinexInterface::set_impedance_level(int level)
 {
   std::vector<rclcpp::Parameter> param {rclcpp::Parameter("impedance_level", level)};
-  auto set_results = parameters_client->set_parameters(param);
-
-  // Check to see if it was set.
-  for (auto & result : set_results) {
-    if (!result.successful) {
-      fprintf(stderr, "Failed to set parameter: %s", result.reason.c_str());
-      return 0;
-    }
+  
+  if (!update_param(param)) {
+    return 0;
   }
-
-  printf("Quiero %d empanadas porfi\n", level);
 
   return 1;
 }
 
 void
 FinexInterface::show_progress()
-{
-  ui->Progress_Bar->setValue(10);
+{ 
+  std::string name = "progress";
+  int value = parameters_client->get_parameter("progress").as_int();
+
+  ui->Progress_Bar->setValue(value);
 }
