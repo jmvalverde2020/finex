@@ -7,10 +7,6 @@ FinexInterface::FinexInterface(rclcpp::Node::SharedPtr node, QWidget *parent)
   : QMainWindow(parent)
   , ui(new Ui::FinexInterface)
 { 
-  timer_node = node;
-  auto param_node = rclcpp::Node::make_shared("finex_gui_param_node");
-  parameters_client = std::make_shared<rclcpp::SyncParametersClient>(param_node, "control_node");
-
   ui->setupUi(this);
 
   connect(ui->Start_B, &QPushButton::pressed, this, &FinexInterface::set_start);
@@ -22,6 +18,10 @@ FinexInterface::FinexInterface(rclcpp::Node::SharedPtr node, QWidget *parent)
 
   connect(ui->Impedance_slider, &QSlider::valueChanged, this, &FinexInterface::set_impedance_level);
   connect(ui->Control_dial, &QDial::valueChanged, this, &FinexInterface::change_mode);
+
+  timer_node = node;
+  auto param_node = rclcpp::Node::make_shared("finex_gui_param_node");
+  parameters_client = std::make_shared<rclcpp::SyncParametersClient>(param_node, "control_node");
 
   progress_timer = timer_node->create_wall_timer(
       2ms, std::bind(&FinexInterface::show_progress, this));

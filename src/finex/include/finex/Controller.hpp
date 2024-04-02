@@ -22,7 +22,8 @@ enum trajectories {
     FREE = 0,
     LOOP,
     SIT,
-    STAND
+    STAND,
+    SQUAT
 };
 
 enum states {
@@ -66,9 +67,10 @@ private:
     int t_stand();
     int t_sit();
     int t_loop();
+    int t_squat();
 
     int get_trajectory();
-    void check_progress(double error);
+    void check_progress();
 
     double impedance();
 

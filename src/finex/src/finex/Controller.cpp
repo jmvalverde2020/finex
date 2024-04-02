@@ -350,6 +350,7 @@ Controller::t_loop()
 {
     if (t_state == START) {
         t_state = GO;
+        t_goal = P_MIN;
     }
     else if (t_state == GO) {
         if (t_goal == angle_) {
@@ -370,6 +371,39 @@ Controller::t_loop()
             t_state = END;
             t_path = FREE;
             return -1;
+        }
+    }
+
+    return t_goal;
+}
+
+int
+Controller::t_squat()
+{
+    if (t_state == START) {
+        t_state = BACK;
+        t_goal = P_MAX;
+    }
+    else if (t_state == GO) {
+        if (t_goal == angle_) {
+            t_goal = angle_ + 1;
+        }
+
+        if (t_goal == P_MAX) {
+            t_state = END;
+            t_path = FREE;
+            return -1;
+        }
+    }
+    else if (t_state == BACK) {
+        if (t_goal == angle_) {
+            t_goal = angle_ - 1;
+        }
+
+        if (t_goal == P_MIN) {
+            t_state = BACK;
+            return t_goal;
+            
         }
     }
 
@@ -441,6 +475,10 @@ Controller::get_trajectory()
             t_goal = t_stand();
             break;
         
+        case SQUAT:
+            t_goal = t_squat();
+            break;
+
         default:
             t_path = this->get_parameter("trajectory").as_int();
             t_goal = -1;
@@ -453,9 +491,21 @@ Controller::get_trajectory()
 }
 
 void
-Controller::check_progress(double error)
+Controller::check_progress()
 {
-    int value = static_cast<int>(100 - error);
+    int value;
+    
+    if ( t_state == GO )  {
+        value = static_cast<int>(angle_ * 1.11);
+        if ( t_path == LOOP ) {
+            std::max(value, 50);
+        }
+    } else if ( t_state == BACK ) {
+        value = static_cast<int>((P_MAX - angle_) * 1.11);
+        if ( t_path == SQUAT ) {
+            std::max(value, 50);
+        }
+    }
 
     std::vector<rclcpp::Parameter> param {rclcpp::Parameter("progress", value)};
     auto set_results = this->set_parameters(param);
@@ -491,7 +541,7 @@ Controller::impedance()
     if (std::isnan(error)) {
         return error;
     }
-    check_progress(error);
+    check_progress();
 
     imp = error * KS_;
     printf("Impedancia: %f\n", imp);
