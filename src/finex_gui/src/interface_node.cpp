@@ -13,13 +13,15 @@ int main(int argc, char* argv[])
 
     rclcpp::init(argc, argv);
 
-    FinexInterface w;
+    auto node = rclcpp::Node::make_shared("finex_gui_timer_node");
+    FinexInterface w(node);
     w.show();
 
     app.processEvents();
     while (rclcpp::ok())
     {
       app.processEvents();
+      rclcpp::spin_some(node);
     }
 
     signal(SIGINT, siginthandler);

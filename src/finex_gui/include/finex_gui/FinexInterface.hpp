@@ -1,6 +1,7 @@
 #ifndef FINEX_INTERFACE_HPP
 #define FINEX_INTERFACE_HPP
 
+#include <chrono>
 
 #include <QMainWindow>
 #include <QWidget>
@@ -21,7 +22,7 @@ class FinexInterface : public QMainWindow
     Q_OBJECT
 
 public:
-    FinexInterface(QWidget *parent = nullptr);
+    FinexInterface(rclcpp::Node::SharedPtr node_, QWidget *parent = nullptr);
     ~FinexInterface();
 
 private:
@@ -51,7 +52,9 @@ private:
     QProgressBar *progress;
 
     rclcpp::SyncParametersClient::SharedPtr  parameters_client;
-    rclcpp::Node::SharedPtr node;
+    rclcpp::Node::SharedPtr timer_node;
+    rclcpp::TimerBase::SharedPtr progress_timer;
+
 };
 
 #endif // FINEX_INTERFACE_HPP

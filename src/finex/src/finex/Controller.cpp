@@ -263,13 +263,13 @@ Controller::p_update(int goal)
 
     if (angle_ < 0 || angle_ > 95) {
         RCLCPP_ERROR(this->get_logger(), "No angle data");
-        return 0.0;
+        return std::nan("");
     }
 
     if (goal < P_MIN || goal > P_MAX) {
         printf("Goal: %d, Trajectory: %d\n", goal, t_path);
         RCLCPP_ERROR(this->get_logger(), "Goal out of bounds");
-        return 0.0;
+        return std::nan("");
     }
 
     publish_angle(goal);
@@ -285,13 +285,13 @@ Controller::f_update(double goal)
 
     if (std::isnan(force_)) {
         RCLCPP_ERROR(this->get_logger(), "No force data");
-        return 0.0;
+        return std::nan("");
     }
 
     std::clamp(goal, F_MIN, F_MAX);
 
     if (force_ < F_MIN || force_ > F_MAX) {
-        return 0.0;
+        return std::nan("");
     }
 
     publish_force(goal);
@@ -303,7 +303,11 @@ Controller::f_update(double goal)
 
 double
 Controller::apply_PID(double error)
-{
+{   
+    if (std::isnan(error)) {
+        return 0.0;
+    }
+
     // For tunning the controller
     KP_ = this->get_parameter("kp").as_double();
     KD_ = this->get_parameter("kd").as_double();
@@ -483,6 +487,10 @@ Controller::impedance()
     }
 
     error = p_update(goal);
+
+    if (std::isnan(error)) {
+        return error;
+    }
     check_progress(error);
 
     imp = error * KS_;
