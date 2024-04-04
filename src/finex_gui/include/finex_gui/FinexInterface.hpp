@@ -51,7 +51,7 @@ private:
     QDial *control_dial;
     QProgressBar *progress;
 
-    rclcpp::SyncParametersClient::SharedPtr  parameters_client;
+    rclcpp::SyncParametersClient::SharedPtr parameters_client;
     rclcpp::Node::SharedPtr timer_node;
     rclcpp::TimerBase::SharedPtr progress_timer;
 

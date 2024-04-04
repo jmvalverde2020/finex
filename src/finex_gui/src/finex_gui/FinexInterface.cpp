@@ -24,7 +24,7 @@ FinexInterface::FinexInterface(rclcpp::Node::SharedPtr node, QWidget *parent)
   parameters_client = std::make_shared<rclcpp::SyncParametersClient>(param_node, "control_node");
 
   progress_timer = timer_node->create_wall_timer(
-      2ms, std::bind(&FinexInterface::show_progress, this));
+      50ms, std::bind(&FinexInterface::show_progress, this));
 }
 
 FinexInterface::~FinexInterface()

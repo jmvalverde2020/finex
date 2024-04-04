@@ -179,7 +179,7 @@ Controller::set_gains()
             KS_ = KS_I;
             break;
 
-        default:
+        default:progress
             return 0;
     }
     
@@ -187,7 +187,8 @@ Controller::set_gains()
     rclcpp::Parameter("kp", KP_), 
     rclcpp::Parameter("ki", KI_),
     rclcpp::Parameter("kd", KD_),
-    rclcpp::Parameter("ks", KS_)
+    rclcpp::Parameter("ks", KS_),
+    rclcpp::Parameter("progress", 0)
     };
 
     auto results = this->set_parameters(all_new_parameters);
