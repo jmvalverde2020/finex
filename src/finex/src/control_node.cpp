@@ -19,7 +19,6 @@ int main(int argc, char * argv[])
 
     int FRQ = 400;
     double Ts = 1.0/FRQ;
-
     double vel = 0.0;
     // int count = 0;
     std::chrono::high_resolution_clock::time_point stop;
@@ -39,6 +38,7 @@ int main(int argc, char * argv[])
         exit(EXIT_FAILURE);
     }
 
+    RCLCPP_INFO(controller->get_logger(), "System initiated");
     // auto start = std::chrono::high_resolution_clock::now();
     while (rclcpp::ok()) {
         rclcpp::spin_some(controller);

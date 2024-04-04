@@ -129,6 +129,7 @@ private:
     const double KP_T = 0.15;
     const double KI_T = 0.0;
     const double KD_T = 0.0;
+    const double W_MAX = 2;
 
     // Gains for impredance
     const double KS_I = 0.7, KS_MAX = 3;

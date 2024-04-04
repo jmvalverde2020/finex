@@ -125,11 +125,8 @@ Controller::update()
     double error, f_goal, p_goal;
 
     if (!start) {
-        // printf("STOP\n");
         return OFFSET;
     }
-
-    // printf("RUNNING\n");
 
     switch(control_mode) {
         case POSITION:
@@ -159,7 +156,7 @@ Controller::update()
     
     vel = check_limits();
 
-    // printf("velocity: %f\n", vel);
+    printf("velocity: %f\n", vel);
     publish_vel();
 
     vel = vel+OFFSET;
@@ -338,9 +335,11 @@ Controller::apply_PID(double error)
     cd = ((error - prev_error) / Ts) * KD_;
     vel = cp + ci + cd;
 
-    if (t_path == GAIT) {
+    if (control_mode == GAIT) {
         double w = this->get_parameter("gait_assistance").as_double();
-        vel = vel * w;
+
+        printf("assistance: %f\n", w);
+        vel = (w * W_MAX) / 4.0;
     }
     prev_error = error;
 

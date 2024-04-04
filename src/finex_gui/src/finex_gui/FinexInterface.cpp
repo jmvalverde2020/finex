@@ -151,8 +151,7 @@ FinexInterface::change_trajectory(int path)
 int
 FinexInterface::set_gait_assistance(int level)
 {
-  double assistance = static_cast<double>(level / 2.0);
-  std::vector<rclcpp::Parameter> param {rclcpp::Parameter("gait_assistance", assistance)};
+  std::vector<rclcpp::Parameter> param {rclcpp::Parameter("gait_assistance", level)};
   
   if (!update_param(param)) {
     return 0;
