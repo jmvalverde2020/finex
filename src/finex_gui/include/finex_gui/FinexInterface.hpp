@@ -40,6 +40,7 @@ private:
     int set_stand();
     int change_trajectory(int path);
 
+    int set_gait_assistance(int level);
     int set_impedance_level(int level);
 
     void show_progress();
@@ -47,9 +48,6 @@ private:
     bool recording = false;
 
     Ui::FinexInterface *ui;
-    QSlider *impedance_level;
-    QDial *control_dial;
-    QProgressBar *progress;
 
     rclcpp::SyncParametersClient::SharedPtr parameters_client;
     rclcpp::Node::SharedPtr timer_node;

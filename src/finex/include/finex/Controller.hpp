@@ -14,7 +14,7 @@
 
 enum modes {
     POSITION = 0,
-    TRANSPARENT,
+    GAIT,
     IMPEDANCE
 };
 
@@ -41,8 +41,8 @@ class Controller : public rclcpp::Node
 public:
     Controller();
 
-    int init(double ts, int mode);
-    void init(double kp, double ki, double kd, double ts, int mode);
+    int init(double ts);
+    void init(double kp, double ki, double kd, double ts);
 
     double update();
 private:
@@ -63,6 +63,8 @@ private:
     double apply_PID(double error);
 
     double check_limits();
+
+    int t_clear();
 
     int t_stand();
     int t_sit();
@@ -104,8 +106,8 @@ private:
 
     int start = 0;
     bool record = false;
-    // Control modes: positon -> 0, transparent -> 1, impedance -> 2.
-    int control_mode=-1;
+    // Control modes: positon -> 0, gait -> 1, impedance -> 2.
+    int control_mode=GAIT;
 
     /*--------CONSTANTS-------*/
 

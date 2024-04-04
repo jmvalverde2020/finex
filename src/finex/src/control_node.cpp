@@ -13,37 +13,12 @@ void exit_handler(int s) {
     exit(0);
 }
 
-int select_mode() {
-
-    int mode;
-
-    std::cout << "Please enter the control mode (0 -> position | 1 -> transparent | 2 -> impedance)\n";
-    std::cin >> mode;
-
-    switch(mode) {
-        case POSITION:
-            return POSITION;
-        
-        case TRANSPARENT:
-            return TRANSPARENT;
-        
-        case IMPEDANCE:
-            return IMPEDANCE;
-        
-        default:
-            std::cout << "\tInvalid number. Please try again\n";
-            break;
-    }
-    return -1;
-}
-
 int main(int argc, char * argv[])
 {   
     signal(SIGINT, exit_handler);
 
     int FRQ = 400;
     double Ts = 1.0/FRQ;
-    int mode = -1;
 
     double vel = 0.0;
     // int count = 0;
@@ -58,12 +33,8 @@ int main(int argc, char * argv[])
         RCLCPP_ERROR(controller->get_logger(), "SPI initialization failed");
         exit(EXIT_FAILURE);
     }
-
-    while (mode < 0) {
-        mode = select_mode();
-    }
     
-    if (!controller->init(Ts, mode)){
+    if (!controller->init(Ts)){
         RCLCPP_ERROR(controller->get_logger(), "Controller initialization failed");
         exit(EXIT_FAILURE);
     }

@@ -43,6 +43,7 @@ Controller::init_params()
     // Params for controlling via GUI
     this->declare_parameter("trajectory", 0);
     this->declare_parameter("impedance_level", 0);
+    this->declare_parameter("gait_assistance", 1.0);
     this->declare_parameter("progress", 0);
 
     // Init Start param and callback
@@ -50,6 +51,10 @@ Controller::init_params()
     start_param_ = std::make_shared<rclcpp::ParameterEventHandler>(this);
     auto set_start = [this](const rclcpp::Parameter & p) {
         start = p.as_int();
+
+        if (!start) {
+            printf("STOPPED\n");
+        }
     };
     start_cb_handle_ = start_param_->add_parameter_callback("start", set_start);
 
@@ -58,6 +63,12 @@ Controller::init_params()
     record_param_ = std::make_shared<rclcpp::ParameterEventHandler>(this);
     auto set_record = [this](const rclcpp::Parameter & p) {
         record = p.as_bool();
+
+        if (record) {
+            printf("RECORDING\n");
+        } else {
+            printf("RECORDING ENDED\n");
+        }
     };
     record_cb_handle_ = record_param_->add_parameter_callback("record", set_record);
 
@@ -72,9 +83,9 @@ Controller::init_params()
 }
 
 int
-Controller::init(double ts, int mode)
+Controller::init(double ts)
 {  
-    control_mode = mode;
+    control_mode = GAIT;
 
     if (!set_gains()) {
         return 0;
@@ -93,9 +104,9 @@ Controller::init(double ts, int mode)
 }
 
 void
-Controller::init(double kp, double ki, double kd, double ts, int mode)
+Controller::init(double kp, double ki, double kd, double ts)
 {
-    control_mode = mode;
+    control_mode = GAIT;
 
     KP_ = kp;
     KI_ = ki;
@@ -114,11 +125,11 @@ Controller::update()
     double error, f_goal, p_goal;
 
     if (!start) {
-        printf("STOP\n");
+        // printf("STOP\n");
         return OFFSET;
     }
 
-    printf("RUNNING\n");
+    // printf("RUNNING\n");
 
     switch(control_mode) {
         case POSITION:
@@ -127,7 +138,7 @@ Controller::update()
             vel = apply_PID(error);
             break;
 
-        case TRANSPARENT:
+        case GAIT:
             f_goal = 0.0;
             error = f_update(f_goal);
             vel = apply_PID(error);
@@ -148,7 +159,7 @@ Controller::update()
     
     vel = check_limits();
 
-    printf("velocity: %f\n", vel);
+    // printf("velocity: %f\n", vel);
     publish_vel();
 
     vel = vel+OFFSET;
@@ -166,7 +177,7 @@ Controller::set_gains()
             KD_ = KD_A;
             break;
 
-        case TRANSPARENT:
+        case GAIT:
             KP_ = KP_T;
             KI_ = KI_T;
             KD_ = KD_T;
@@ -179,7 +190,7 @@ Controller::set_gains()
             KS_ = KS_I;
             break;
 
-        default:progress
+        default:
             return 0;
     }
     
@@ -327,6 +338,10 @@ Controller::apply_PID(double error)
     cd = ((error - prev_error) / Ts) * KD_;
     vel = cp + ci + cd;
 
+    if (t_path == GAIT) {
+        double w = this->get_parameter("gait_assistance").as_double();
+        vel = vel * w;
+    }
     prev_error = error;
 
     return vel;
@@ -344,6 +359,23 @@ Controller::check_limits()
     }
 
     return vel;
+}
+
+int
+Controller::t_clear()
+{
+    std::vector<rclcpp::Parameter> param {rclcpp::Parameter("trajectory", FREE)};
+    auto set_results = this->set_parameters(param);
+
+    // Check to see if it was set.
+    for (auto & result : set_results) {
+        if (!result.successful) {
+            fprintf(stderr, "Failed to set parameter: %s", result.reason.c_str());
+            return 0;
+        }
+    }
+
+    return 1;
 }
 
 int
@@ -371,6 +403,7 @@ Controller::t_loop()
         if (t_goal == P_MIN) {
             t_state = END;
             t_path = FREE;
+            t_clear();
             return -1;
         }
     }
@@ -393,6 +426,7 @@ Controller::t_squat()
         if (t_goal == P_MAX) {
             t_state = END;
             t_path = FREE;
+            t_clear();
             return -1;
         }
     }
@@ -428,6 +462,7 @@ Controller::t_sit()
         if (t_goal == P_MIN) {
             t_state = END;
             t_path = FREE;
+            t_clear();
             return -1;
         }
     }
@@ -452,6 +487,7 @@ Controller::t_stand()
         if (t_goal == P_MAX) {
             t_state = END;
             t_path = FREE;
+            t_clear();
             return -1;
         }
     }
@@ -462,6 +498,8 @@ Controller::t_stand()
 int
 Controller::get_trajectory()
 {
+    printf("t_path: %d, t_state: %d\n", t_path, t_state);
+
     switch (t_path) {
 
         case LOOP:
@@ -483,6 +521,7 @@ Controller::get_trajectory()
         default:
             t_path = this->get_parameter("trajectory").as_int();
             t_goal = -1;
+            t_state = START;
             break;
     }
 
@@ -497,14 +536,27 @@ Controller::check_progress()
     int value;
     
     if ( t_state == GO )  {
-        value = static_cast<int>(angle_ * 1.11);
+        value = static_cast<int>(angle_ * 1.29);
         if ( t_path == LOOP ) {
-            std::max(value, 50);
+            value = value / 2;
+
+            value = std::min(value, 50);
+
+        } else if ( t_path == SQUAT ) {
+            value = 50 + (value / 2);
+
+            value = std::min(value, 100);
         }
     } else if ( t_state == BACK ) {
-        value = static_cast<int>((P_MAX - angle_) * 1.11);
+        value = static_cast<int>((P_MAX - angle_) * 1.29);
         if ( t_path == SQUAT ) {
-            std::max(value, 50);
+            value = value / 2;
+
+            value = std::min(value, 50);
+        } else if ( t_path == LOOP ) {
+            value = 50 + (value / 2);
+
+            value = std::min(value, 100);
         }
     }
 
@@ -529,9 +581,11 @@ Controller::impedance()
 
     KS_ = (level * KS_MAX) / 5.0;
 
-    printf("Impedance gain: %f\n", KS_);
+    // printf("Impedance gain: %f\n", KS_);
 
     goal = get_trajectory();
+
+    printf("Goal: %d\n", goal);
 
     if (t_path == FREE) {
         return 0.0;
@@ -545,11 +599,11 @@ Controller::impedance()
     check_progress();
 
     imp = error * KS_;
-    printf("Impedancia: %f\n", imp);
+    // printf("Impedancia: %f\n", imp);
 
     imp = std::clamp(imp, I_MIN, I_MAX);
 
-    printf("Impedancia Real: %f\n", imp);
+    // printf("Impedancia Real: %f\n", imp);
 
     return imp;
 

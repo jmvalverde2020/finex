@@ -17,6 +17,8 @@ FinexInterface::FinexInterface(rclcpp::Node::SharedPtr node, QWidget *parent)
   connect(ui->Stand_TB, &QPushButton::pressed, this, &FinexInterface::set_stand);
 
   connect(ui->Impedance_slider, &QSlider::valueChanged, this, &FinexInterface::set_impedance_level);
+  connect(ui->Gait_slider, &QSlider::valueChanged, this, &FinexInterface::set_gait_assistance);
+
   connect(ui->Control_dial, &QDial::valueChanged, this, &FinexInterface::change_mode);
 
   timer_node = node;
@@ -138,6 +140,19 @@ int
 FinexInterface::change_trajectory(int path)
 {
   std::vector<rclcpp::Parameter> param {rclcpp::Parameter("trajectory", path)};
+  
+  if (!update_param(param)) {
+    return 0;
+  }
+
+  return 1;
+}
+
+int
+FinexInterface::set_gait_assistance(int level)
+{
+  double assistance = static_cast<double>(level / 2.0);
+  std::vector<rclcpp::Parameter> param {rclcpp::Parameter("gait_assistance", assistance)};
   
   if (!update_param(param)) {
     return 0;
