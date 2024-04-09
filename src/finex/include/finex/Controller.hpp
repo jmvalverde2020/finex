@@ -8,6 +8,7 @@
 #include <chrono>
 #include <cmath>
 #include "rclcpp/rclcpp.hpp"
+#include "rosbag2_cpp/writer.hpp"
 #include "std_msgs/msg/float32.hpp"
 #include "std_msgs/msg/float64.hpp"
 #include "std_msgs/msg/u_int16.hpp"
@@ -76,6 +77,9 @@ private:
 
     double impedance();
 
+    const std::string get_date_time();
+    const std::string ask_bag_name();
+
     rclcpp::Subscription<std_msgs::msg::UInt16>::SharedPtr pot_sub_;
     rclcpp::Subscription<std_msgs::msg::Float32>::SharedPtr gauge_sub_;
     rclcpp::Publisher<std_msgs::msg::Float64>::SharedPtr vel_pub_;
@@ -91,6 +95,9 @@ private:
 
     std::shared_ptr<rclcpp::ParameterEventHandler> mode_param_;
     std::shared_ptr<rclcpp::ParameterCallbackHandle> mode_cb_handle_;
+
+    std::unique_ptr<rosbag2_cpp::Writer> writer_;
+    std::string bag_name;
 
     double KP_, KI_, KD_, KS_;
     double cp, ci, cd;
@@ -114,11 +121,11 @@ private:
     const double F_THRESHOLD = 0.58;
 
     // Control constants
-    const double V_MIN = -3.0, V_MAX = 3.0;
+    const double V_MIN = -5.0, V_MAX = 5.0;
     const double F_MIN = -14, F_MAX = 14;
     const double I_MIN = -10, I_MAX = 10;
     const double P_MIN = 5, P_MAX = 85;
-    const double OFFSET=0.76;
+    const double OFFSET=0.781;
 
     // Gains for position control
     const double KP_A = 0.144;
@@ -129,10 +136,10 @@ private:
     const double KP_T = 0.15;
     const double KI_T = 0.0;
     const double KD_T = 0.0;
-    const double W_MAX = 2;
+    const double W_MAX = 4.0, W_LEVELS = 4.0;
 
     // Gains for impredance
-    const double KS_I = 0.7, KS_MAX = 3;
+    const double KS_I = 0.7, KS_MAX = 5, KS_LEVELS = 5.0;
 };
 
 } // namespace finex

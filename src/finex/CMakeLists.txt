@@ -9,6 +9,7 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(ament_cmake_python REQUIRED)
 find_package(rclcpp REQUIRED)
+find_package(rosbag2_cpp REQUIRED)
 find_package(rclpy REQUIRED)
 find_package(std_msgs REQUIRED)
 
@@ -29,6 +30,7 @@ target_include_directories(control_node PUBLIC
 
 ament_target_dependencies(control_node 
   rclcpp 
+  rosbag2_cpp
   std_msgs
   )
 

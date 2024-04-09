@@ -79,11 +79,11 @@ FinexInterface::record()
 {
   std::vector<rclcpp::Parameter> param {rclcpp::Parameter("record", recording)};
 
+  recording = !recording;
+
   if (!update_param(param)) {
     return 0;
   }
-
-  recording = !recording;
 
   return 1;
 }

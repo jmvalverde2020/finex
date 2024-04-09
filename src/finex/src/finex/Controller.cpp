@@ -6,6 +6,22 @@ using namespace std::chrono_literals;
 namespace finex
 {
 
+// Get current date/time, format is YYYY-MM-DD.HH:mm:ss
+const std::string 
+Controller::get_date_time()
+{
+    time_t     now = time(0);
+    struct tm  tstruct;
+    char       buf[80];
+    tstruct = *localtime(&now);
+
+    // Visit http://en.cppreference.com/w/cpp/chrono/c/strftime
+    // for more information about date/time format
+    strftime(buf, sizeof(buf), "bags/%Y-%m-%d.%X", &tstruct);
+
+    return buf;
+}
+
 Controller::Controller()
 : Node("control_node")
 {
@@ -24,6 +40,9 @@ Controller::Controller()
       2ms, std::bind(&Controller::timeOut_callback, this));
 
     init_params();
+
+    writer_ = std::make_unique<rosbag2_cpp::Writer>();
+    
 }
 
 void
@@ -43,7 +62,7 @@ Controller::init_params()
     // Params for controlling via GUI
     this->declare_parameter("trajectory", 0);
     this->declare_parameter("impedance_level", 0);
-    this->declare_parameter("gait_assistance", 1.0);
+    this->declare_parameter("gait_assistance", 2);
     this->declare_parameter("progress", 0);
 
     // Init Start param and callback
@@ -66,6 +85,8 @@ Controller::init_params()
 
         if (record) {
             printf("RECORDING\n");
+            bag_name = get_date_time();
+            writer_->open(bag_name.c_str());
         } else {
             printf("RECORDING ENDED\n");
         }
@@ -92,10 +113,6 @@ Controller::init(double ts)
     }
 
     Ts = ts;
-
-    cp = 0.0;
-    ci = 0.0;
-    cd = 0.0;
 
     vel = 0.0;
     prev_error = 0.0;
@@ -191,6 +208,7 @@ Controller::set_gains()
             return 0;
     }
     
+
     std::vector<rclcpp::Parameter> all_new_parameters{
     rclcpp::Parameter("kp", KP_), 
     rclcpp::Parameter("ki", KI_),
@@ -208,6 +226,10 @@ Controller::set_gains()
         return 0;
         }
     }
+
+    cp = 0.0;
+    ci = 0.0;
+    cd = 0.0;
 
     return 1;
 }
@@ -336,10 +358,11 @@ Controller::apply_PID(double error)
     vel = cp + ci + cd;
 
     if (control_mode == GAIT) {
-        double w = this->get_parameter("gait_assistance").as_double();
+        int level = this->get_parameter("gait_assistance").as_int();
+        double w = (level * W_MAX) / W_LEVELS;
 
         printf("assistance: %f\n", w);
-        vel = (w * W_MAX) / 4.0;
+        vel = vel * w;
     }
     prev_error = error;
 
@@ -578,7 +601,7 @@ Controller::impedance()
 
     level = this->get_parameter("impedance_level").as_int();
 
-    KS_ = (level * KS_MAX) / 5.0;
+    KS_ = (level * KS_MAX) / KS_LEVELS;
 
     // printf("Impedance gain: %f\n", KS_);
 
