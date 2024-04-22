@@ -244,6 +244,11 @@ Controller::pot_callback(std_msgs::msg::UInt16 msg)
     } else {
         angle_ = -1;
     }
+
+    if (record) {
+        rclcpp::Time time_stamp = this->now();
+        writer_->write(msg, "/finex/readings/finex_pot", time_stamp);
+    }
 }
 
 void 
@@ -254,6 +259,11 @@ Controller::gauge_callback(std_msgs::msg::Float32 msg)
 
     if (abs(force_) < F_THRESHOLD) {
         force_ = 0.0;
+    }
+
+    if (record) {
+        rclcpp::Time time_stamp = this->now();
+        writer_->write(msg, "/finex/readings/finex_gauge", time_stamp);
     }
 }
 
@@ -270,6 +280,11 @@ Controller::publish_vel()
     auto msg = std_msgs::msg::Float64();
     msg.data = vel;
     vel_pub_->publish(msg);
+
+    if (record) {
+        rclcpp::Time time_stamp = this->now();
+        writer_->write(msg, "/finex/velocity", time_stamp);
+    }
 }
 
 void
@@ -278,6 +293,11 @@ Controller::publish_angle(int goal)
     auto msg = std_msgs::msg::UInt16();
     msg.data = goal;
     angle_pub_->publish(msg);
+
+    if (record) {
+        rclcpp::Time time_stamp = this->now();
+        writer_->write(msg, "/finex/angle_goal", time_stamp);
+    }
 }
 
 void
@@ -286,6 +306,11 @@ Controller::publish_force(double goal)
     auto msg = std_msgs::msg::Float64();
     msg.data = goal;
     force_pub_->publish(msg);
+
+    if (record) {
+        rclcpp::Time time_stamp = this->now();
+        writer_->write(msg, "/finex/force_goal", time_stamp);
+    }
 }
 
 double
