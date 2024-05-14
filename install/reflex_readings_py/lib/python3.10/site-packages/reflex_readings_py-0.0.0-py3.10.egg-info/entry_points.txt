@@ -1,3 +1,0 @@
-[console_scripts]
-sensor_node = reflex_readings_py.sensor_node:main
-

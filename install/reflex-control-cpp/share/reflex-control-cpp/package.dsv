@@ -1,8 +1,0 @@
-source;share/reflex-control-cpp/hook/cmake_prefix_path.ps1
-source;share/reflex-control-cpp/hook/cmake_prefix_path.dsv
-source;share/reflex-control-cpp/hook/cmake_prefix_path.sh
-source;share/reflex-control-cpp/local_setup.bash
-source;share/reflex-control-cpp/local_setup.dsv
-source;share/reflex-control-cpp/local_setup.ps1
-source;share/reflex-control-cpp/local_setup.sh
-source;share/reflex-control-cpp/local_setup.zsh
