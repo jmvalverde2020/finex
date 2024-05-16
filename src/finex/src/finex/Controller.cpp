@@ -130,10 +130,6 @@ Controller::init(double kp, double ki, double kd, double ts)
     KD_ = kd;
 
     Ts = ts;
-
-    cp = 0.0;
-    ci = 0.0;
-    cd = 0.0;
 }
 
 double
@@ -226,10 +222,6 @@ Controller::set_gains()
         return 0;
         }
     }
-
-    cp = 0.0;
-    ci = 0.0;
-    cd = 0.0;
 
     return 1;
 }
@@ -344,12 +336,6 @@ Controller::f_update(double goal)
         return std::nan("");
     }
 
-    std::clamp(goal, F_MIN, F_MAX);
-
-    if (force_ < F_MIN || force_ > F_MAX) {
-        return std::nan("");
-    }
-
     publish_force(goal);
 
     error = goal - force_;
@@ -360,7 +346,11 @@ Controller::f_update(double goal)
 double
 Controller::apply_PID(double error)
 {   
+    double cp, ci, cd;
+
     if (std::isnan(error)) {
+
+        printf("invalid error\n");
         return 0.0;
     }
 
@@ -372,8 +362,12 @@ Controller::apply_PID(double error)
     // Proportional controller
     cp = error * KP_;
 
-    // Integrative controller
-    ci += error * Ts * KI_;
+    // Integral controller
+    if (error == 0.0) {
+        integral_ = 0.0;
+    }
+    integral_ += error * Ts;
+    ci =  integral_ * KI_;
 
     // Anti-Windup
     ci = std::clamp(ci, V_MIN, V_MAX);

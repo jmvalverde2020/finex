@@ -100,7 +100,7 @@ private:
     std::string bag_name;
 
     double KP_, KI_, KD_, KS_;
-    double cp, ci, cd;
+    double integral_ = 0.0;
     double prev_error, Ts;
 
     double vel;
@@ -121,8 +121,7 @@ private:
     const double F_THRESHOLD = 0.58;
 
     // Control constants
-    const double V_MIN = -5.0, V_MAX = 5.0;
-    const double F_MIN = -14, F_MAX = 14;
+    const double V_MIN = -8.0, V_MAX = 8.0;
     const double I_MIN = -10, I_MAX = 10;
     const double P_MIN = 5, P_MAX = 85;
     const double OFFSET=0.781;
@@ -139,7 +138,7 @@ private:
     const double W_MAX = 4.0, W_LEVELS = 4.0;
 
     // Gains for impredance
-    const double KS_I = 0.7, KS_MAX = 5, KS_LEVELS = 5.0;
+    const double KS_I = 0.7, KS_MAX = 10, KS_LEVELS = 5.0;
 };
 
 } // namespace finex
