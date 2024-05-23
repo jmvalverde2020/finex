@@ -73,6 +73,8 @@ Controller::init_params()
 
         if (!start) {
             printf("STOPPED\n");
+        } else {
+            printf("START\n");
         }
     };
     start_cb_handle_ = start_param_->add_parameter_callback("start", set_start);
@@ -88,6 +90,7 @@ Controller::init_params()
             bag_name = get_date_time();
             writer_->open(bag_name.c_str());
         } else {
+            writer_->close();
             printf("RECORDING ENDED\n");
         }
     };
@@ -130,10 +133,6 @@ Controller::init(double kp, double ki, double kd, double ts)
     KD_ = kd;
 
     Ts = ts;
-
-    cp = 0.0;
-    ci = 0.0;
-    cd = 0.0;
 }
 
 double
@@ -173,7 +172,6 @@ Controller::update()
     
     vel = check_limits();
 
-    printf("velocity: %f\n", vel);
     publish_vel();
 
     vel = vel+OFFSET;
@@ -226,10 +224,6 @@ Controller::set_gains()
         return 0;
         }
     }
-
-    cp = 0.0;
-    ci = 0.0;
-    cd = 0.0;
 
     return 1;
 }
@@ -344,12 +338,6 @@ Controller::f_update(double goal)
         return std::nan("");
     }
 
-    std::clamp(goal, F_MIN, F_MAX);
-
-    if (force_ < F_MIN || force_ > F_MAX) {
-        return std::nan("");
-    }
-
     publish_force(goal);
 
     error = goal - force_;
@@ -360,7 +348,11 @@ Controller::f_update(double goal)
 double
 Controller::apply_PID(double error)
 {   
+    double cp, ci, cd;
+
     if (std::isnan(error)) {
+
+        printf("invalid error\n");
         return 0.0;
     }
 
@@ -372,8 +364,12 @@ Controller::apply_PID(double error)
     // Proportional controller
     cp = error * KP_;
 
-    // Integrative controller
-    ci += error * Ts * KI_;
+    // Integral controller
+    if (error == 0.0) {
+        integral_ = 0.0;
+    }
+    integral_ += error * Ts;
+    ci =  integral_ * KI_;
 
     // Anti-Windup
     ci = std::clamp(ci, V_MIN, V_MAX);
@@ -386,7 +382,6 @@ Controller::apply_PID(double error)
         int level = this->get_parameter("gait_assistance").as_int();
         double w = (level * W_MAX) / W_LEVELS;
 
-        printf("assistance: %f\n", w);
         vel = vel * w;
     }
     prev_error = error;
@@ -465,6 +460,16 @@ Controller::t_squat()
         t_state = BACK;
         t_goal = P_MAX;
     }
+    else if (t_state == BACK) {
+        if (t_goal == angle_) {
+            t_goal = angle_ - 1;
+        }
+
+        if (t_goal == P_MIN) {
+            t_state = GO;
+            return t_goal;
+        }
+    }
     else if (t_state == GO) {
         if (t_goal == angle_) {
             t_goal = angle_ + 1;
@@ -475,17 +480,6 @@ Controller::t_squat()
             t_path = FREE;
             t_clear();
             return -1;
-        }
-    }
-    else if (t_state == BACK) {
-        if (t_goal == angle_) {
-            t_goal = angle_ - 1;
-        }
-
-        if (t_goal == P_MIN) {
-            t_state = BACK;
-            return t_goal;
-            
         }
     }
 
@@ -545,8 +539,6 @@ Controller::t_stand()
 int
 Controller::get_trajectory()
 {
-    printf("t_path: %d, t_state: %d\n", t_path, t_state);
-
     switch (t_path) {
 
         case LOOP:
@@ -628,8 +620,6 @@ Controller::impedance()
 
     KS_ = (level * KS_MAX) / KS_LEVELS;
 
-    // printf("Impedance gain: %f\n", KS_);
-
     goal = get_trajectory();
 
     printf("Goal: %d\n", goal);
@@ -646,11 +636,8 @@ Controller::impedance()
     check_progress();
 
     imp = error * KS_;
-    // printf("Impedancia: %f\n", imp);
 
     imp = std::clamp(imp, I_MIN, I_MAX);
-
-    // printf("Impedancia Real: %f\n", imp);
 
     return imp;
 

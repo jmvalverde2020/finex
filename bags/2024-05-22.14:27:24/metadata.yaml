@@ -1,0 +1,50 @@
+rosbag2_bagfile_information:
+  version: 5
+  storage_identifier: sqlite3
+  duration:
+    nanoseconds: 60119023594
+  starting_time:
+    nanoseconds_since_epoch: 1716380845005174359
+  message_count: 51365
+  topics_with_message_count:
+    - topic_metadata:
+        name: /finex/angle_goal
+        type: std_msgs/msg/UInt16
+        serialization_format: cdr
+        offered_qos_profiles: ""
+      message_count: 3768
+    - topic_metadata:
+        name: /finex/velocity
+        type: std_msgs/msg/Float64
+        serialization_format: cdr
+        offered_qos_profiles: ""
+      message_count: 5215
+    - topic_metadata:
+        name: /finex/force_goal
+        type: std_msgs/msg/Float64
+        serialization_format: cdr
+        offered_qos_profiles: ""
+      message_count: 5215
+    - topic_metadata:
+        name: /finex/readings/finex_gauge
+        type: std_msgs/msg/Float32
+        serialization_format: cdr
+        offered_qos_profiles: ""
+      message_count: 18581
+    - topic_metadata:
+        name: /finex/readings/finex_pot
+        type: std_msgs/msg/UInt16
+        serialization_format: cdr
+        offered_qos_profiles: ""
+      message_count: 18586
+  compression_format: ""
+  compression_mode: ""
+  relative_file_paths:
+    - 2024-05-22.14:27:24_0.db3
+  files:
+    - path: 2024-05-22.14:27:24_0.db3
+      starting_time:
+        nanoseconds_since_epoch: 1716380845005174359
+      duration:
+        nanoseconds: 60119023594
+      message_count: 51365
