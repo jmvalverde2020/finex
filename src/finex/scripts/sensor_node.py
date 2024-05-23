@@ -66,8 +66,8 @@ class SensorNode(Node):
 
 filter_states = [0.0]*2
 gauge_data  = [0] * 318 # gauge_data  = [None] * 318
-pot_params = [-0.10483871, 99.701613]
-gauge_params = [0.0282302158273381, -15.950071942446]
+pot_params = [-0.103926096997691, 99.2494226327945]
+gauge_params = [0.0285255319148936, -19.2547340425532]
 debug = False
 
 """FIR filter for gauge readings (Values exported from Simulink)"""
@@ -141,6 +141,7 @@ def main(args=None):
     debug = parser.parse_args().D
 
     sensor_node = SensorNode()
+    rate = sensor_node.create_rate(200)
     can_bus = CANbus(channel="can0")
 
     if debug:
@@ -166,8 +167,6 @@ def main(args=None):
                 #print("sending:", gauge_msg)
                 sensor_node.gauge_pub.publish(gauge_msg)
 
-            
-    
             if debug:
                 counter += 1
                 if (time.time() - start) > 0.99999:
@@ -182,7 +181,10 @@ def main(args=None):
                     sensor_node.pot_raw.publish(pot_msg_raw)
                 if gauge_msg_raw.data is not None:
                     sensor_node.gauge_raw.publish(gauge_msg_raw)
-    
+
+        rclpy.spin_once(sensor_node)
+        rate.sleep()
+
     sensor_node.destroy_node()
     rclpy.shutdown()
 
