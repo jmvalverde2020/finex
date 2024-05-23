@@ -17,7 +17,7 @@ int main(int argc, char * argv[])
 {   
     signal(SIGINT, exit_handler);
 
-    int FRQ = 400;
+    int FRQ = 150;
     double Ts = 1.0/FRQ;
     double vel = 0.0;
     // int count = 0;
