@@ -78,7 +78,6 @@ private:
     double impedance();
 
     const std::string get_date_time();
-    const std::string ask_bag_name();
 
     rclcpp::Subscription<std_msgs::msg::UInt16>::SharedPtr pot_sub_;
     rclcpp::Subscription<std_msgs::msg::Float32>::SharedPtr gauge_sub_;
@@ -127,12 +126,12 @@ private:
     const double OFFSET=0.781;
 
     // Gains for position control
-    const double KP_A = 0.144;
-    const double KI_A = 0.2866;
+    const double KP_A = 0.18;
+    const double KI_A = 0.333;
     const double KD_A = 0.0;
 
     // Gains for transparent control
-    const double KP_T = 0.15;
+    const double KP_T = 0.1;
     const double KI_T = 0.0;
     const double KD_T = 0.0;
     const double W_MAX = 4.0, W_LEVELS = 4.0;
