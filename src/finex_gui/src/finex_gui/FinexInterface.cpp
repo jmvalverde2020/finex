@@ -15,6 +15,7 @@ FinexInterface::FinexInterface(rclcpp::Node::SharedPtr node, QWidget *parent)
   connect(ui->Loop_TB, &QPushButton::pressed, this, &FinexInterface::set_loop);
   connect(ui->Sit_TB, &QPushButton::pressed, this, &FinexInterface::set_sit);
   connect(ui->Stand_TB, &QPushButton::pressed, this, &FinexInterface::set_stand);
+  connect(ui->Squat_TB, &QPushButton::pressed, this, &FinexInterface::set_squat);
 
   connect(ui->Impedance_slider, &QSlider::valueChanged, this, &FinexInterface::set_impedance_level);
   connect(ui->Gait_slider, &QSlider::valueChanged, this, &FinexInterface::set_gait_assistance);
@@ -22,7 +23,7 @@ FinexInterface::FinexInterface(rclcpp::Node::SharedPtr node, QWidget *parent)
   connect(ui->Control_dial, &QDial::valueChanged, this, &FinexInterface::change_mode);
 
   timer_node = node;
-  auto param_node = rclcpp::Node::make_shared("finex_gui_param_node");
+  auto param_node = rclcpp::Node::make_shared("gui_node");
   parameters_client = std::make_shared<rclcpp::SyncParametersClient>(param_node, "control_node");
 
   progress_timer = timer_node->create_wall_timer(
@@ -79,11 +80,11 @@ FinexInterface::record()
 {
   std::vector<rclcpp::Parameter> param {rclcpp::Parameter("record", recording)};
 
-  recording = !recording;
-
   if (!update_param(param)) {
     return 0;
   }
+
+  recording = !recording;
 
   return 1;
 }
@@ -137,6 +138,18 @@ FinexInterface::set_stand()
 }
 
 int
+FinexInterface::set_squat()
+{ 
+  
+  if (!change_trajectory(4)) {
+    return 0;
+  }
+
+
+  return 1;
+}
+
+int
 FinexInterface::change_trajectory(int path)
 {
   std::vector<rclcpp::Parameter> param {rclcpp::Parameter("trajectory", path)};
@@ -177,6 +190,6 @@ FinexInterface::show_progress()
 { 
   int value;
   value = parameters_client->get_parameters({"progress"})[0].as_int();
-
+  
   ui->Progress_Bar->setValue(value);
 }

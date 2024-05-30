@@ -38,6 +38,7 @@ private:
     int set_loop();
     int set_sit();
     int set_stand();
+    int set_squat();
     int change_trajectory(int path);
 
     int set_gait_assistance(int level);
@@ -45,7 +46,7 @@ private:
 
     void show_progress();
 
-    bool recording = false;
+    bool recording = true;
 
     Ui::FinexInterface *ui;
 

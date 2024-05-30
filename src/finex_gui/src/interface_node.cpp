@@ -13,7 +13,7 @@ int main(int argc, char* argv[])
 
     rclcpp::init(argc, argv);
 
-    auto node = rclcpp::Node::make_shared("finex_gui_timer_node");
+    auto node = rclcpp::Node::make_shared("gui_timer_node");
     FinexInterface w(node);
     w.show();
 
