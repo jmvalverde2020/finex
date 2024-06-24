@@ -57,7 +57,7 @@ Controller::init_params()
     this->declare_parameter("ki", 0.0);
 
     // For tunning the impedance model
-    this->declare_parameter("ks", 0.1);
+    this->declare_parameter("ks", 10.0);
 
     // Params for controlling via GUI
     this->declare_parameter("trajectory", 0);
@@ -199,7 +199,7 @@ Controller::set_gains()
             KP_ = KP_T;
             KI_ = KI_T;
             KD_ = KD_T;
-            KS_ = KS_I;
+            KS_ = KS_MAX;
             break;
 
         default:
@@ -614,11 +614,11 @@ double
 Controller::impedance()
 {
     int goal, level;
-    double error, imp;
+    double error, imp, ks;
 
     level = this->get_parameter("impedance_level").as_int();
 
-    KS_ = (level * KS_MAX) / KS_LEVELS;
+    ks = (level * KS_) / KS_LEVELS;
 
     goal = get_trajectory();
 
@@ -635,7 +635,7 @@ Controller::impedance()
     }
     check_progress();
 
-    imp = error * KS_;
+    imp = error * ks;
 
     imp = std::clamp(imp, I_MIN, I_MAX);
 

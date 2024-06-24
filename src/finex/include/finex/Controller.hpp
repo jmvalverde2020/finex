@@ -137,7 +137,7 @@ private:
     const double W_MAX = 4.0, W_LEVELS = 4.0;
 
     // Gains for impredance
-    const double KS_I = 0.7, KS_MAX = 10, KS_LEVELS = 5.0;
+    const double KS_MAX = 10, KS_LEVELS = 5.0;
 };
 
 } // namespace finex
